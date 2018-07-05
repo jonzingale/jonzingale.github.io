@@ -29,6 +29,20 @@ function incr(pos, sig) {
   return ((pos > 450) ? -1 : (pos < 0) ? 1 : sig)
 }
 
+function cube(pos, sig, elem) {
+
+}
+
+
+function butterfly(){
+  data = [[rando(), rando()], [rando(), rando()],
+          [rando(), rando()], [rando(), rando()]];
+
+  var lineGenerator = d3.line();
+  var pathString = lineGenerator(data);
+  d3.select('path').attr('d', pathString)
+}
+
 function myMove() {
   var elem = document.getElementById("animate");   
   var id = setInterval(frame, 10);
@@ -36,18 +50,13 @@ function myMove() {
   var sig = 1
 
   function frame() {
+    butterfly()
+    // (top, left) =cube(pos, sig, elem)
+
     sig = incr(pos, sig)
     pos += sig
-
-    data = [[rando(), rando()], [rando(), rando()],
-    				[rando(), rando()], [rando(), rando()]];
-
-    var lineGenerator = d3.line();
-    var pathString = lineGenerator(data);
-    d3.select('path').attr('d', pathString)
-
-    elem.style.top = pos + 'px'; 
-    elem.style.left = pos + 'px'; 
+    elem.style.top = pos + 'px';
+    elem.style.left = pos + 'px';
   }
 }
 
