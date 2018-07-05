@@ -26,12 +26,12 @@ function rando(){
 }
 
 function incr(pos, sig) {
-  return ((pos > 280) ? -1 : (pos < 0) ? 1 : sig)
+  return ((pos > 450) ? -1 : (pos < 0) ? 1 : sig)
 }
 
 function myMove() {
   var elem = document.getElementById("animate");   
-  var id = setInterval(frame, 20);
+  var id = setInterval(frame, 10);
   let pos = 0;
   var sig = 1
 
