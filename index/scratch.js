@@ -8,10 +8,8 @@ d3.select("body")
   .attr("cy", 25)
   .attr("r", 25).style("fill", "purple");
 
-var theData = [ 1, 2, 3 ]
-
 var p = d3.select("body").selectAll("p")
-  .data(theData)
+  .data([ 1, 2, 3 ])
   .enter()
   .append("p")
   .text("here ");
@@ -29,14 +27,9 @@ function incr(pos, sig) {
   return ((pos > 450) ? -1 : (pos < 0) ? 1 : sig)
 }
 
-function cube(pos, sig, elem) {
-
-}
-
-
 function butterfly(){
-  data = [[rando(), rando()], [rando(), rando()],
-          [rando(), rando()], [rando(), rando()]];
+  var data = [[rando(), rando()], [rando(), rando()],
+              [rando(), rando()], [rando(), rando()]];
 
   var lineGenerator = d3.line();
   var pathString = lineGenerator(data);
@@ -51,7 +44,6 @@ function myMove() {
 
   function frame() {
     butterfly()
-    // (top, left) =cube(pos, sig, elem)
 
     sig = incr(pos, sig)
     pos += sig
@@ -59,5 +51,3 @@ function myMove() {
     elem.style.left = pos + 'px';
   }
 }
-
-
