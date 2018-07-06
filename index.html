@@ -2,15 +2,15 @@
 <html lang="en-us">
 	<style>
 	   path {
-	      fill: black;
+	      /*fill: black;*/
 	      /*stroke: #aaa;*/
 	   }
 	   body {
 	   	background: #5B4D49;
 	   }
 	   #animate {
-	       width: 300px;
-	       height: 300px;
+	       width: 100px;
+	       height: 100px;
 	       position: absolute;
 	       background: #97843A;
 	   }
@@ -19,16 +19,26 @@
     <script type="text/javascript" src="./index/d3.v4.min.js"></script>               
   </head>
 
-  <body onload="myMove()">
+  <body>
 	  <main class="pb7" role="main">
 	  	<div id ="animate">Boxy</div>
 	    <div class="flex-l mt2 mw8 center">
-	    	<svg width = "800" height = "500">
-	    	   <path transform = "translate(500, 50)" />
+
+	    	<svg width="730" height="700">
+	    		<path id="butterfly" transform="translate(400,0)" />
 	    	</svg>
+
+	    	<svg width="20" height="20">
+	    		<path id="ocean" />
+	    	</svg>
+
 	    </div>
 	  </main>
 	</body>
-
-<script  src="./index/scratch.js" ></script>
+<script src="./index/boxy_butterfly.js" ></script>
+<script src="./index/ocean.js"></script>
+<script>
+	ocean()
+	boxy()
+</script>
 </html>

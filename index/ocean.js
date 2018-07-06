@@ -1,27 +1,3 @@
-<!DOCTYPE html>
-<head>
-<meta charset="utf-8">
-<title>Streamgraph</title>
-<style>
-
-button {
-  position: absolute;
-  left: 10px;
-  top: 10px;
-}
-
-</style>
-
-<script src="https://d3js.org/d3.v4.min.js"></script>
-
-
-</head>
-
-<body onload="window.setInterval(transition, 2500)">
-  <svg width="960" height="500"></svg>
-
-  <script>
-
   var n = 50, // number of layers
       m = 50, // number of samples per layer
       k = 2; // number of bumps per layer
@@ -41,7 +17,7 @@ button {
 
   var y = d3.scaleLinear()
       .domain([d3.min(layers, stackMin), d3.max(layers, stackMax)])
-      .range([height, 0]);
+      .range([height/2, 0]);
 
   var z = d3.interpolateCool;
 
@@ -50,10 +26,10 @@ button {
       .y0(function(d) { return y(d[0]); })
       .y1(function(d) { return y(d[1]); });
 
-  svg.selectAll("path")
+  svg.selectAll('path[id=ocean]')
     .data(layers0)
-    .enter().append("path")
-      .attr("d", area)
+    .enter().append('path').attr('id','ocean')
+      .attr("d", area).attr('transform','translate(0 400)')
       .attr("fill", function() { return z(Math.random()); });
 
   function stackMax(layer) {
@@ -64,13 +40,16 @@ button {
     return d3.min(layer, function(d) { return d[0]; });
   }
 
+  function ocean() {
+    window.setInterval(transition, 1500)
+  }
+
   function transition() {
-    // window.alert("Tranny Alert");
     var t;
-    d3.selectAll("path")
+    d3.selectAll('path[id=ocean]')
       .data((t = layers1, layers1 = layers0, layers0 = t))
       .transition()
-        .duration(2500)
+        .duration(1500)
         .attr("d", area);
   }
 
@@ -91,8 +70,3 @@ button {
       a[i] += x * Math.exp(-w * w);
     }
   }
-
-  </script>
-
-</body>
-</html>
