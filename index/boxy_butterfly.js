@@ -22,15 +22,15 @@ function butterfly(){
 
 function boxy() {
   var elem = document.getElementById("animate");
-  var id = setInterval(frame, 100);
-  let pos = 0;
+  elem.style.top = '440px'
+  var id = setInterval(frame, 20);
+  let pos = 450;
   var sig = 1
 
   function frame() {
     butterfly()
     sig = incr(pos, sig)
     pos += sig
-    elem.style.top = pos + 'px';
     elem.style.left = pos + 'px';
   }
 }

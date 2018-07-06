@@ -17,7 +17,7 @@
 
   var y = d3.scaleLinear()
       .domain([d3.min(layers, stackMin), d3.max(layers, stackMax)])
-      .range([height/2, 0]);
+      .range([height/3, 0]);
 
   var z = d3.interpolateCool;
 

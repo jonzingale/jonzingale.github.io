@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 	<style>
-	   path {
+	   #ocean {
 	      /*fill: black;*/
 	      /*stroke: #aaa;*/
 	   }
@@ -9,7 +9,7 @@
 	   	background: #5B4D49;
 	   }
 	   #animate {
-	       width: 100px;
+	       width: 200px;
 	       height: 100px;
 	       position: absolute;
 	       background: #97843A;
@@ -21,11 +21,11 @@
 
   <body>
 	  <main class="pb7" role="main">
-	  	<div id ="animate">Boxy</div>
+	  	<div id ="animate">USS Boxy</div>
 	    <div class="flex-l mt2 mw8 center">
 
 	    	<svg width="730" height="700">
-	    		<path id="butterfly" transform="translate(400,0)" />
+	    		<path id="butterfly" transform="translate(400,30)" />
 	    	</svg>
 
 	    	<svg width="20" height="20">
@@ -38,7 +38,7 @@
 <script src="./index/boxy_butterfly.js" ></script>
 <script src="./index/ocean.js"></script>
 <script>
-	ocean()
 	boxy()
+	ocean()
 </script>
 </html>
