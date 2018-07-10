@@ -21,8 +21,9 @@ function butterfly(){
 }
 
 function boxy() {
-  var elem = document.getElementById("animate");
-  elem.style.top = '440px'
+
+  var elem = d3.selectAll('div[id=animate]').text('HMS Boxy')
+
   var id = setInterval(frame, 20);
   let pos = 450;
   var sig = 1
@@ -31,6 +32,6 @@ function boxy() {
     butterfly()
     sig = incr(pos, sig)
     pos += sig
-    elem.style.left = pos + 'px';
+    d3.selectAll('div[id=animate]').attr('style', `left: ${pos}px; top: 430px`)
   }
 }

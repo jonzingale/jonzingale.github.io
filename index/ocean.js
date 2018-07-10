@@ -63,7 +63,7 @@
   }
 
   function bump(a, n) {
-    var x = 1 / (0.1 + Math.random()),
+    var x = 1 / (30.1 + Math.random()),
         y = 2 * Math.random() - 0.5,
         z = 10 / (0.1 + Math.random());
     for (var i = 0; i < n; i++) {
