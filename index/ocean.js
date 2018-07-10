@@ -8,7 +8,8 @@
       layers = layers0.concat(layers1);
 
   var svg = d3.select("svg[id=ocean]")
-              .attr('width',window.innerWidth),
+              .attr('width',window.innerWidth)
+              .attr('height',window.innerHeight),
       width = +svg.attr("width"),
       height = +svg.attr("height");
 
@@ -49,9 +50,7 @@
     var t;
     d3.selectAll('path[id=ocean]')
       .data((t = layers1, layers1 = layers0, layers0 = t))
-      .transition()
-        .duration(1500)
-        .attr("d", area);
+      .transition().duration(1500).attr("d", area);
   }
 
   // Inspired by Lee Byron’s test data generator.
@@ -65,7 +64,7 @@
   function bump(a, n) {
     var x = 1 / (30.1 + Math.random()),
         y = 2 * Math.random() - 0.5,
-        z = 10 / (0.1 + Math.random());
+        z = 5 / (0.1 + Math.random());
     for (var i = 0; i < n; i++) {
       var w = (i / n - y) * z;
       a[i] += x * Math.exp(-w * w);
