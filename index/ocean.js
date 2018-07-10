@@ -1,4 +1,4 @@
-  var n = 50, // number of layers
+  var n = 40, // number of layers
       m = 50, // number of samples per layer
       k = 2; // number of bumps per layer
 
@@ -7,7 +7,7 @@
       layers1 = stack(d3.transpose(d3.range(n).map(function() { return bumps(m, k); }))),
       layers = layers0.concat(layers1);
 
-  var svg = d3.select("svg"),
+  var svg = d3.select("svg[id=ocean]"),
       width = +svg.attr("width"),
       height = +svg.attr("height");
 
@@ -17,7 +17,7 @@
 
   var y = d3.scaleLinear()
       .domain([d3.min(layers, stackMin), d3.max(layers, stackMax)])
-      .range([height/3, 0]);
+      .range([height, 0]);
 
   var z = d3.interpolateCool;
 
@@ -29,7 +29,7 @@
   svg.selectAll('path[id=ocean]')
     .data(layers0)
     .enter().append('path').attr('id','ocean')
-      .attr("d", area).attr('transform','translate(0 400)')
+      .attr("d", area).attr('transform','translate(0 0)')
       .attr("fill", function() { return z(Math.random()); });
 
   function stackMax(layer) {
