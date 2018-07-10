@@ -7,7 +7,8 @@
       layers1 = stack(d3.transpose(d3.range(n).map(function() { return bumps(m, k); }))),
       layers = layers0.concat(layers1);
 
-  var svg = d3.select("svg[id=ocean]"),
+  var svg = d3.select("svg[id=ocean]")
+              .attr('width',window.innerWidth),
       width = +svg.attr("width"),
       height = +svg.attr("height");
 
