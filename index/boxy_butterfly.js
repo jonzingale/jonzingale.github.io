@@ -32,6 +32,7 @@ function boxy() {
     butterfly()
     sig = incr(pos, sig)
     pos += sig
-    d3.selectAll('div[id=animate]').attr('style', `left: ${pos}px; top: 430px`)
+    d3.selectAll('div[id=animate]')
+      .attr('style', `left: ${pos}px; top: 430px`)
   }
 }
