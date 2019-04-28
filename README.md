@@ -1,3 +1,15 @@
-# jonzingale.github.io
+# SIR Contagion Network Model
 
-<a href="https://jonzingale.github.io/index.html"> PAGE </a>
+```
+cd epidemics
+SERVER on 8000: python -m http.server
+http://localhost:8000/epidemics.html
+```
+
+```
+python adjacencyBuilder.py builds dirksGraph() as adjacency.json
+python graphBuilder.py builds network()
+```
+
+TODO: 
+* Use proper javascript json parser.
