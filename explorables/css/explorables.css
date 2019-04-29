@@ -20,3 +20,12 @@
   text-align: left;
   width: 100%;
 }
+
+html {
+  background: #eee;
+}
+
+text {
+  font-family: sans-serif;
+  font-size: 20px;
+}
