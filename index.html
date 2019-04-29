@@ -41,13 +41,12 @@
 	        .attr("cy", function(d, i) { return i*40 + 20 })
 	        .attr('fill', function(d, i) { return color[i] })
 
-		links
-				.append('a').attr('href', function(d) { return d.url })
-				.append('text').attr('class','menu')
+		links.append('a')
+				.attr('href', function(d) { return d.url })
+				.append('text').attr('class', 'menu')
 				.attr('y', function(d, i) { return i*40 + 27})
-				.attr('x', 30).style('stroke', 'black')
-				.attr("font-family", "Bev")
-				.attr("font-size", "12px")
+				.attr('x', 32).style('stroke', 'black')
+				.attr("font-size", "20px")
 				.text(function(d) {return d.id})
 
   </script>
