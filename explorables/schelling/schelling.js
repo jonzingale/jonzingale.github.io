@@ -4,8 +4,8 @@
   const L = 120,
         world_width = 400,
         kk = Math.ceil(world_width/L), // agent size
-        controlbox_width = 400,
-        controlbox_height = 400,
+        controlbox_width = 500,
+        controlbox_height = 380,
         n_grid_x = 24,
         n_grid_y = 24,
         stateK = .99 // population/availability
@@ -16,14 +16,14 @@
       population,
       freeBoard
 
-  // var vacantColor = '#330C00', // darkbrown
-  //     agentColor1 = '#D3AC8B', // peru
-  //     agentColor2 = '#8B4513' // coffee
+  var vacantColor = '#330C00', // darkbrown
+      agentColor1 = '#D3AC8B', // peru
+      agentColor2 = '#8B4513' // coffee
 
   // Alternative Color Scheme.
-  var vacantColor = '#330C00', // darkbrown
-      agentColor1 = '#6699FF', // bluish
-      agentColor2 = '#8B4513' // coffee
+  // var vacantColor = '#330C00', // darkbrown
+  //     agentColor1 = '#6699FF', // bluish
+  //     agentColor2 = '#8B4513' // coffee
 
   // moore neighborhood
   var moore = [[ 1, -1],[ 1, 0],[ 1, 1],
@@ -66,7 +66,7 @@
 
   var controls = d3.selectAll("#schelling_controls").append("svg")
     .attr("width",controlbox_width)
-    .attr("height",controlbox_height)
+    .attr("height",controlbox_height-80)
     .attr("class","schelling_widgets")
 
   // Buttons and Blocks.

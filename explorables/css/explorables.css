@@ -29,11 +29,14 @@
 }
 
 .happiness {
-  font-family: dinLight;
   padding-left: 20px;
-  font-size: 34px;
-  line-height: 1.5;
+  font-size: 32px;
   font-weight: 400;
+}
+
+.description {
+  padding-top: 20px;
+  width: 56%;
 }
 
 a {
