@@ -29,6 +29,9 @@
   font-weight: 400;
 }
 
+a {
+  text-decoration: none;
+}
 
 html {
   background: #eee;
