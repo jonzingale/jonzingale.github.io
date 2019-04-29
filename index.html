@@ -6,6 +6,9 @@
     <link href="/explorables/css/explorables.css" rel="stylesheet" type="text/css" />    
     <script type="text/javascript" src="/explorables/js/d3.v4.min.js"></script>
     <script src="/explorables/js/d3-scale-chromatic.v1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
   </head>
 
   <main role="main">
@@ -30,7 +33,7 @@
 				{'id': 'The Lorenz System', 'url': "/explorables/lorenz/lorenz.html"},
 			]
 
-    var rows = d3.selectAll('tr').append('svg').attr('height', 200)
+    var rows = d3.selectAll('tr').append('svg').attr('height', 200).attr('width', 350)
 		var links = rows.selectAll("text").data(data).enter()
 
 		links.append('g')
@@ -43,9 +46,9 @@
 
 		links.append('a')
 				.attr('href', function(d) { return d.url })
-				.append('text').attr('class', 'menu')
+				.append('text').attr('class', 'menu').attr('x', 40)
 				.attr('y', function(d, i) { return i*40 + 27})
-				.attr('x', 32).style('stroke', 'black')
+				.attr('font-family', 'Nunito Sans')
 				.attr("font-size", "20px")
 				.text(function(d) {return d.id})
 
