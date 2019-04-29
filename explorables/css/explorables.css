@@ -58,6 +58,11 @@ html {
 }
 
 text {
-  font-family: sans-serif;
+  /*font-family: sans-serif;*/
+  font-size: 20px;
+}
+
+.menu text {
+  font-family: 'Bev';
   font-size: 20px;
 }

@@ -5,6 +5,7 @@
     <link href='/explorables/css/main.css' rel='stylesheet' type="text/css" />
     <link href="/explorables/css/explorables.css" rel="stylesheet" type="text/css" />    
     <script type="text/javascript" src="/explorables/js/d3.v4.min.js"></script>
+    <script src="/explorables/js/d3-scale-chromatic.v1.min.js"></script>
   </head>
 
   <main role="main">
@@ -12,14 +13,41 @@
 	  	<div class="menu-text">
 	  	  <table>
 	  	    <tbody>
-	  	      <tr><td><a href="/explorables/epidemics/epidemics.html">Contagion Network</a></td></tr>
-	  	      <tr><td><a href="/explorables/schelling/schelling.html">Schelling Segregation</a></td></tr>
-	  	      <tr><td><a href="/explorables/nagelschreckenberg/nagelSchreckenberg.html">Nagel-Schreckenberg Traffic</a></td></tr>
-	  	      <tr><td><a href="/explorables/briansBrain/briansBrain.html">Cellular Automata</a></td></tr>
-	  	      <tr><td><a href="/explorables/lorenz/lorenz.html">The Lorenz Attractor</a></td></tr>     
+	  	    	<tr></tr>
 	  	    </tbody>
 	  	  </table>
 	  	</div>
 	  </div>
   </main>
+
+  <script>
+  	const color = d3.schemeAccent
+	  const data = [{'id': 'Contagion Network', 'url': "/explorables/epidemics/epidemics.html"},
+        				{'id': 'Schelling Segregation', 'url': "/explorables/schelling/schelling.html"},
+        				{'id': 'Nagel-Schreckenberg Traffic', 'url': "/explorables/nagelschreckenberg/nagelSchreckenberg.html"},
+        				{'id': 'Cellular Automata', 'url': "/explorables/briansBrain/briansBrain.html"},
+        				{'id': 'The Lorenz System', 'url': "/explorables/lorenz/lorenz.html"}
+        				]
+
+    var rows = d3.selectAll('tr').append('svg').attr('height', 200)
+		var links = rows.selectAll("text").data(data).enter()
+
+		links.append('g')
+	      .selectAll("circle").data(data)
+	      .enter().append("circle")
+	        .attr('id', function(d) { return d.id })
+	        .attr("cx", 20).attr("r", 15)
+	        .attr("cy", function(d, i) { return i*40 + 20 })
+	        .attr('fill', function(d, i) { return color[i] })
+
+		links
+				.append('a').attr('href', function(d) { return d.url })
+				.append('text').attr('class','menu')
+				.attr('y', function(d, i) { return i*40 + 27})
+				.attr('x', 30).style('stroke', 'black')
+				.attr("font-family", "Bev")
+				.attr("font-size", "12px")
+				.text(function(d) {return d.id})
+
+  </script>
 </html>
