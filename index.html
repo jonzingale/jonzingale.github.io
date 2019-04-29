@@ -22,12 +22,13 @@
 
   <script>
   	const color = d3.schemeAccent
-	  const data = [{'id': 'Contagion Network', 'url': "/explorables/epidemics/epidemics.html"},
-        				{'id': 'Schelling Segregation', 'url': "/explorables/schelling/schelling.html"},
-        				{'id': 'Nagel-Schreckenberg Traffic', 'url': "/explorables/nagelschreckenberg/nagelSchreckenberg.html"},
-        				{'id': 'Cellular Automata', 'url': "/explorables/briansBrain/briansBrain.html"},
-        				{'id': 'The Lorenz System', 'url': "/explorables/lorenz/lorenz.html"}
-        				]
+	  const data =
+	  	[ {'id': 'Contagion Network', 'url': "/explorables/epidemics/epidemics.html"},
+				{'id': 'Schelling Segregation', 'url': "/explorables/schelling/schelling.html"},
+				{'id': 'Nagel-Schreckenberg Traffic', 'url': "/explorables/nagelschreckenberg/nagelSchreckenberg.html"},
+				{'id': 'Cellular Automata', 'url': "/explorables/briansBrain/briansBrain.html"},
+				{'id': 'The Lorenz System', 'url': "/explorables/lorenz/lorenz.html"},
+			]
 
     var rows = d3.selectAll('tr').append('svg').attr('height', 200)
 		var links = rows.selectAll("text").data(data).enter()
