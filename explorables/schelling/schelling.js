@@ -1,6 +1,6 @@
 // http://nifty.stanford.edu/2014/mccown-schelling-model-segregation/
 (function(){
-  const L = 150,
+  const L = 130,
         population = L**2,
         world_width = 400,
         kk = Math.ceil(world_width/L), // agent size
@@ -18,11 +18,6 @@
   var vacantColor = '#330C00', // darkbrown
       agentColor1 = '#D3AC8B', // peru
       agentColor2 = '#8B4513' // coffee
-
-  // Alternative Color Scheme.
-  // var vacantColor = '#330C00', // darkbrown
-  //     agentColor1 = '#6699FF', // bluish
-  //     agentColor2 = '#8B4513' // coffee
 
   // moore neighborhood
   var moore = [[ 1, -1],[ 1, 0],[ 1, 1],
@@ -70,11 +65,14 @@
   // Buttons and Blocks.
   var g = widget.grid(controlbox_width,controlbox_height, n_grid_x, n_grid_y);
   var playblock = g.block({x0:5,y0:16,width:0,height:0});
-  var buttonblock = g.block({x0:12,y0:14,width:4,height:0}).Nx(2);
   var sliderBlock = g.block({x0:2,y0:7,width:10,height:3});
+  var buttonblock = g.block({x0:11.5,y0:17,width:4,height:0}).Nx(2);
+  var colorBlock = g.block({x0:11,y0:12,width:4,height:0}).Nx(2);
 
   var sliderwidth = sliderBlock.w();
   var handleSize = 12, trackSize = 8;
+
+  var colorRule = {id:"t1", name: "Blues or Browns", value: true};
 
   var playpause = { id:"b4", name:"run simulation",
                     actions: ["play","pause"], value: 0};
@@ -90,11 +88,21 @@
       .handleSize(handleSize),
   ]
 
+  var toggles = [
+    widget.toggle(colorRule).label("bottom").size(15).update(toggleColors)
+  ]
+
   var buttons = [ widget.button(reset).update(resetpositions) ]
 
   var playbutton = [
     widget.button(playpause).size(g.x(7)).symbolSize(0.6*g.x(7)).update(runpause),
   ]
+
+  controls.selectAll(".toggle").data(toggles).enter()
+          .append(widget.toggleElement)
+          .attr("transform",function(d,i){
+      return "translate("+colorBlock.x(0)+","+colorBlock.y(i)+")"
+  });
 
   controls.selectAll(".slider .block3").data(sliders).enter().append(widget.sliderElement)
     .attr("transform",function(d,i){
@@ -116,6 +124,21 @@
   function resetpositions() {
     createBoard()
     schelling()
+  }
+
+  function toggleColors(d) {
+    if (d.value) {
+      vacantColor = '#330C00' // darkbrown
+      agentColor1 = '#D3AC8B' // peru
+      agentColor2 = '#8B4513' // coffee
+      colorRule.value = true
+    }
+    else {
+      vacantColor = '#330C00' // darkbrown
+      agentColor1 = '#6699FF' // bluish
+      agentColor2 = '#8B4513' // coffee
+      colorRule.value = false
+    } ; resetpositions()
   }
 
   // Schelling Segregation Code
