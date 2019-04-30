@@ -1,7 +1,8 @@
 // http://nifty.stanford.edu/2014/mccown-schelling-model-segregation/
 (function(){
 
-  const L = 120,
+  const L = 140,
+        population = L**2,
         world_width = 400,
         kk = Math.ceil(world_width/L), // agent size
         controlbox_width = 500,
@@ -13,7 +14,6 @@
   var tolerance = 4, // dynamic for tol > 4
       satisfied = 0,
       occupiedBoard,
-      population,
       freeBoard
 
   var vacantColor = '#330C00', // darkbrown
@@ -30,15 +30,15 @@
                [ 0, -1],        [ 0, 1],
                [-1, -1],[-1, 0],[-1, 1]]
 
-  // runpause({value: 1})
   function createBoard(){
     freeBoard = {}
     occupiedBoard = {}
-    d3.range(L**2).forEach(function(d,i){
-      var id = String(i),
+    
+    for (let i = 0; i < L**2; i++) {
+      let id = String(i),
           x = i % L,
           y = Math.floor(i/L),
-          state = Math.floor(Math.random()+ stateK),
+          state = Math.floor(Math.random() + stateK),
           ptype = Math.floor(Math.random() + 0.5)
 
       if (state == 0) {
@@ -50,8 +50,7 @@
       else {
         occupiedBoard[id] = {x: x, y: y, c: agentColor2}
       }
-      population = Object.keys(occupiedBoard).length
-    })
+    }
   }
 
   var world = d3.selectAll("#schelling_display").append('canvas')
