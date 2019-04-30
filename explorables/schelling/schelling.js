@@ -1,7 +1,6 @@
 // http://nifty.stanford.edu/2014/mccown-schelling-model-segregation/
 (function(){
-
-  const L = 140,
+  const L = 150,
         population = L**2,
         world_width = 400,
         kk = Math.ceil(world_width/L), // agent size
@@ -153,7 +152,7 @@
       satisfied = 0
 
       Object.keys(occupiedBoard).forEach(function(key){
-        var agent = occupiedBoard[key]
+        let agent = occupiedBoard[key]
         if (neigh(agent) < tol.value) {
           // calculate distance from agent to nearest available rental
           newRental = nearestAvail(agent)
@@ -171,7 +170,7 @@
 
       // color occupied board positions
       Object.keys(occupiedBoard).forEach(function(key){
-        var agent = occupiedBoard[key]
+        agent = occupiedBoard[key]
         context.fillStyle = agent.c
         context.fillRect(agent.x * kk, agent.y * kk, kk, kk);
       })
@@ -179,7 +178,7 @@
       // color un-occupied board positions
       context.fillStyle = vacantColor
       Object.keys(freeBoard).forEach(function(key){
-        var newRental = freeBoard[key]
+        let newRental = freeBoard[key]
         context.fillRect(newRental.x * kk, newRental.y * kk, kk, kk);
       })
 
