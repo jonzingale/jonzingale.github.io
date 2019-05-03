@@ -16,12 +16,12 @@ function network() {
     if (error) throw error;
     var numNodes = graph.nodes.length
 
-    var link = svg.append("g")
-      .attr("class", "links")
-      .selectAll("line")
-      .data(graph.links)
-      .enter().append("line")
-      .attr('id', function(d) {return d.source+d.target});
+    // var link = svg.append("g")
+    //   .attr("class", "links")
+    //   .selectAll("line")
+    //   .data(graph.links)
+    //   .enter().append("line")
+    //   .attr('id', function(d) {return d.source+d.target});
 
     var node = svg.append("g")
       .attr("class", "nodes")
@@ -68,11 +68,11 @@ function network() {
         .links(graph.links);
 
     function ticked() {
-      link
-        .attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
+      // link
+      //   .attr("x1", function(d) { return d.source.x; })
+      //   .attr("y1", function(d) { return d.source.y; })
+      //   .attr("x2", function(d) { return d.target.x; })
+      //   .attr("y2", function(d) { return d.target.y; });
 
       node
         .attr("cx", function(d) { return d.x; })
