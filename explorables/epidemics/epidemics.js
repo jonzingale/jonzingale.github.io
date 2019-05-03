@@ -1,6 +1,6 @@
 // SERVER on 8000: python -m http.server
 import { dirksGraph } from './adjacency.js';
-import { network } from './network2.js';
+import { network } from './network.js';
 
 (function(){
   var controlbox_width = 300,
@@ -176,34 +176,10 @@ import { network } from './network2.js';
   }
 
   function resetNodes() {
-    d3.select('svg').selectAll("*").remove();
+    d3.select('#network').selectAll("*").remove();
     genNamedVectors(graph, contagion.value)
     network()
   }
 
   resetNodes()
-
-  // setTimeout(function() {
-  //   var nodes = []
-  //   d3.select('.nodes').selectAll('circle').each(function(d) {
-  //     var circleData = {'id': d.id, 'degree': d.degree, 'x': d.x, 'y': d.y}
-  //     nodes.push(circleData)
-  //   });
-
-  //   var links = []
-  //   d3.select('.links').selectAll('line').each(function(d) {
-  //     var link = {'source': {}, 'target': {}}
-  //     var src = d.source, tar = d.target
-
-  //     link['source'] = {'id': src.id, 'x': src.x, 'y': src.y}
-  //     link['target'] = {'id': tar.id, 'x': tar.x, 'y': tar.y}
-
-  //     links.push(link)
-  //   });
-
-  //   var gg = {'nodes': nodes, 'links': links}
-  //   console.log(JSON.stringify(gg))
-
-  // }, 5000)
-
 })()
