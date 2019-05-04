@@ -1,5 +1,6 @@
 // SERVER on 8000: python -m http.server
 import { dirksGraph } from './adjacency.js';
+// import { network } from './networkSansPhysics.js';
 import { network } from './network.js';
 
 (function(){
