@@ -11,7 +11,7 @@ POPEY31 = '579859'
 KAPAHULU = '635266'
 
 # likely a moderator smurf
-LAMKARFAI = 334676
+LAMKARFAI = 334676, 633088
 
 # Does this guy Smurf?
 INCE = 241720
@@ -21,13 +21,10 @@ INCE = 241720
 HOTANDUP: '17486746' # ALSO AN INTENTIONAL ELO BALANCER. 
 
 # These are the same guy.
-SAME_PLAYERS = {'rudeGuy': [596941, 600314, 586319], 
+SAME_PLAYERS = {'rudeGuy': [596941, 600314, 586319, 633088], 
                 619007: [609138],
                 'AX.SN': [609242, 609459, 611043, 619005, 619007],
-
                 }
-
-# 619007 is 609138
 
 # Why Bans
 WHYBAN1 = 617300
