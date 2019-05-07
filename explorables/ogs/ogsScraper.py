@@ -10,6 +10,30 @@ LAMBDA = '426925'
 POPEY31 = '579859'
 KAPAHULU = '635266'
 
+# likely a moderator smurf
+LAMKARFAI = 334676
+
+# Does this guy Smurf?
+INCE = 241720
+
+# A truely rude player:
+# https://online-go.com/game/17504419
+HOTANDUP: '17486746' # ALSO AN INTENTIONAL ELO BALANCER. 
+
+# These are the same guy.
+SAME_PLAYERS = {'rudeGuy': [596941, 600314, 586319], 
+                619007: [609138],
+                'AX.SN': [609242, 609459, 611043, 619005, 619007],
+
+                }
+
+# 619007 is 609138
+
+# Why Bans
+WHYBAN1 = 617300
+WHYBAN2 = 618248
+WHYBAN3 = 618772
+
 HOST_URL = 'https://online-go.com'
 GAME_HISTORY_URL = HOST_URL + "/api/v1/players/%s/games?ordering=-ended"
 GAME_DETAIL = HOST_URL + '/api/v1/games/%s'
