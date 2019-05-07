@@ -20,7 +20,7 @@ INCE = 241720
 # https://online-go.com/game/17504419
 HOTANDUP: '17486746' # ALSO AN INTENTIONAL ELO BALANCER. 
 
-# These are the same guy.
+# These are the same guy. Need to unblock to read game toxicity
 SAME_PLAYERS = {'rudeGuy': [596941, 600314, 586319, 633088], 
                 619007: [609138],
                 'AX.SN': [609242, 609459, 611043, 619005, 619007],
