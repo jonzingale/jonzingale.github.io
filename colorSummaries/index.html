@@ -25,7 +25,7 @@
 
     const umeboshiUrl = 'https://soundcloud.com/jeejaws-for-jawaas/umeboshi'
 
-    const data = [ // umeboshi
+    const umeboshiData = [ // umeboshi
       {'hex': '#566D62', 'percent': 0.388095238095238},
       {'hex': '#FB6CFB', 'percent': 0.236190476190476},
       {'hex': '#B1B7A8', 'percent': 0.188333333333333},
@@ -36,10 +36,10 @@
     var rows = d3.selectAll('tr').append('svg')
                  .attr('height', 400).attr('width', 800)
 
-    var swatches = rows.selectAll("text").data(data).enter()
+    var swatches = rows.selectAll("text").data(umeboshiData).enter()
 
     swatches.append('g')
-        .selectAll("rect").data(data)
+        .selectAll("rect").data(umeboshiData)
         .enter().append("rect")
           .attr('id', function(d) { return d.id })
           .attr("x", 20).attr('height', 40)
