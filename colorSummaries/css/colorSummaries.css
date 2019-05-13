@@ -17,12 +17,6 @@
   padding-left: 100px;
 }
 
-.happiness {
-  padding-left: 20px;
-  font-size: 32px;
-  font-weight: 400;
-}
-
 .description {
   padding-top: 20px;
   width: 56%;
@@ -37,12 +31,7 @@ html {
   background: #eee;
 }
 
-.links line {
+.swatches line {
   stroke: #999;
   stroke-width: 0.9px;
-}
-
-.nodes circle {
-  stroke: #aaa;
-  stroke-width: 0.5px;
 }

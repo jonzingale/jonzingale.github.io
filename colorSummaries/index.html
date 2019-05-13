@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en-us">
+  <head>
+    <!-- <link href='/colorSummaries/css/main.css' rel='stylesheet' type="text/css" /> -->
+    <link href="/colorSummaries/css/colorSummaries.css" rel="stylesheet" type="text/css" />    
+    <script type="text/javascript" src="/colorSummaries/js/d3.v4.min.js"></script>
+    <script src="/colorSummaries/js/d3-scale-chromatic.v1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+  </head>
+
+  <main role="main">
+    <div class='menu-list'>
+      <div class="menu-text">
+        <table>
+          <tbody>
+            <tr></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script>
+
+    // SERVER on 8000: python -m http.server
+
+    const umeboshiUrl = 'https://soundcloud.com/jeejaws-for-jawaas/umeboshi'
+
+    const data = [ // umeboshi
+      {'hex': '#566D62', 'percent': 0.388095238095238},
+      {'hex': '#FB6CFB', 'percent': 0.236190476190476},
+      {'hex': '#B1B7A8', 'percent': 0.188333333333333},
+      {'hex': '#9D3DF3', 'percent': 0.117380952380952},
+      {'hex': '#E196EB', 'percent': 0.07}
+    ]
+
+    var rows = d3.selectAll('tr').append('svg')
+                 .attr('height', 400).attr('width', 800)
+
+    var swatches = rows.selectAll("text").data(data).enter()
+
+    swatches.append('g')
+        .selectAll("rect").data(data)
+        .enter().append("rect")
+          .attr('id', function(d) { return d.id })
+          .attr("x", 20).attr('height', 60)
+          .attr('width', function(d) { return d['percent'] * 100 * 15})
+          .attr("y", function(d, i) { return i*40 + 50 })
+          .attr('fill', function(d, i) { return d['hex'] })
+
+    swatches.append('a')
+        .attr('href', umeboshiUrl)
+        .append('text').attr('class', 'menu')
+        .attr('x', 20).attr('y', 30)
+        .attr('font-family', 'Nunito Sans')
+        .attr("font-size", "30px")
+        .text('Umeboshi: A Haskell Drum Machine')
+
+  </script>
+</html>
