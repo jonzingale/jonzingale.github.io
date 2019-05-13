@@ -8,51 +8,63 @@
   </head>
 
   <main role="main">
+    <div class='title'>
+      Palettes from Color Summaries:
+    </div>
+
     <div class='menu-list'>
-      <div class="menu-text">
-        <table>
-          <tbody>
-            <tr></tr>
-          </tbody>
-        </table>
-      </div>
     </div>
   </main>
 
   <script>
-
     // SERVER on 8000: python -m http.server
-
     const umeboshiUrl = 'https://soundcloud.com/jeejaws-for-jawaas/umeboshi'
 
-    const umeboshiData = [ // umeboshi
-      {'hex': '#566D62', 'percent': 0.388095238095238},
-      {'hex': '#FB6CFB', 'percent': 0.236190476190476},
-      {'hex': '#B1B7A8', 'percent': 0.188333333333333},
-      {'hex': '#9D3DF3', 'percent': 0.117380952380952},
-      {'hex': '#E196EB', 'percent': 0.07}
+    const data = [
+      // umeboshi
+      [{'hex': '#566D62', 'percent': 0.388095238095238},
+       {'hex': '#FB6CFB', 'percent': 0.236190476190476},
+       {'hex': '#B1B7A8', 'percent': 0.188333333333333},
+       {'hex': '#9D3DF3', 'percent': 0.117380952380952},
+       {'hex': '#E196EB', 'percent': 0.07}],
+
+      // picacho
+      [{'hex': '#7F8D94', 'percent': 0.308533333333333},
+       {'hex': '#868A59', 'percent': 0.254933333333333},
+       {'hex': '#A9D5F7', 'percent': 0.1774},
+       {'hex': '#D1CBBB', 'percent': 0.167266666666667},
+       {'hex': '#4B5137', 'percent': 0.0918666666666667}],
+
+      //10 K
+      [{'hex': '#A1A5A2', 'percent': 0.3088},
+       {'hex': '#D8DEE4', 'percent': 0.228866666666667},
+       {'hex': '#23211D', 'percent': 0.202933333333333},
+       {'hex': '#606260', 'percent': 0.182266666666667},
+       {'hex': '#6F4532', 'percent': 0.0771333333333333}]
     ]
 
-    var rows = d3.selectAll('tr').append('svg')
-                 .attr('height', 400).attr('width', 800)
+    const tags = ['umeboshi','picacho','10 thousand waves']
 
-    var swatches = rows.selectAll("text").data(umeboshiData).enter()
+    data.forEach(function(datum, i) {
+    var len = data.length
 
-    swatches.append('g')
-        .selectAll("rect").data(umeboshiData)
-        .enter().append("rect")
-          .attr('id', function(d) { return d.id })
-          .attr("x", 20).attr('height', 40)
-          .attr('width', function(d) { return d['percent'] * 100 * 12})
-          .attr("y", function(d, i) { return i*30 + 50 })
-          .attr('fill', function(d, i) { return d['hex'] })
+    var container = d3.selectAll('.menu-list').append('svg')
+      .attr('height', 700/len).attr('width', 800);
 
-    swatches.append('a')
-        .attr('href', umeboshiUrl)
-        .append('text').attr('class', 'menu')
-        .attr('x', 270).attr('y', 209)
-        .attr("font-size", "50px")
-        .text('umeboshi')
+    container.append('g')
+      .selectAll("rect").data(datum).enter()
+        .append("rect").attr("x", 20).attr('height', 40)
+        .attr("y", function(d, i) { return i*30 + 50 })
+        .attr('width', function(d) { return d['percent'] * 100 * 12})
+        .attr('fill', function(d, i) { return d['hex'] });
+
+    container.append('a')
+      .attr('href', umeboshiUrl)
+      .append('text').attr('class', 'menu')
+      .attr('x', 270).attr('y', 209)
+      .attr("font-size", "50px")
+      .text(function(d) { return tags[i]});
+    })
 
   </script>
 </html>

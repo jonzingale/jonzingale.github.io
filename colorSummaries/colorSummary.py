@@ -7,6 +7,7 @@ class Clusters:
       data = json.load(json_file)
 
     self.values = self.getClusters(data)
+    self.jsValues = self.getClustersJs(data)
 
   def reducedData(self, data, clusters=[]):
     for value in data['clusters'].values():
@@ -22,7 +23,23 @@ class Clusters:
       key=lambda item: item['percent'])
     return(sortedClusters)
 
+  def reducedDataJs(self, data, clusters=[]):
+    for value in data['clusters'].values():
+      clusters.append(
+        {'hex': value['hex'][0], 'percent': value['f']}
+      )
+    return(clusters)
 
-clusters = Clusters('umeboshiSummary.json')
-print(clusters.values)
+  def getClustersJs(self, data, clusters=[]):
+    clusters = self.reducedDataJs(data)
+    sortedClusters = sorted(clusters, reverse=True,
+      key=lambda item: item['percent'])
+    return(sortedClusters)
+
+
+# clusters = Clusters('umeboshiSummary.json')
+# clusters = Clusters('picacho.json')
+clusters = Clusters('tenK.json')
+print(clusters.jsValues)
+# print(clusters.values)
 st()
