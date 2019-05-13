@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en-us">
+  <head>
+    <link href='/colorSummaries/css/main.css' rel='stylesheet' type="text/css" />
+    <link href="/colorSummaries/css/colorSummaries.css" rel="stylesheet" type="text/css" />    
+    <script type="text/javascript" src="/colorSummaries/js/d3.v4.min.js"></script>
+    <script src="/colorSummaries/js/d3-scale-chromatic.v1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+  </head>
+
+  <main role="main">
+    <div class='menu-list'>
+      <div class="menu-text">
+        <table>
+          <tbody>
+            <tr></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script>
+
+    // SERVER on 8000: python -m http.server
+
+    // umeboshi
+    const color = ['#566D62', '#FB6CFB', '#B1B7A8', '#9D3DF3', '#E196EB']
+
+    const data =
+      [ {'id': 'Contagion Network', 'url': "/explorables/epidemics/epidemics.html"},
+        {'id': 'Schelling Segregation', 'url': "/explorables/schelling/schelling.html"},
+        {'id': 'Nagel-Schreckenberg Traffic', 'url': "/explorables/nagelschreckenberg/nagelSchreckenberg.html"},
+        {'id': 'Cellular Automata', 'url': "/explorables/briansBrain/briansBrain.html"},
+        {'id': 'The Lorenz System', 'url': "/explorables/lorenz/lorenz.html"},
+      ]
+
+    var rows = d3.selectAll('tr').append('svg').attr('height', 200).attr('width', 350)
+    var links = rows.selectAll("text").data(data).enter()
+
+    links.append('g')
+        .selectAll("circle").data(data)
+        .enter().append("circle")
+          .attr('id', function(d) { return d.id })
+          .attr("cx", 20).attr("r", 15)
+          .attr("cy", function(d, i) { return i*40 + 20 })
+          .attr('fill', function(d, i) { return color[i] })
+
+    links.append('a')
+        .attr('href', function(d) { return d.url })
+        .append('text').attr('class', 'menu').attr('x', 40)
+        .attr('y', function(d, i) { return i*40 + 27})
+        .attr('font-family', 'Nunito Sans')
+        .attr("font-size", "20px")
+        .text(function(d) {return d.id})
+
+  </script>
+</html>

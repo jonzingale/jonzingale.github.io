@@ -1,0 +1,48 @@
+.explorable_display {
+  border:1px solid black;
+  background:rgb(230,230,230);
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.explorable_widgets {
+  display: block;
+  display: block;
+  margin: auto;
+}
+
+.menu-list {
+  padding-top: 150px;
+  padding-left: 100px;
+}
+
+.happiness {
+  padding-left: 20px;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.description {
+  padding-top: 20px;
+  width: 56%;
+  /*width: 70%;*/
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  background: #eee;
+}
+
+.links line {
+  stroke: #999;
+  stroke-width: 0.9px;
+}
+
+.nodes circle {
+  stroke: #aaa;
+  stroke-width: 0.5px;
+}
