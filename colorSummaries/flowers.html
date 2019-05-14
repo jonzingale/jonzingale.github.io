@@ -32,6 +32,18 @@
        {'hex': '#9BAC7C', 'percent': 0.0687},
        {'hex': '#785F20', 'percent': 0.02465}],
 
+      // daisy
+      [{'hex': '#C6B30E', 'percent': 0.287683215130024},
+       {'hex': '#33451A', 'percent': 0.234787234042553},
+       {'hex': '#1B1C10', 'percent': 0.221442080378251},
+       {'hex': '#493828', 'percent': 0.215342789598109},
+       {'hex': '#6F5F48', 'percent': 0.209373522458629},
+       {'hex': '#9E890B', 'percent': 0.1795508274231679},
+       {'hex': '#978970', 'percent': 0.1570685579196218},
+       {'hex': '#C98404', 'percent': 0.1453073286052009},
+       {'hex': '#71502A', 'percent': 0.1452482269503546},
+       {'hex': '#352864', 'percent': 0.10419621749408983}],
+
       // red flower
       [{'hex': '#72987C', 'percent': 0.168002364066194},
        {'hex': '#EF050B', 'percent': 0.150212765957447},
@@ -54,12 +66,12 @@
        {'hex': '#7F8087', 'percent': 0.0771394799054373},
        {'hex': '#4E2516', 'percent': 0.0438652482269504},
        {'hex': '#6F4F33', 'percent': 0.0397044917257683},
-       {'hex': '#9A7C3B', 'percent': 0.0252482269503546}]
+       {'hex': '#9A7C3B', 'percent': 0.0252482269503546}],
     ]
 
     data.forEach( d => normalize(d))
 
-    const tags = ['orange flower', 'red flower', 'peach blossom']
+    const tags = ['orange flowers', 'daisy', 'red flower', 'peach blossom']
 
     data.forEach(function(datum, i) {
       var container = d3.selectAll('.menu-list').append('svg')
@@ -73,11 +85,12 @@
           .attr('fill', function(d, i) { return d['hex'] });
 
       container.append('a')
-        // .attr('href', `/colorSummaries/${urls[i]}.html`)
+        .attr('href', `/colorSummaries/index.html`)
         .append('text').attr('class', 'flower-menu')
         .attr("font-size", "50px")
         .attr("text-anchor", "end")
         .attr("x", 620).attr('y', 360)
+        .attr('fill', '#413928')
         .text(function(d) { return tags[i]});
     })
 

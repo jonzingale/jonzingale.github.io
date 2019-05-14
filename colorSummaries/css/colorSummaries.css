@@ -5,6 +5,7 @@ a {
 html {
   background: #eee;
   font-family: 'Nunito Sans';
+  /*color: #413928;*/
 }
 
 .title {
@@ -23,5 +24,5 @@ html {
 .flower-menu {
   font-family: 'Merriweather';
   /*color: #413928;*/
-  color: #F56605;
+  /*fill: #F56605;*/
 }
