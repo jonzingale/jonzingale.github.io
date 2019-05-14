@@ -32,16 +32,16 @@
 				{'id': 'Nagel-Schreckenberg Traffic', 'url': "/explorables/nagelschreckenberg/nagelSchreckenberg.html"},
 				{'id': 'Cellular Automata', 'url': "/explorables/briansBrain/briansBrain.html"},
 				{'id': 'The Lorenz System', 'url': "/explorables/lorenz/lorenz.html"},
-        // {'id': 'Color Summaries', 'url': "/colorSummaries/index.html"},
+        {'id': 'Color Summaries', 'url': "/colorSummaries/index.html"},
 			]
 
-    const data2 =
-      [ 
-        {'id': 'Color Summaries', 'url': "/colorSummaries/index.html"},
-      ]
+    // const data2 =
+    //   [ 
+    //     {'id': 'Color Summaries', 'url': "/colorSummaries/index.html"},
+    //   ]
 
     var col = d3.selectAll('.first-col').append('svg')
-                 .attr('height', 260).attr('width', 350)
+                 .attr('height', 260).attr('width', 470)
 
 		var modelLinks = col.selectAll("text").data(data).enter()
 
@@ -49,39 +49,39 @@
 	      .selectAll("circle").data(data)
 	      .enter().append("circle")
 	        .attr('id', function(d) { return d.id })
-	        .attr("cx", 20).attr("r", 15)
+	        .attr("cx", 20).attr("r", 16)
 	        .attr("cy", function(d, i) { return i*40 + 20 })
 	        .attr('fill', function(d, i) { return modelColors[i] })
 
 		modelLinks.append('a')
 				.attr('href', function(d) { return d.url })
-				.append('text').attr('class', 'menu').attr('x', 40)
-				.attr('y', function(d, i) { return i*40 + 27})
+				.append('text').attr('class', 'menu').attr('x', 43)
+				.attr('y', function(d, i) { return i*40 + 31})
 				.attr('font-family', 'Nunito Sans')
-				.attr("font-size", "20px")
+				.attr("font-size", "30px")
 				.text(function(d) {return d.id})
 
 
     // TODO: REFACTOR THIS
-    var rows = d3.selectAll('.second-col').append('svg')
-                 .attr('height', 260).attr('width', 350)
-    var links2 = rows.selectAll("text").data(data2).enter()
+    // var rows = d3.selectAll('.second-col').append('svg')
+    //              .attr('height', 260).attr('width', 350)
+    // var links2 = rows.selectAll("text").data(data2).enter()
 
-    links2.append('g')
-        .selectAll("circle").data(data2)
-        .enter().append("circle")
-          .attr('id', function(d) { return d.id })
-          .attr("cx", 20).attr("r", 15)
-          .attr("cy", function(d, i) { return i*40 + 20 })
-          .attr('fill', function(d, i) { return modelColors[5-i] })
+    // links2.append('g')
+    //     .selectAll("circle").data(data2)
+    //     .enter().append("circle")
+    //       .attr('id', function(d) { return d.id })
+    //       .attr("cx", 20).attr("r", 16)
+    //       .attr("cy", function(d, i) { return i*40 + 20 })
+    //       .attr('fill', function(d, i) { return modelColors[5-i] })
 
-    links2.append('a')
-        .attr('href', function(d) { return d.url })
-        .append('text').attr('class', 'menu').attr('x', 40)
-        .attr('y', function(d, i) { return i*40 + 27})
-        .attr('font-family', 'Nunito Sans')
-        .attr("font-size", "20px")
-        .text(function(d) {return d.id})
+    // links2.append('a')
+    //     .attr('href', function(d) { return d.url })
+    //     .append('text').attr('class', 'menu').attr('x', 42)
+    //     .attr('y', function(d, i) { return i*40 + 31})
+    //     .attr('font-family', 'Nunito Sans')
+    //     .attr("font-size", "30px")
+    //     .text(function(d) {return d.id})
 
   </script>
 </html>
