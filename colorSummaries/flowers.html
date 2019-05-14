@@ -13,7 +13,7 @@
       Color Summaries of Some Flowers:
     </div>
 
-    <div class='menu-list'></div>
+    <div class='menu-list'><div class='flower-menu'></div>
   </main>
 
   <script>
@@ -71,7 +71,7 @@
 
     data.forEach( d => normalize(d))
 
-    const tags = ['orange flowers', 'daisy', 'red flower', 'peach blossom']
+    const tags = ['orange flower', 'daisy', 'red flower', 'peach blossom']
 
     data.forEach(function(datum, i) {
       var container = d3.selectAll('.menu-list').append('svg')
@@ -90,7 +90,6 @@
         .attr("font-size", "50px")
         .attr("text-anchor", "end")
         .attr("x", 620).attr('y', 360)
-        .attr('fill', '#413928')
         .text(function(d) { return tags[i]});
     })
 
