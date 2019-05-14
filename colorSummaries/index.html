@@ -62,15 +62,23 @@
        {'hex': '#D1E47B', 'percent': 0.11925},
        {'hex': '#A0D9B4', 'percent': 0.0684821428571429},
        {'hex': '#30768C', 'percent': 0.0593392857142857}],
+
+       // Nautilus 2013: Home
+      [{'hex': '#A6AE97', 'percent': 0.144875},
+       {'hex': '#83958A', 'percent': 0.09825},
+       {'hex': '#DCDA99', 'percent': 0.068575},
+       {'hex': '#B29551', 'percent': 0.043175},
+       {'hex': '#B26B62', 'percent': 0.0122}],
     ]
 
     data.forEach( d => normalize(d))
 
     const tags = ['picacho peak', '10k waves', 'umeboshi',
-                  'may 12th hike', 'the birthday', 'river graffiti']
+                  'may 12th hike', 'the birthday', 'river graffiti',
+                  'nautilus 2013']
 
     const urls = ['picacho', 'tenK', 'umeboshi', 'mayHike',
-                  'birthday', 'riverGraffiti']
+                  'birthday', 'riverGraffiti', 'nautilus']
 
     data.forEach(function(datum, i) {
       var container = d3.selectAll('.menu-list').append('svg')
