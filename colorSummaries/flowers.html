@@ -20,7 +20,7 @@
     // SERVER on 8000: python -m http.server
 
     const data = [
-      // orange flower
+      // tulip
       [{'hex': '#F56605', 'percent': 0.187825},
        {'hex': '#E53E02', 'percent': 0.13245},
        {'hex': '#365218', 'percent': 0.113875},
@@ -71,7 +71,7 @@
 
     data.forEach( d => normalize(d))
 
-    const tags = ['orange flower', 'daisy', 'red flower', 'peach blossom']
+    const tags = ['tulip', 'daisy', 'red flower', 'peach blossom']
 
     data.forEach(function(datum, i) {
       var container = d3.selectAll('.menu-list').append('svg')
