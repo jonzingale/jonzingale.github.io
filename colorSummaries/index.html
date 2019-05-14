@@ -21,6 +21,13 @@
     // SERVER on 8000: python -m http.server
 
     const data = [
+      // Flowers
+      [{'hex': '#F56605', 'percent': 0.187825},
+       {'hex': '#E53E02', 'percent': 0.13245},
+       {'hex': '#678459', 'percent': 0.112275},
+       {'hex': '#FBC42B', 'percent': 0.081575},
+       {'hex': '#9BAC7C', 'percent': 0.0687}],
+
       // picacho
       [{'hex': '#ACD8FB', 'percent': 0.163345864661654},
       {'hex': '#77858B', 'percent': 0.129661654135338},
@@ -83,25 +90,17 @@
       {'hex': '#B8B6C0', 'percent': 0.092992700729927},
       {'hex': '#938F9C', 'percent': 0.045036496350365},
       {'hex': '#D3C4C3', 'percent': 0.0339416058394161}],
-
-      // Flowers
-      [{'hex': '#F56605', 'percent': 0.187825},
-       {'hex': '#E53E02', 'percent': 0.13245},
-       {'hex': '#678459', 'percent': 0.112275},
-       {'hex': '#FBC42B', 'percent': 0.081575},
-       {'hex': '#9BAC7C', 'percent': 0.0687}],
     ]
 
     data.forEach( d => normalize(d))
 
-    const tags = ['picacho peak', '10k waves', 'umeboshi',
+    const tags = ['flowers', 'picacho peak', '10k waves', 'umeboshi',
                   'may 12th hike', 'the birthday', 'river graffiti',
-                  'nautilus 2013', 'milkyway', 'the institute',
-                  'flowers']
+                  'nautilus 2013', 'milkyway', 'the institute']
 
-    const urls = ['picacho', 'tenK', 'umeboshi', 'mayHike',
+    const urls = ['flowers', 'picacho', 'tenK', 'umeboshi', 'mayHike',
                   'birthday', 'riverGraffiti', 'nautilus', 'milkyway',
-                  'sfi', 'flowers']
+                  'sfi']
 
     data.forEach(function(datum, i) {
       var container = d3.selectAll('.menu-list').append('svg')
