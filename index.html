@@ -23,6 +23,7 @@
   </main>
 
   <script>
+    const yHeight = 50
   	const modelColors = ['#8c510a','#bf812d','#dfc27d',
   								       '#80cdc1','#35978f','#01665e']
 
@@ -35,13 +36,8 @@
         {'id': 'Color Summaries', 'url': "/colorSummaries/index.html"},
 			]
 
-    // const data2 =
-    //   [ 
-    //     {'id': 'Color Summaries', 'url': "/colorSummaries/index.html"},
-    //   ]
-
     var col = d3.selectAll('.first-col').append('svg')
-                 .attr('height', 260).attr('width', 470)
+                 .attr('height', 300).attr('width', 470)
 
 		var modelLinks = col.selectAll("text").data(data).enter()
 
@@ -50,38 +46,16 @@
 	      .enter().append("circle")
 	        .attr('id', function(d) { return d.id })
 	        .attr("cx", 20).attr("r", 16)
-	        .attr("cy", function(d, i) { return i*40 + 20 })
+	        .attr("cy", function(d, i) { return i*yHeight + 20 })
 	        .attr('fill', function(d, i) { return modelColors[i] })
 
 		modelLinks.append('a')
 				.attr('href', function(d) { return d.url })
 				.append('text').attr('class', 'menu').attr('x', 43)
-				.attr('y', function(d, i) { return i*40 + 31})
+				.attr('y', function(d, i) { return i*yHeight + 31})
 				.attr('font-family', 'Nunito Sans')
 				.attr("font-size", "30px")
 				.text(function(d) {return d.id})
-
-
-    // TODO: REFACTOR THIS
-    // var rows = d3.selectAll('.second-col').append('svg')
-    //              .attr('height', 260).attr('width', 350)
-    // var links2 = rows.selectAll("text").data(data2).enter()
-
-    // links2.append('g')
-    //     .selectAll("circle").data(data2)
-    //     .enter().append("circle")
-    //       .attr('id', function(d) { return d.id })
-    //       .attr("cx", 20).attr("r", 16)
-    //       .attr("cy", function(d, i) { return i*40 + 20 })
-    //       .attr('fill', function(d, i) { return modelColors[5-i] })
-
-    // links2.append('a')
-    //     .attr('href', function(d) { return d.url })
-    //     .append('text').attr('class', 'menu').attr('x', 42)
-    //     .attr('y', function(d, i) { return i*40 + 31})
-    //     .attr('font-family', 'Nunito Sans')
-    //     .attr("font-size", "30px")
-    //     .text(function(d) {return d.id})
 
   </script>
 </html>
