@@ -13,9 +13,6 @@
   </main>
 
   <script>
-    // SERVER on 8000: python -m http.server
-    const umeboshiUrl = 'https://soundcloud.com/jeejaws-for-jawaas/umeboshi'
-
     const data = [
       {'hex': '#DDE4EB', 'percent': 0.191766917293233},
       {'hex': '#B7BBB9', 'percent': 0.170300751879699},
@@ -48,7 +45,7 @@
         .attr('fill', function(d, i) { return d['hex'] });
 
     container.append('a')
-      .attr('href', umeboshiUrl)
+      // .attr('href', umeboshiUrl)
       .append('text').attr('class', 'menu')
       .attr("font-size", "50px")
       .attr("text-anchor", "end")
