@@ -19,3 +19,9 @@ html {
   padding-top: 30px;
   padding-left: 100px;
 }
+
+.flower-menu {
+  font-family: 'Merriweather';
+  /*color: #413928;*/
+  color: #F56605;
+}

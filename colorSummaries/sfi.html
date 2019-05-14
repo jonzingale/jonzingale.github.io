@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en-us">
+  <head>
+    <link href="/colorSummaries/css/nunitoSans.css" rel="stylesheet">
+    <link href="/colorSummaries/css/colorSummaries.css" rel="stylesheet" type="text/css" /> 
+    <script type='text/javascript' src='/colorSummaries/js/helpers.js'></script>
+    <script type="text/javascript" src="/colorSummaries/js/d3.v4.min.js"></script>
+  </head>
+
+  <main role="main">
+    <div class='menu-list'>
+    </div>
+  </main>
+
+  <script>
+    const width = 900
+    const data = [
+      {'hex': '#716D71', 'percent': 0.146642335766423},
+      {'hex': '#5D5A60', 'percent': 0.140912408759124},
+      {'hex': '#898083', 'percent': 0.122627737226277},
+      {'hex': '#A79799', 'percent': 0.117992700729927},
+      {'hex': '#494751', 'percent': 0.113394160583942},
+      {'hex': '#C1A8A8', 'percent': 0.0975547445255475},
+      {'hex': '#B8B6C0', 'percent': 0.092992700729927},
+      {'hex': '#323140', 'percent': 0.0704379562043796},
+      {'hex': '#938F9C', 'percent': 0.0535036496350365},
+      {'hex': '#D3C4C3', 'percent': 0.0439416058394161}
+    ]
+
+    normalize(data)
+
+    var container = d3.selectAll('.menu-list').append('svg')
+      .attr('height', 800).attr('width', width);
+
+    container.append('g')
+      .selectAll("rect").data(data).enter()
+        .append("rect").attr("x", 20).attr('height', 40)
+        .attr("y", function(d, i) { return i*30 + 50 })
+        .attr('width', function(d) { return d['percent'] * width})
+        .attr('fill', function(d, i) { return d['hex'] });
+
+    container.append('a')
+      // .attr('href', umeboshiUrl)
+      .append('text').attr('class', 'menu')
+      .attr("font-size", "50px")
+      .attr("text-anchor", "end")
+      .attr("x", width).attr('y', 349)
+      .text(function(d) { return 'The Santa Fe Institute'});
+
+  </script>
+</html>

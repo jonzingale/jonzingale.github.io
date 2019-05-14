@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en-us">
+  <head>
+    <link href="/colorSummaries/css/nunitoSans.css" rel="stylesheet">
+    <link href="/colorSummaries/css/colorSummaries.css" rel="stylesheet" type="text/css" /> 
+    <script type='text/javascript' src='/colorSummaries/js/helpers.js'></script>
+    <script type="text/javascript" src="/colorSummaries/js/d3.v4.min.js"></script>
+  </head>
+
+  <main role="main">
+    <div class='menu-list'>
+    </div>
+  </main>
+
+  <script>
+    const width = 900
+    const data = [
+      {'hex': '#020203', 'percent': 0.288544776119403},
+      {'hex': '#070A18', 'percent': 0.150559701492537},
+      {'hex': '#181733', 'percent': 0.139813432835821},
+      {'hex': '#0D0F24', 'percent': 0.127985074626866},
+      {'hex': '#252247', 'percent': 0.113283582089552},
+      {'hex': '#353062', 'percent': 0.0756716417910448},
+      {'hex': '#24192C', 'percent': 0.0637313432835821},
+      {'hex': '#313529', 'percent': 0.0190298507462687},
+      {'hex': '#514890', 'percent': 0.0163059701492537},
+      {'hex': '#7E9486', 'percent': 0.00507462686567164}
+    ]
+
+    normalize(data)
+
+    var container = d3.selectAll('.menu-list').append('svg')
+      .attr('height', 800).attr('width', width);
+
+    container.append('g')
+      .selectAll("rect").data(data).enter()
+        .append("rect").attr("x", 20).attr('height', 40)
+        .attr("y", function(d, i) { return i*30 + 50 })
+        .attr('width', function(d) { return d['percent'] * width})
+        .attr('fill', function(d, i) { return d['hex'] });
+
+    container.append('a')
+      // .attr('href', umeboshiUrl)
+      .append('text').attr('class', 'menu')
+      .attr("font-size", "50px")
+      .attr("text-anchor", "end")
+      .attr("x", width).attr('y', 279)
+      .text(function(d) { return 'Nautilus 2013: Home'});
+
+  </script>
+</html>

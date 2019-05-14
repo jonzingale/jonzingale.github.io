@@ -63,22 +63,45 @@
        {'hex': '#A0D9B4', 'percent': 0.0684821428571429},
        {'hex': '#30768C', 'percent': 0.0593392857142857}],
 
-       // Nautilus 2013: Home
+      // Nautilus 2013: Home
       [{'hex': '#A6AE97', 'percent': 0.144875},
        {'hex': '#83958A', 'percent': 0.09825},
        {'hex': '#DCDA99', 'percent': 0.068575},
        {'hex': '#B29551', 'percent': 0.043175},
        {'hex': '#B26B62', 'percent': 0.0122}],
+
+      // milkyway
+      [{'hex': '#181733', 'percent': 0.119813432835821},
+       {'hex': '#252247', 'percent': 0.113283582089552},
+       {'hex': '#353062', 'percent': 0.0756716417910448},
+       {'hex': '#313529', 'percent': 0.0510298507462687},
+       {'hex': '#7E9486', 'percent': 0.03007462686567164}],
+
+      // SFI
+      [{'hex': '#A79799', 'percent': 0.117992700729927},
+      {'hex': '#C1A8A8', 'percent': 0.0975547445255475},
+      {'hex': '#B8B6C0', 'percent': 0.092992700729927},
+      {'hex': '#938F9C', 'percent': 0.045036496350365},
+      {'hex': '#D3C4C3', 'percent': 0.0339416058394161}],
+
+      // Flowers
+      [{'hex': '#F56605', 'percent': 0.187825},
+       {'hex': '#E53E02', 'percent': 0.13245},
+       {'hex': '#678459', 'percent': 0.112275},
+       {'hex': '#FBC42B', 'percent': 0.081575},
+       {'hex': '#9BAC7C', 'percent': 0.0687}],
     ]
 
     data.forEach( d => normalize(d))
 
     const tags = ['picacho peak', '10k waves', 'umeboshi',
                   'may 12th hike', 'the birthday', 'river graffiti',
-                  'nautilus 2013']
+                  'nautilus 2013', 'milkyway', 'the institute',
+                  'flowers']
 
     const urls = ['picacho', 'tenK', 'umeboshi', 'mayHike',
-                  'birthday', 'riverGraffiti', 'nautilus']
+                  'birthday', 'riverGraffiti', 'nautilus', 'milkyway',
+                  'sfi', 'flowers']
 
     data.forEach(function(datum, i) {
       var container = d3.selectAll('.menu-list').append('svg')

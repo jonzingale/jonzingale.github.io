@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en-us">
+  <head>
+    <link href="/colorSummaries/css/nunitoSans.css" rel="stylesheet">
+    <link href="/colorSummaries/css/colorSummaries.css" rel="stylesheet" type="text/css"></link> 
+    <script type='text/javascript' src='/colorSummaries/js/helpers.js'></script>
+    <script type="text/javascript" src="/colorSummaries/js/d3.v4.min.js"></script>
+  </head>
+
+  <main role="main">
+    <div class='title'>
+      Color Summaries of Some Flowers:
+    </div>
+
+    <div class='menu-list'></div>
+  </main>
+
+  <script>
+    // SERVER on 8000: python -m http.server
+
+    const data = [
+      // orange flower
+      [{'hex': '#F56605', 'percent': 0.187825},
+       {'hex': '#E53E02', 'percent': 0.13245},
+       {'hex': '#365218', 'percent': 0.113875},
+       {'hex': '#678459', 'percent': 0.112275},
+       {'hex': '#F89115', 'percent': 0.110075},
+       {'hex': '#212D05', 'percent': 0.0943},
+       {'hex': '#AC2604', 'percent': 0.084275},
+       {'hex': '#FBC42B', 'percent': 0.071575},
+       {'hex': '#9BAC7C', 'percent': 0.0687},
+       {'hex': '#785F20', 'percent': 0.02465}],
+
+      // red flower
+      [{'hex': '#72987C', 'percent': 0.168002364066194},
+       {'hex': '#EF050B', 'percent': 0.150212765957447},
+       {'hex': '#201B19', 'percent': 0.132210401891253},
+       {'hex': '#457248', 'percent': 0.126666666666667},
+       {'hex': '#AA8287', 'percent': 0.112836879432624},
+       {'hex': '#C30F08', 'percent': 0.0856855791962175},
+       {'hex': '#234121', 'percent': 0.0842553191489362},
+       {'hex': '#725D65', 'percent': 0.0807565011820331},
+       {'hex': '#CB5B09', 'percent': 0.0436052009456265},
+       {'hex': '#7B200B', 'percent': 0.0157683215130024}],
+
+      // peach blossom
+      [{'hex': '#B4B1A8', 'percent': 0.208238770685579},
+       {'hex': '#151311', 'percent': 0.156548463356974},
+       {'hex': '#484342', 'percent': 0.12451536643026},
+       {'hex': '#2C2927', 'percent': 0.118817966903073},
+       {'hex': '#645F5F', 'percent': 0.117186761229314},
+       {'hex': '#9B907F', 'percent': 0.0887352245862884},
+       {'hex': '#7F8087', 'percent': 0.0771394799054373},
+       {'hex': '#4E2516', 'percent': 0.0438652482269504},
+       {'hex': '#6F4F33', 'percent': 0.0397044917257683},
+       {'hex': '#9A7C3B', 'percent': 0.0252482269503546}]
+    ]
+
+    data.forEach( d => normalize(d))
+
+    const tags = ['orange flower', 'red flower', 'peach blossom']
+
+    data.forEach(function(datum, i) {
+      var container = d3.selectAll('.menu-list').append('svg')
+        .attr('height', 400).attr('width', 800);
+
+      container.append('g')
+        .selectAll("rect").data(datum).enter()
+          .append("rect").attr("x", 20).attr('height', 40)
+          .attr("y", function(d, i) { return i*30 + 50 })
+          .attr('width', function(d) { return d['percent'] * 600})
+          .attr('fill', function(d, i) { return d['hex'] });
+
+      container.append('a')
+        // .attr('href', `/colorSummaries/${urls[i]}.html`)
+        .append('text').attr('class', 'flower-menu')
+        .attr("font-size", "50px")
+        .attr("text-anchor", "end")
+        .attr("x", 620).attr('y', 360)
+        .text(function(d) { return tags[i]});
+    })
+
+  </script>
+</html>
