@@ -1,3 +1,3 @@
-# Welcome to my git spot.
+# git as social media.
 
-An SIR Contagion Network Model can be found here: https://jonzingale.github.io/
+some projects: https://jonzingale.github.io/
