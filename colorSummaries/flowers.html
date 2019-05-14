@@ -44,6 +44,30 @@
        {'hex': '#71502A', 'percent': 0.1452482269503546},
        {'hex': '#352864', 'percent': 0.10419621749408983}],
 
+      // poppy
+      [{'hex': '#E8010E', 'percent': 0.225502512562814},
+       {'hex': '#D7DADD', 'percent': 0.214447236180905},
+       {'hex': '#5B5735', 'percent': 0.209070351758794},
+       {'hex': '#9D693B', 'percent': 0.151608040201005},
+       {'hex': '#9EA49C', 'percent': 0.12321608040201},
+       {'hex': '#990913', 'percent': 0.1031909547738693},
+       {'hex': '#613375', 'percent': 0.1010301507537688},
+       {'hex': '#23221E', 'percent': 0.1006030150753769},
+       {'hex': '#2F6421', 'percent': 0.0870100502512563},
+       {'hex': '#B8CE56', 'percent': 0.064321608040201}],
+
+      // poppy with sky
+      [{'hex': '#3D5CB8', 'percent': 0.280846774193548},
+       {'hex': '#2E48A5', 'percent': 0.267983870967742},
+       {'hex': '#586EBF', 'percent': 0.1931451612903226},
+       {'hex': '#435084', 'percent': 0.1844354838709677},
+       {'hex': '#464C5B', 'percent': 0.1735887096774194},
+       {'hex': '#323023', 'percent': 0.1625403225806452},
+       {'hex': '#4D4722', 'percent': 0.1576612903225806},
+       {'hex': '#7A241C', 'percent': 0.1347983870967742},
+       {'hex': '#C82910', 'percent': 0.1021774193548387},
+       {'hex': '#A3A3DB', 'percent': 0.0928225806451613}],
+
       // red flower
       [{'hex': '#72987C', 'percent': 0.168002364066194},
        {'hex': '#EF050B', 'percent': 0.150212765957447},
@@ -71,7 +95,8 @@
 
     data.forEach( d => normalize(d))
 
-    const tags = ['tulip', 'daisy', 'red flower', 'peach blossom']
+    const tags = ['tulip', 'daisy', 'poppy', 'poppy with sky', 
+                  'red flower', 'peach blossom']
 
     data.forEach(function(datum, i) {
       var container = d3.selectAll('.menu-list').append('svg')
