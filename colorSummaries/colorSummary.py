@@ -36,10 +36,7 @@ class Clusters:
       key=lambda item: item['percent'])
     return(sortedClusters)
 
-
-# clusters = Clusters('umeboshiSummary.json')
-# clusters = Clusters('picacho.json')
-clusters = Clusters('tenK.json')
+clusters = Clusters('photoData.json')
 print(clusters.jsValues)
 # print(clusters.values)
-st()
+# st()

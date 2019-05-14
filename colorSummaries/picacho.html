@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en-us">
+  <head>
+    <link href="/colorSummaries/css/nunitoSans.css" rel="stylesheet">
+    <link href="/colorSummaries/css/colorSummaries.css" rel="stylesheet" type="text/css" />    
+    <script type="text/javascript" src="/colorSummaries/js/d3.v4.min.js"></script>
+  </head>
+
+  <main role="main">
+    <div class='menu-list'>
+    </div>
+  </main>
+
+  <script>
+    const umeboshiUrl = 'https://soundcloud.com/jeejaws-for-jawaas/umeboshi'
+
+    const data = [
+      {'hex': '#ACD8FB', 'percent': 0.163345864661654},
+      {'hex': '#77858B', 'percent': 0.129661654135338},
+      {'hex': '#8C918B', 'percent': 0.125977443609023},
+      {'hex': '#959961', 'percent': 0.120714285714286},
+      {'hex': '#7A7E4F', 'percent': 0.115037593984962},
+      {'hex': '#DFD9CB', 'percent': 0.0943984962406015},
+      {'hex': '#7A95B4', 'percent': 0.0783082706766917},
+      {'hex': '#C0B9A8', 'percent': 0.0743609022556391},
+      {'hex': '#585E3C', 'percent': 0.0604135338345865},
+      {'hex': '#363C2E', 'percent': 0.037781954887218}
+    ]
+
+    function normalize(array) {
+      var total = array.reduce((a, item) => a += item.percent, 0)
+
+      array.forEach(function(item, i) {
+        item['percent'] = item.percent/total * 100
+      })
+    }
+
+    normalize(data)
+    var container = d3.selectAll('.menu-list').append('svg')
+      .attr('height', 800).attr('width', 900);
+
+    container.append('g')
+      .selectAll("rect").data(data).enter()
+        .append("rect").attr("x", 20).attr('height', 40)
+        .attr("y", function(d, i) { return i*30 + 50 })
+        .attr('width', function(d) { return d['percent'] * 60})
+        .attr('fill', function(d, i) { return d['hex'] });
+
+    container.append('a')
+      .attr('href', umeboshiUrl)
+      .append('text').attr('class', 'menu')
+      .attr("font-size", "50px")
+      .attr("text-anchor", "end")
+      .attr("x", 900).attr('y', 330)
+      .text(function(d) { return 'Picacho Peak'});
+
+  </script>
+</html>

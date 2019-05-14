@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en-us">
+  <head>
+    <link href="/colorSummaries/css/nunitoSans.css" rel="stylesheet">
+    <link href="/colorSummaries/css/colorSummaries.css" rel="stylesheet" type="text/css" />    
+    <script type="text/javascript" src="/colorSummaries/js/d3.v4.min.js"></script>
+  </head>
+
+  <main role="main">
+    <div class='menu-list'>
+    </div>
+  </main>
+
+  <script>
+    // SERVER on 8000: python -m http.server
+    const umeboshiUrl = 'https://soundcloud.com/jeejaws-for-jawaas/umeboshi'
+
+    const data = [
+      {'hex': '#DDE4EB', 'percent': 0.191766917293233},
+      {'hex': '#B7BBB9', 'percent': 0.170300751879699},
+      {'hex': '#969C98', 'percent': 0.148045112781955},
+      {'hex': '#32312B', 'percent': 0.0989097744360902},
+      {'hex': '#777776', 'percent': 0.0932706766917293},
+      {'hex': '#52534F', 'percent': 0.092781954887218},
+      {'hex': '#5D3625', 'percent': 0.0580451127819549},
+      {'hex': '#9D6E56', 'percent': 0.0285714285714286},
+      {'hex': '#307797', 'percent': 0.00819548872180451}
+    ]
+
+    function normalize(array) {
+      var total = array.reduce((a, item) => a += item.percent, 0)
+
+      array.forEach(function(item, i) {
+        item['percent'] = item.percent/total * 100
+      })
+    }
+
+    normalize(data)
+    var container = d3.selectAll('.menu-list').append('svg')
+      .attr('height', 800).attr('width', 800);
+
+    container.append('g')
+      .selectAll("rect").data(data).enter()
+        .append("rect").attr("x", 20).attr('height', 40)
+        .attr("y", function(d, i) { return i*30 + 50 })
+        .attr('width', function(d) { return d['percent'] * 50})
+        .attr('fill', function(d, i) { return d['hex'] });
+
+    container.append('a')
+      .attr('href', umeboshiUrl)
+      .append('text').attr('class', 'menu')
+      .attr("font-size", "50px")
+      .attr("text-anchor", "end")
+      .attr("x", 800).attr('y', 359)
+      .text(function(d) { return 'Ten Thousand Waves'});
+
+  </script>
+</html>

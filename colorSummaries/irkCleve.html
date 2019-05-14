@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en-us">
+  <head>
+    <link href="/colorSummaries/css/nunitoSans.css" rel="stylesheet">
+    <link href="/colorSummaries/css/colorSummaries.css" rel="stylesheet" type="text/css" />    
+    <script type="text/javascript" src="/colorSummaries/js/d3.v4.min.js"></script>
+  </head>
+
+  <main role="main">
+    <div class='menu-list'>
+    </div>
+  </main>
+
+  <script>
+    const umeboshiUrl = 'https://soundcloud.com/jeejaws-for-jawaas/umeboshi'
+
+    const data = [
+      {'hex': '#E7E24F', 'percent': 0.236910714285714},
+      {'hex': '#48E4F3', 'percent': 0.172},
+      {'hex': '#33BDE2', 'percent': 0.1555},
+      {'hex': '#D1E47B', 'percent': 0.11925},
+      {'hex': '#A0D9B4', 'percent': 0.0684821428571429},
+      {'hex': '#30768C', 'percent': 0.0593392857142857},
+      {'hex': '#757B32', 'percent': 0.0512142857142857},
+      {'hex': '#2B2C5B', 'percent': 0.0314285714285714},
+      {'hex': '#6A231E', 'percent': 0.0216428571428571}
+    ]
+
+    function normalize(array) {
+      var total = array.reduce((a, item) => a += item.percent, 0)
+
+      array.forEach(function(item, i) {
+        item['percent'] = item.percent/total * 100
+      })
+    }
+
+    normalize(data)
+    var container = d3.selectAll('.menu-list').append('svg')
+      .attr('height', 800).attr('width', 900);
+
+    container.append('g')
+      .selectAll("rect").data(data).enter()
+        .append("rect").attr("x", 20).attr('height', 40)
+        .attr("y", function(d, i) { return i*30 + 50 })
+        .attr('width', function(d) { return d['percent'] * 40})
+        .attr('fill', function(d, i) { return d['hex'] });
+
+    container.append('a')
+      .attr('href', umeboshiUrl)
+      .append('text').attr('class', 'menu')
+      .attr("font-size", "50px")
+      .attr("text-anchor", "end")
+      .attr("x", 900).attr('y', 330)
+      .text(function(d) { return 'Graffiti Along the Cuyahoga'});
+
+  </script>
+</html>

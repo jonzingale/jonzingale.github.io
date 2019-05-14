@@ -8,6 +8,8 @@ html {
 }
 
 .title {
+  font-family: 'Merriweather';
+  color: #413928;
   padding-top: 20px;
   font-size: 50px;
   padding-left: 70px;

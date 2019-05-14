@@ -29,41 +29,75 @@
        {'hex': '#E196EB', 'percent': 0.07}],
 
       // picacho
-      [{'hex': '#7F8D94', 'percent': 0.308533333333333},
-       {'hex': '#868A59', 'percent': 0.254933333333333},
-       {'hex': '#A9D5F7', 'percent': 0.1774},
-       {'hex': '#D1CBBB', 'percent': 0.167266666666667},
-       {'hex': '#4B5137', 'percent': 0.0918666666666667}],
+      [{'hex': '#ACD8FB', 'percent': 0.163345864661654},
+      {'hex': '#77858B', 'percent': 0.129661654135338},
+      {'hex': '#959961', 'percent': 0.120714285714286},
+      {'hex': '#7A95B4', 'percent': 0.0783082706766917},
+      {'hex': '#C0B9A8', 'percent': 0.0743609022556391}],
 
       //10 K
-      [{'hex': '#A1A5A2', 'percent': 0.3088},
-       {'hex': '#D8DEE4', 'percent': 0.228866666666667},
-       {'hex': '#23211D', 'percent': 0.202933333333333},
-       {'hex': '#606260', 'percent': 0.182266666666667},
-       {'hex': '#6F4532', 'percent': 0.0771333333333333}]
+      [{'hex': '#DDE4EB', 'percent': 0.191766917293233},
+      {'hex': '#B7BBB9', 'percent': 0.170300751879699},
+      {'hex': '#5D3625', 'percent': 0.0580451127819549},
+      {'hex': '#9D6E56', 'percent': 0.0285714285714286},
+      {'hex': '#307797', 'percent': 0.00819548872180451}],
+
+      //May 12th Hike
+      [{'hex': '#6E6F41', 'percent': 0.140733333333333},
+      {'hex': '#D0A37C', 'percent': 0.115633333333333},
+      {'hex': '#6894D0', 'percent': 0.0931666666666667},
+      {'hex': '#DAE2E9', 'percent': 0.0568},
+      {'hex': '#4E5D6B', 'percent': 0.0261333333333333}],
+
+      // the birthday
+      [{"hex":"#CEAF89","percent":30.145371078806438},
+       {"hex":"#9C7E6B","percent":24.27952053047693},
+       {"hex":"#DDEEDB","percent":17.86108985802941},
+       {"hex":"#B0695A","percent":15.642268128878683},
+       {"hex":"#B1AF9E","percent":12.071750403808547}],
+
+      // Irk
+      [{'hex': '#48E4F3', 'percent': 0.172},
+       {'hex': '#33BDE2', 'percent': 0.1555},
+       {'hex': '#D1E47B', 'percent': 0.11925},
+       {'hex': '#A0D9B4', 'percent': 0.0684821428571429},
+       {'hex': '#30768C', 'percent': 0.0593392857142857}],
     ]
 
-    const tags = ['umeboshi','picacho','10k waves']
+    function normalize(array, total=0) {
+      array.forEach(item => total += item.percent )
+
+      array.forEach(function(item, i){
+        array[i]['percent'] = item.percent/total * 100
+      })
+    }
+
+    data.forEach(function(d){normalize(d)})
+
+    const tags = ['umeboshi', 'picacho peak', '10k waves',
+                  'may 12th hike', 'the birthday', 'river graffiti']
+
+    const urls = ['umeboshi', 'picacho', 'tenK', 'mayHike',
+                  'birthday', 'irkCleve']
 
     data.forEach(function(datum, i) {
-    var len = data.length
+      var container = d3.selectAll('.menu-list').append('svg')
+        .attr('height', 240).attr('width', 800);
 
-    var container = d3.selectAll('.menu-list').append('svg')
-      .attr('height', 700/len).attr('width', 800);
+      container.append('g')
+        .selectAll("rect").data(datum).enter()
+          .append("rect").attr("x", 20).attr('height', 40)
+          .attr("y", function(d, i) { return i*30 + 50 })
+          .attr('width', function(d) { return d['percent'] * 15})
+          .attr('fill', function(d, i) { return d['hex'] });
 
-    container.append('g')
-      .selectAll("rect").data(datum).enter()
-        .append("rect").attr("x", 20).attr('height', 40)
-        .attr("y", function(d, i) { return i*30 + 50 })
-        .attr('width', function(d) { return d['percent'] * 100 * 12})
-        .attr('fill', function(d, i) { return d['hex'] });
-
-    container.append('a')
-      .attr('href', umeboshiUrl)
-      .append('text').attr('class', 'menu')
-      .attr('x', 270).attr('y', 209)
-      .attr("font-size", "50px")
-      .text(function(d) { return tags[i]});
+      container.append('a')
+        .attr('href', `/colorSummaries/${urls[i]}.html`)
+        .append('text').attr('class', 'menu')
+        .attr("font-size", "50px")
+        .attr("text-anchor", "end")
+        .attr("x", 570).attr('y', 209)
+        .text(function(d) { return tags[i]});
     })
 
   </script>
