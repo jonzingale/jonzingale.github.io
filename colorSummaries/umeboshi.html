@@ -15,7 +15,7 @@
 
   <script>
     const umeboshiUrl = 'https://soundcloud.com/jeejaws-for-jawaas/umeboshi'
-
+    const width = 900
     const data = [
       {'hex': '#537467', 'percent': 0.271033333333333},
       {'hex': '#F77FFD', 'percent': 0.1343},
@@ -32,13 +32,13 @@
     normalize(data)
 
     var container = d3.selectAll('.menu-list').append('svg')
-      .attr('height', 800).attr('width', 900);
+      .attr('height', 800).attr('width', width);
 
     container.append('g')
       .selectAll("rect").data(data).enter()
         .append("rect").attr("x", 20).attr('height', 40)
         .attr("y", function(d, i) { return i*30 + 50 })
-        .attr('width', function(d) { return d['percent'] * 60})
+        .attr('width', function(d) { return d['percent'] * width})
         .attr('fill', function(d, i) { return d['hex'] });
 
     container.append('a')
@@ -46,7 +46,7 @@
       .append('text').attr('class', 'menu')
       .attr("font-size", "50px")
       .attr("text-anchor", "end")
-      .attr("x", 900).attr('y', 330)
+      .attr("x", width).attr('y', 330)
       .text(function(d) { return 'Umeboshi'});
 
   </script>

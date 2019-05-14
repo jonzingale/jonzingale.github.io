@@ -3,7 +3,8 @@
 <html lang="en-us">
   <head>
     <link href="/colorSummaries/css/nunitoSans.css" rel="stylesheet">
-    <link href="/colorSummaries/css/colorSummaries.css" rel="stylesheet" type="text/css" />    
+    <link href="/colorSummaries/css/colorSummaries.css" rel="stylesheet" type="text/css" /> 
+    <script type='text/javascript' src='/colorSummaries/js/helpers.js'></script>
     <script type="text/javascript" src="/colorSummaries/js/d3.v4.min.js"></script>
   </head>
 
@@ -49,13 +50,13 @@
       {'hex': '#4E5D6B', 'percent': 0.0261333333333333}],
 
       // the birthday
-      [{"hex":"#CEAF89","percent":30.145371078806438},
-       {"hex":"#9C7E6B","percent":24.27952053047693},
-       {"hex":"#DDEEDB","percent":17.86108985802941},
-       {"hex":"#B0695A","percent":15.642268128878683},
-       {"hex":"#B1AF9E","percent":12.071750403808547}],
+      [{"hex":"#CEAF89","percent":0.30145371078806438},
+       {"hex":"#9C7E6B","percent":0.2427952053047693},
+       {"hex":"#DDEEDB","percent":0.1786108985802941},
+       {"hex":"#B0695A","percent":0.15642268128878683},
+       {"hex":"#B1AF9E","percent":0.12071750403808547}],
 
-      // Irk
+      // River Graffiti
       [{'hex': '#48E4F3', 'percent': 0.172},
        {'hex': '#33BDE2', 'percent': 0.1555},
        {'hex': '#D1E47B', 'percent': 0.11925},
@@ -63,31 +64,23 @@
        {'hex': '#30768C', 'percent': 0.0593392857142857}],
     ]
 
-    function normalize(array, total=0) {
-      array.forEach(item => total += item.percent )
-
-      array.forEach(function(item, i){
-        array[i]['percent'] = item.percent/total * 100
-      })
-    }
-
     data.forEach( d => normalize(d))
 
     const tags = ['picacho peak', '10k waves', 'umeboshi',
                   'may 12th hike', 'the birthday', 'river graffiti']
 
     const urls = ['picacho', 'tenK', 'umeboshi', 'mayHike',
-                  'birthday', 'irkCleve']
+                  'birthday', 'riverGraffiti']
 
     data.forEach(function(datum, i) {
       var container = d3.selectAll('.menu-list').append('svg')
-        .attr('height', 240).attr('width', 800);
+        .attr('height', 225).attr('width', 800);
 
       container.append('g')
         .selectAll("rect").data(datum).enter()
           .append("rect").attr("x", 20).attr('height', 40)
           .attr("y", function(d, i) { return i*30 + 50 })
-          .attr('width', function(d) { return d['percent'] * 15})
+          .attr('width', function(d) { return d['percent'] * 600})
           .attr('fill', function(d, i) { return d['hex'] });
 
       container.append('a')
@@ -95,7 +88,7 @@
         .append('text').attr('class', 'menu')
         .attr("font-size", "50px")
         .attr("text-anchor", "end")
-        .attr("x", 570).attr('y', 209)
+        .attr("x", 620).attr('y', 215)
         .text(function(d) { return tags[i]});
     })
 

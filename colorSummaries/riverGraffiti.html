@@ -14,6 +14,7 @@
   </main>
 
   <script>
+    const width = 900
     const data = [
       {'hex': '#E7E24F', 'percent': 0.236910714285714},
       {'hex': '#48E4F3', 'percent': 0.172},
@@ -29,13 +30,13 @@
     normalize(data)
 
     var container = d3.selectAll('.menu-list').append('svg')
-      .attr('height', 800).attr('width', 900);
+      .attr('height', 800).attr('width', width);
 
     container.append('g')
       .selectAll("rect").data(data).enter()
         .append("rect").attr("x", 20).attr('height', 40)
         .attr("y", function(d, i) { return i*30 + 50 })
-        .attr('width', function(d) { return d['percent'] * 40})
+        .attr('width', function(d) { return d['percent'] * width})
         .attr('fill', function(d, i) { return d['hex'] });
 
     container.append('a')
@@ -43,7 +44,7 @@
       .append('text').attr('class', 'menu')
       .attr("font-size", "50px")
       .attr("text-anchor", "end")
-      .attr("x", 900).attr('y', 330)
+      .attr("x", width).attr('y', 330)
       .text(function(d) { return 'Graffiti Along the Cuyahoga'});
 
   </script>

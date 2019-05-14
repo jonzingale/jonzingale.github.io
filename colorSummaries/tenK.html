@@ -14,6 +14,7 @@
   </main>
 
   <script>
+    const width = 900
     const data = [
       {'hex': '#DDE4EB', 'percent': 0.191766917293233},
       {'hex': '#B7BBB9', 'percent': 0.170300751879699},
@@ -29,13 +30,13 @@
     normalize(data)
 
     var container = d3.selectAll('.menu-list').append('svg')
-      .attr('height', 800).attr('width', 800);
+      .attr('height', 800).attr('width', width);
 
     container.append('g')
       .selectAll("rect").data(data).enter()
         .append("rect").attr("x", 20).attr('height', 40)
         .attr("y", function(d, i) { return i*30 + 50 })
-        .attr('width', function(d) { return d['percent'] * 50})
+        .attr('width', function(d) { return d['percent'] * width})
         .attr('fill', function(d, i) { return d['hex'] });
 
     container.append('a')
@@ -43,7 +44,7 @@
       .append('text').attr('class', 'menu')
       .attr("font-size", "50px")
       .attr("text-anchor", "end")
-      .attr("x", 800).attr('y', 359)
+      .attr("x", width).attr('y', 359)
       .text(function(d) { return 'Ten Thousand Waves'});
 
   </script>

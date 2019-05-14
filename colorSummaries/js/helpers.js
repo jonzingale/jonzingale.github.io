@@ -1,7 +1,7 @@
-function normalize(array) {
-  var total = array.reduce((a, item) => a += item.percent, 0)
+function normalize(array, total=0) {
+  var biggest = array[0].percent
 
-  array.forEach(function(item, i) {
-    item['percent'] = item.percent/total * 100
+  array.forEach(function(item, i){
+    array[i]['percent'] = item.percent / biggest
   })
 }
