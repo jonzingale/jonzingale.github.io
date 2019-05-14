@@ -3,7 +3,8 @@
 <html lang="en-us">
   <head>
     <link href="/colorSummaries/css/nunitoSans.css" rel="stylesheet">
-    <link href="/colorSummaries/css/colorSummaries.css" rel="stylesheet" type="text/css" />    
+    <link href="/colorSummaries/css/colorSummaries.css" rel="stylesheet" type="text/css" /> 
+    <script type='text/javascript' src='/colorSummaries/js/helpers.js'></script>
     <script type="text/javascript" src="/colorSummaries/js/d3.v4.min.js"></script>
   </head>
 
@@ -25,15 +26,8 @@
       {'hex': '#4E5D6B', 'percent': 0.0261333333333333}
     ]
 
-    function normalize(array) {
-      var total = array.reduce((a, item) => a += item.percent, 0)
-
-      array.forEach(function(item, i) {
-        item['percent'] = item.percent/total * 100
-      })
-    }
-
     normalize(data)
+
     var container = d3.selectAll('.menu-list').append('svg')
       .attr('height', 800).attr('width', 900);
 
