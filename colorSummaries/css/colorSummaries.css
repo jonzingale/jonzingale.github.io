@@ -20,11 +20,11 @@ html {
   padding-left: 100px;
 }
 
-.flower-menu {
+.flower-menu, .place-menu {
   font-family: 'Nunito Sans';
   fill: #413928;
 }
 
 .footer {
-  margin-bottom: 200px;
+  margin-bottom: 160px;
 }

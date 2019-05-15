@@ -19,107 +19,47 @@
 
   <script>
     // SERVER on 8000: python -m http.server
+    const data = {
+      'places': [ 
+        {'hex': '#6E6F41', 'percent': 0.140733333333333},
+        {'hex': '#D0A37C', 'percent': 0.115633333333333},
+        {'hex': '#6894D0', 'percent': 0.0931666666666667},
+        {'hex': '#DAE2E9', 'percent': 0.0568},
+        {'hex': '#4E5D6B', 'percent': 0.0261333333333333}
+      ],
 
-    const data = [
-      // Flowers
-      [{'hex': '#F56605', 'percent': 0.187825},
-       {'hex': '#E53E02', 'percent': 0.13245},
-       {'hex': '#678459', 'percent': 0.112275},
-       {'hex': '#FBC42B', 'percent': 0.081575},
-       {'hex': '#9BAC7C', 'percent': 0.0687}],
+      'flowers': [
+         {'hex': '#F56605', 'percent': 0.187825},
+         {'hex': '#E53E02', 'percent': 0.13245},
+         {'hex': '#678459', 'percent': 0.112275},
+         {'hex': '#FBC42B', 'percent': 0.081575},
+         {'hex': '#9BAC7C', 'percent': 0.0687}
+       ],
+    }
 
-      // picacho
-      [{'hex': '#ACD8FB', 'percent': 0.163345864661654},
-      {'hex': '#77858B', 'percent': 0.129661654135338},
-      {'hex': '#959961', 'percent': 0.120714285714286},
-      {'hex': '#7A95B4', 'percent': 0.0783082706766917},
-      {'hex': '#C0B9A8', 'percent': 0.0743609022556391}],
+    // TODO: REFACTOR EVERYWHERE THIS IS TO BE STATIC DATA.
+    Object.values(data).forEach( d => normalize(d))
 
-      //10 K
-      [{'hex': '#DDE4EB', 'percent': 0.191766917293233},
-      {'hex': '#B7BBB9', 'percent': 0.170300751879699},
-      {'hex': '#5D3625', 'percent': 0.1280451127819549},
-      {'hex': '#9D6E56', 'percent': 0.0985714285714286},
-      {'hex': '#307797', 'percent': 0.06819548872180451}],
+    const urls = ['places', 'flowers']
 
-      // umeboshi
-      [{'hex': '#566D62', 'percent': 0.388095238095238},
-       {'hex': '#FB6CFB', 'percent': 0.236190476190476},
-       {'hex': '#B1B7A8', 'percent': 0.188333333333333},
-       {'hex': '#9D3DF3', 'percent': 0.117380952380952},
-       {'hex': '#E196EB', 'percent': 0.07}],
-
-      //May 12th Hike
-      [{'hex': '#6E6F41', 'percent': 0.140733333333333},
-      {'hex': '#D0A37C', 'percent': 0.115633333333333},
-      {'hex': '#6894D0', 'percent': 0.0931666666666667},
-      {'hex': '#DAE2E9', 'percent': 0.0568},
-      {'hex': '#4E5D6B', 'percent': 0.0261333333333333}],
-
-      // the birthday
-      [{"hex":"#CEAF89","percent":0.30145371078806438},
-       {"hex":"#9C7E6B","percent":0.2427952053047693},
-       {"hex":"#DDEEDB","percent":0.1786108985802941},
-       {"hex":"#B0695A","percent":0.15642268128878683},
-       {"hex":"#B1AF9E","percent":0.12071750403808547}],
-
-      // River Graffiti
-      [{'hex': '#48E4F3', 'percent': 0.172},
-       {'hex': '#33BDE2', 'percent': 0.1555},
-       {'hex': '#D1E47B', 'percent': 0.11925},
-       {'hex': '#A0D9B4', 'percent': 0.0684821428571429},
-       {'hex': '#30768C', 'percent': 0.0593392857142857}],
-
-      // Nautilus 2013: Home
-      [{'hex': '#A6AE97', 'percent': 0.144875},
-       {'hex': '#83958A', 'percent': 0.09825},
-       {'hex': '#DCDA99', 'percent': 0.068575},
-       {'hex': '#B29551', 'percent': 0.043175},
-       {'hex': '#B26B62', 'percent': 0.0222}],
-
-      // milkyway
-      [{'hex': '#181733', 'percent': 0.119813432835821},
-       {'hex': '#252247', 'percent': 0.113283582089552},
-       {'hex': '#353062', 'percent': 0.0756716417910448},
-       {'hex': '#313529', 'percent': 0.0510298507462687},
-       {'hex': '#7E9486', 'percent': 0.03007462686567164}],
-
-      // SFI
-      [{'hex': '#A79799', 'percent': 0.117992700729927},
-      {'hex': '#C1A8A8', 'percent': 0.0975547445255475},
-      {'hex': '#B8B6C0', 'percent': 0.092992700729927},
-      {'hex': '#938F9C', 'percent': 0.045036496350365},
-      {'hex': '#D3C4C3', 'percent': 0.0339416058394161}],
-    ]
-
-    data.forEach( d => normalize(d))
-
-    const tags = ['flowers', 'picacho peak', '10k waves', 'umeboshi',
-                  'may 12th hike', 'the birthday', 'river graffiti',
-                  'nautilus 2013', 'milkyway', 'the institute']
-
-    const urls = ['flowers', 'picacho', 'tenK', 'umeboshi', 'mayHike',
-                  'birthday', 'riverGraffiti', 'nautilus', 'milkyway',
-                  'sfi']
-
-    data.forEach(function(datum, i) {
+    Object.keys(data).forEach(function(key, i) {
       var container = d3.selectAll('.menu-list').append('svg')
         .attr('height', 225).attr('width', 800);
 
       container.append('g')
-        .selectAll("rect").data(datum).enter()
+        .selectAll("rect").data(data[key]).enter()
           .append("rect").attr("x", 20).attr('height', 40)
           .attr("y", function(d, i) { return i*30 + 50 })
           .attr('width', function(d) { return d['percent'] * 600})
           .attr('fill', function(d, i) { return d['hex'] });
 
       container.append('a')
-        .attr('href', `/colorSummaries/${urls[i]}.html`)
+        .attr('href', `/colorSummaries/${key}.html`)
         .append('text').attr('class', 'menu')
         .attr("font-size", "50px")
         .attr("text-anchor", "end")
         .attr("x", 620).attr('y', 215)
-        .text(function(d) { return tags[i]});
+        .text(function(d) { return key});
     })
   </script>
 </html>
