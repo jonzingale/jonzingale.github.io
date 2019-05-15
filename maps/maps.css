@@ -1,0 +1,58 @@
+a {
+  text-decoration: none;
+}
+
+html {
+  background: #eee;
+  font-family: 'Nunito Sans';
+}
+
+.title {
+  font-family: 'Merriweather';
+  color: #413928;
+  font-size: 50px;
+  padding-left: 70px;
+
+}
+
+.footer {
+  margin-bottom: 160px;
+}
+
+div {
+  position: relative;
+  display: inline;
+}
+
+/* topo */
+.bottom-img { 
+  top: 10;
+  opacity: 1;
+  padding-left: 100px;
+  padding-top: 6px;
+}
+
+.top-img {
+  position: absolute;
+  opacity: 0.6;
+  left: 0;
+  top: 10;
+  padding-left: 120px;
+}
+
+.trace {
+  z-index: 1;
+  position: absolute;
+  top: 10;
+  left: 0;
+  padding-left: 100px;
+
+  fill: none;
+  stroke: none;
+}
+
+path {
+  fill: none;
+  stroke: black;
+  stroke-width: 2px;
+}

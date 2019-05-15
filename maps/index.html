@@ -2,8 +2,8 @@
 <meta charset="utf-8">
 <html lang="en-us">
   <head>
-    <link href="/colorSummaries/css/nunitoSans.css" rel="stylesheet" />
-    <link href="/colorSummaries/css/colorSummaries.css" rel="stylesheet" type="text/css" /> 
+    <link href="/colorSummaries/css/merriweather.css" rel="stylesheet" />
+    <link href="/maps/maps.css" rel="stylesheet" type="text/css" /> 
     <script type="text/javascript" src="/colorSummaries/js/d3.v4.min.js"></script>
   </head>
 
@@ -12,18 +12,128 @@
       Ann Nitze Hiking Trail:
     </div>
 
-    <div class='menu-list'></div>
+    <div class='map-img'>
+      <img src='/maps/topoMap.png' width= 800 height= 618 class='bottom-img'/>
+      <img src='/maps/mapSfi.png' width= 800 height= 618 class='top-img'/>
+      <path class='trace' />
+    </div>
     <div class='footer'></div>
   </main>
 
   <script>
-    const data = "M50 49.454a2.613 2.613 0 0 1-5.225 0 2.535 2.535 0 0 1 1.407-2.256v-8.484H37.19a5.1 5.1 0 0 1-5.16-5.021 5 5 0 0 1 1.853-3.847 4.922 4.922 0 0 1 0-7.7 5 5 0 0 1-1.853-3.847 5.1 5.1 0 0 1 5.16-5.021h8.992V4.8a2.535 2.535 0 0 1-1.407-2.256 2.613 2.613 0 0 1 5.225 0A2.534 2.534 0 0 1 48.594 4.8v10.832h-11.4a2.675 2.675 0 1 0 0 5.347h2.8a1.174 1.174 0 1 1 0 2.348h-2.8a2.675 2.675 0 1 0 0 5.348h2.8a1.174 1.174 0 1 1 0 2.347h-2.8a2.675 2.675 0 1 0 0 5.348h11.4V47.2A2.534 2.534 0 0 1 50 49.454zm-50 0a2.613 2.613 0 0 0 5.224 0 2.535 2.535 0 0 0-1.407-2.256v-8.484h8.993a5.1 5.1 0 0 0 5.16-5.021 5 5 0 0 0-1.853-3.847 4.922 4.922 0 0 0 0-7.7 5 5 0 0 0 1.853-3.847 5.1 5.1 0 0 0-5.16-5.021H3.817V4.8a2.535 2.535 0 0 0 1.407-2.256 2.613 2.613 0 0 0-5.224 0A2.534 2.534 0 0 0 1.406 4.8v10.832h11.4a2.675 2.675 0 1 1 0 5.347h-2.8a1.174 1.174 0 1 0 0 2.348h2.8a2.675 2.675 0 1 1 0 5.348h-2.8a1.174 1.174 0 1 0 0 2.347h2.8a2.675 2.675 0 1 1 0 5.348h-11.4V47.2A2.534 2.534 0 0 0 0 49.454zm26.341-11.175V13.716h2.412v24.563h-2.412zm-5.095 0V13.716h2.411v24.563h-2.411z"
 
-    var container = d3.selectAll('.menu-list').append('svg')
-      .attr('height', 225).attr('width', 800);
+    const topoMapSize = [1598, 1234]
+    var data = [
+      [394, 216], [354, 178], [336, 178],
+      [333, 192], [353, 218],
 
-    container.append('path').attr('d', data)
+      // [280, 400],
+      // [270, 600]
+    ]
 
+    // Todo: d3 coordinate finder
+
+    var container = d3.selectAll('.map-img').selectAll('.trace')
+      .append('svg').attr('height', 630).attr('width', 820)
+
+    var lineGenerator = d3.line().curve(d3.curveCardinal);
+    var pathString = lineGenerator(data);
+
+    var mainBuilding = container.append("g")
+    var annex = container.append('g')
+    var dots = container.append('g')
+
+    var dotsData = [    
+     // {x: 353, y: 218},
+     {x: 355, y: 235},
+     {x: 290, y: 360},
+     {x: 312, y: 455},
+     {x: 302, y: 508},
+     {x: 269, y: 548},
+     {x: 272, y: 600}
+    ] 
+
+    var dotsString = lineGenerator(dotsData.map(item => [item.x, item.y]))
+
+    console.log(JSON.stringify(dotsString))
+
+
+
+    var path = mainBuilding
+      .append('path')
+      .attr('d', dotsString);
+
+
+    var circles = dots.selectAll('circle')
+      .data(dotsData).enter().append('circle')
+
+    circles
+        .attr('cx', function(d){ return d.x})
+        .attr('cy', function(d){ return d.y})
+        .attr('r', 3).attr('fill', 'black')
+
+    annex
+      .append("rect")
+      .attr("transform", "translate(392, 198) rotate(-20)")
+      .attr("width", 15)
+      .attr("height", 8)
+      .attr("fill", "grey")
+
+    annex
+      .append("rect")
+      .attr("transform", "translate(406, 199) rotate(-20)")
+      .attr("width", 9)
+      .attr("height", 9)
+      .attr("fill", "grey")
+
+    mainBuilding
+       .append("rect")
+       .attr("transform", "translate(368, 272) rotate(-50)")
+       .attr("width", 40)
+       .attr("height", 20)
+       .attr("fill", "grey")
+
+    mainBuilding
+      .append("rect")
+      .attr("transform", "translate(398, 288) rotate(-50)")
+      .attr("width", 40)
+      .attr("height", 8)
+      .attr("fill", "grey")
+
+    mainBuilding
+      .append("rect")
+      .attr("transform", "translate(392, 270) rotate(40)")
+      .attr("width", 17)
+      .attr("height", 12)
+      .attr("fill", "grey")
+
+    mainBuilding
+      .append("rect")
+      .attr("transform", "translate(405, 255) rotate(40)")
+      .attr("width", 17)
+      .attr("height", 12)
+      .attr("fill", "grey")
+
+    var podA = mainBuilding
+      .append("rect")
+      .attr("transform", "translate(390, 288) rotate(40)")
+      .attr("width", 27)
+      .attr("height", 12)
+      .attr("fill", "grey")
+
+    var podB = mainBuilding
+      .append("rect")
+      .attr("transform", "translate(390, 308) rotate(40)")
+      .attr("width", 25)
+      .attr("height", 12)
+      .attr("fill", "grey")
+
+    var podC = mainBuilding
+      .append("rect")
+      .attr("transform", "translate(390, 328) rotate(40)")
+      .attr("width", 23)
+      .attr("height", 12)
+      .attr("fill", "grey")
 
   </script>
 </html>
