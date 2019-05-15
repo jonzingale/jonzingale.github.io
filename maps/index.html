@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en-us">
+  <head>
+    <link href="/colorSummaries/css/nunitoSans.css" rel="stylesheet" />
+    <link href="/colorSummaries/css/colorSummaries.css" rel="stylesheet" type="text/css" /> 
+    <script type="text/javascript" src="/colorSummaries/js/d3.v4.min.js"></script>
+  </head>
+
+  <main role="main">
+    <div class='title'>
+      Ann Nitze Hiking Trail:
+    </div>
+
+    <div class='menu-list'></div>
+    <div class='footer'></div>
+  </main>
+
+  <script>
+    const data = "M50 49.454a2.613 2.613 0 0 1-5.225 0 2.535 2.535 0 0 1 1.407-2.256v-8.484H37.19a5.1 5.1 0 0 1-5.16-5.021 5 5 0 0 1 1.853-3.847 4.922 4.922 0 0 1 0-7.7 5 5 0 0 1-1.853-3.847 5.1 5.1 0 0 1 5.16-5.021h8.992V4.8a2.535 2.535 0 0 1-1.407-2.256 2.613 2.613 0 0 1 5.225 0A2.534 2.534 0 0 1 48.594 4.8v10.832h-11.4a2.675 2.675 0 1 0 0 5.347h2.8a1.174 1.174 0 1 1 0 2.348h-2.8a2.675 2.675 0 1 0 0 5.348h2.8a1.174 1.174 0 1 1 0 2.347h-2.8a2.675 2.675 0 1 0 0 5.348h11.4V47.2A2.534 2.534 0 0 1 50 49.454zm-50 0a2.613 2.613 0 0 0 5.224 0 2.535 2.535 0 0 0-1.407-2.256v-8.484h8.993a5.1 5.1 0 0 0 5.16-5.021 5 5 0 0 0-1.853-3.847 4.922 4.922 0 0 0 0-7.7 5 5 0 0 0 1.853-3.847 5.1 5.1 0 0 0-5.16-5.021H3.817V4.8a2.535 2.535 0 0 0 1.407-2.256 2.613 2.613 0 0 0-5.224 0A2.534 2.534 0 0 0 1.406 4.8v10.832h11.4a2.675 2.675 0 1 1 0 5.347h-2.8a1.174 1.174 0 1 0 0 2.348h2.8a2.675 2.675 0 1 1 0 5.348h-2.8a1.174 1.174 0 1 0 0 2.347h2.8a2.675 2.675 0 1 1 0 5.348h-11.4V47.2A2.534 2.534 0 0 0 0 49.454zm26.341-11.175V13.716h2.412v24.563h-2.412zm-5.095 0V13.716h2.411v24.563h-2.411z"
+
+    var container = d3.selectAll('.menu-list').append('svg')
+      .attr('height', 225).attr('width', 800);
+
+    container.append('path').attr('d', data)
+
+
+  </script>
+</html>
