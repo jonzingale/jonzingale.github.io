@@ -20,7 +20,7 @@
     // SERVER on 8000: python -m http.server
 
     const data = [
-      // tulip
+      // orange tulip
       [{'hex': '#F56605', 'percent': 0.187825},
        {'hex': '#E53E02', 'percent': 0.13245},
        {'hex': '#365218', 'percent': 0.113875},
@@ -32,7 +32,7 @@
        {'hex': '#9BAC7C', 'percent': 0.0687},
        {'hex': '#785F20', 'percent': 0.02465}],
 
-      // daisy
+      // daffodil
       [{'hex': '#C6B30E', 'percent': 0.287683215130024},
        {'hex': '#33451A', 'percent': 0.234787234042553},
        {'hex': '#1B1C10', 'percent': 0.221442080378251},
@@ -68,7 +68,7 @@
        {'hex': '#C82910', 'percent': 0.1021774193548387},
        {'hex': '#A3A3DB', 'percent': 0.0928225806451613}],
 
-      // red flower
+      // red tulip
       [{'hex': '#72987C', 'percent': 0.168002364066194},
        {'hex': '#EF050B', 'percent': 0.150212765957447},
        {'hex': '#201B19', 'percent': 0.132210401891253},
@@ -80,7 +80,7 @@
        {'hex': '#CB5B09', 'percent': 0.0436052009456265},
        {'hex': '#7B200B', 'percent': 0.0157683215130024}],
 
-      // peach blossom
+      // apple blossom
       [{'hex': '#B4B1A8', 'percent': 0.208238770685579},
        {'hex': '#151311', 'percent': 0.156548463356974},
        {'hex': '#484342', 'percent': 0.12451536643026},
@@ -95,8 +95,8 @@
 
     data.forEach( d => normalize(d))
 
-    const tags = ['tulip', 'daisy', 'poppy', 'poppy with sky', 
-                  'red flower', 'peach blossom']
+    const tags = ['orange tulip', 'daffodil', 'poppy', 'poppy with sky', 
+                  'red tulip', 'apple blossom']
 
     data.forEach(function(datum, i) {
       var container = d3.selectAll('.menu-list').append('svg')
