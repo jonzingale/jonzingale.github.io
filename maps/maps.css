@@ -42,10 +42,16 @@ html {
   stroke: none;
 }
 
-path {
+.roads {
   fill: none;
   stroke: black;
-  stroke-width: 2px;
+  stroke-width: 3px;
+}
+
+.contours {
+  fill: none;
+  stroke: brown;
+  stroke-width: 1px;
 }
 
 .footer {

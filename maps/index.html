@@ -67,8 +67,21 @@
       {t: "translate(390, 328) rotate(40)", w: 23, h: 12},
     ]
 
+    const contdata1 = [[304,9],[316,67],[337,110],[364,146],[405,168],[431,152],[452,106],[493,82],[517,57],[537,26],[553,8]]
+    const contdata2 = [[327,9],[343,66],[368,97],[394,112],[415,107],[432,88],[452,73],[476,62],[504,42],[519,22],[530,9]]
+
+    // Contours
+    var contours = container.append('g').attr('class','contours')
+
+    var c1 = lineGenerator(contdata1)
+    contours.append('path').attr('d', c1);
+
+    var c2 = lineGenerator(contdata2)
+    contours.append('path').attr('d', c2);
+
+
     // Roads
-    var roads = container.append("g")
+    var roads = container.append("g").attr('class','roads')
 
     var wing = lineGenerator(wingData)
     roads.append('path').attr('d', wing);
