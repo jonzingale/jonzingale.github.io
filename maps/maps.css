@@ -33,6 +33,7 @@ html {
 }
 
 .trace {
+  z-index: 1;
   position: absolute;
   padding-left: 100px;
   top: 10;

@@ -9,8 +9,6 @@
   <div class='title'>Ann Nitze Hiking Trail:</div>
   <main role="main">
     <div class='map-img'>
-      <img src='/maps/topoMap.png' width= 800 height= 618 class='bottom-img'/>
-      <img src='/maps/mapSfi.png' width= 800 height= 618 class='top-img'/>
       <path class='trace' />
     </div>
 
@@ -18,135 +16,67 @@
   </main>
 
   <script>
-
-    const topoMapSize = [1598, 1234]
-    var data = [
-      [394, 216], [354, 178], [336, 178],
-      [333, 192], [353, 218],
-
-      // [280, 400],
-      // [270, 600]
-    ]
-
     // Todo: d3 coordinate finder
-
+    var lineGenerator = d3.line().curve(d3.curveCardinal);
     var container = d3.selectAll('.map-img').selectAll('.trace')
       .append('svg').attr('height', 630).attr('width', 820)
 
-    // var imageContainer = d3.selectAll('.map-img')//.append('g')
+    var imageContainer = d3.selectAll('.map-img')
 
-    // imageContainer
-    //   .append('img')
-    //    width= 800 height= 618 class='bottom-img'
-    //   .attr('src','/maps/topoMap.png')
-    //   .attr('width', 800)
-    //   .attr('height', 618)
-    //   .attr('class','bottom-img')
+    imageContainer
+      .append('img')
+      .attr('src','/maps/topoMap.png')
+      .attr('width', 800)
+      .attr('height', 618)
+      .attr('class','bottom-img')
 
-    // <img src='/maps/topoMap.png' width= 800 height= 618 class='bottom-img'/>
-    // <img src='/maps/mapSfi.png' width= 800 height= 618 class='top-img'/>
+    imageContainer
+      .append('img')
+      .attr('src','/maps/mapSfi.png')
+      .attr('width', 800)
+      .attr('height', 618)
+      .attr('class','top-img')
 
-    var lineGenerator = d3.line().curve(d3.curveCardinal);
-    var pathString = lineGenerator(data);
+    const mainRoadData = [
+      {x: 394, y: 216}, {x: 354, y: 178}, {x: 336, y: 178},
+      {x: 333, y: 192}, {x: 353, y: 218}, {x: 352, y: 218},
+      {x: 355, y: 236}, {x: 318, y: 288}, {x: 289, y: 369},
+      {x: 312, y: 455}, {x: 304, y: 503}, {x: 268, y: 546},
+      {x: 272, y: 600}] 
 
+    const buildingData = [
+      {t: "translate(392, 198) rotate(-20)", w: 15, h: 8},
+      {t: "translate(406, 199) rotate(-20)", w: 9, h: 9},
+      {t: "translate(368, 272) rotate(-50)", w: 40, h: 20},
+      {t: "translate(398, 288) rotate(-50)", w: 40, h: 8},
+      {t: "translate(392, 270) rotate(40)", w: 17, h: 12},
+      {t: "translate(405, 255) rotate(40)", w: 17, h: 12},
+      {t: "translate(390, 288) rotate(40)", w: 27, h: 12},
+      {t: "translate(390, 308) rotate(40)", w: 25, h: 12},
+      {t: "translate(390, 328) rotate(40)", w: 23, h: 12},
+    ]
+
+    // Driveway
+    var mainRoad = container.append("g")
+    var roadPath = lineGenerator(mainRoadData.map(item => [item.x, item.y]))
+    mainRoad.append('path').attr('d', roadPath);
+
+    // console.log(JSON.stringify(roadPath))
+
+    // Dots along the way
+    var roadCircles = mainRoad.selectAll('circle')
+      .data(mainRoadData).enter().append('circle')
+      .attr('cx', function(d){ return d.x})
+      .attr('cy', function(d){ return d.y})
+      .attr('r', 3).attr('fill', 'black')
+
+    // Campus Buildings
     var mainBuilding = container.append("g")
-    var annex = container.append('g')
-    var dots = container.append('g')
-
-    var dotsData = [
-    {x: 394, y: 216}, {x: 354, y: 178}, {x: 336, y: 178},
-    {x: 333, y: 192}, {x: 353, y: 218},
-
-    {x: 352, y: 218},
-    {x: 355, y: 236},
-    {x: 318, y: 288},
-    {x: 289, y: 369},
-    {x: 312, y: 455},
-    {x: 304, y: 503},
-    {x: 268, y: 546},
-    {x: 272, y: 600}
-    ] 
-
-    var dotsString = lineGenerator(dotsData.map(item => [item.x, item.y]))
-
-    console.log(JSON.stringify(dotsString))
-
-
-
-    var path = mainBuilding
-      .append('path')
-      .attr('d', dotsString);
-
-
-    var circles = dots.selectAll('circle')
-      .data(dotsData).enter().append('circle')
-
-    circles
-        .attr('cx', function(d){ return d.x})
-        .attr('cy', function(d){ return d.y})
-        .attr('r', 3).attr('fill', 'black')
-
-    annex
-      .append("rect")
-      .attr("transform", "translate(392, 198) rotate(-20)")
-      .attr("width", 15)
-      .attr("height", 8)
-      .attr("fill", "grey")
-
-    annex
-      .append("rect")
-      .attr("transform", "translate(406, 199) rotate(-20)")
-      .attr("width", 9)
-      .attr("height", 9)
-      .attr("fill", "grey")
-
-    mainBuilding
-       .append("rect")
-       .attr("transform", "translate(368, 272) rotate(-50)")
-       .attr("width", 40)
-       .attr("height", 20)
-       .attr("fill", "grey")
-
-    mainBuilding
-      .append("rect")
-      .attr("transform", "translate(398, 288) rotate(-50)")
-      .attr("width", 40)
-      .attr("height", 8)
-      .attr("fill", "grey")
-
-    mainBuilding
-      .append("rect")
-      .attr("transform", "translate(392, 270) rotate(40)")
-      .attr("width", 17)
-      .attr("height", 12)
-      .attr("fill", "grey")
-
-    mainBuilding
-      .append("rect")
-      .attr("transform", "translate(405, 255) rotate(40)")
-      .attr("width", 17)
-      .attr("height", 12)
-      .attr("fill", "grey")
-
-    var podA = mainBuilding
-      .append("rect")
-      .attr("transform", "translate(390, 288) rotate(40)")
-      .attr("width", 27)
-      .attr("height", 12)
-      .attr("fill", "grey")
-
-    var podB = mainBuilding
-      .append("rect")
-      .attr("transform", "translate(390, 308) rotate(40)")
-      .attr("width", 25)
-      .attr("height", 12)
-      .attr("fill", "grey")
-
-    var podC = mainBuilding
-      .append("rect")
-      .attr("transform", "translate(390, 328) rotate(40)")
-      .attr("width", 23)
-      .attr("height", 12)
+    var buildingRects = mainBuilding.selectAll('rect')
+      .data(buildingData).enter().append('rect')
+      .attr("transform", function(d) { return d.t })
+      .attr("width", function(d) { return d.w })
+      .attr("height", function(d) { return d.h })
       .attr("fill", "grey")
 
   </script>
