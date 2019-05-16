@@ -25,12 +25,12 @@
 
     var imageContainer = d3.selectAll('.map-img')
 
-    imageContainer
-      .append('img')
+    imageContainer.append('img')
       .attr('class','bottom-img')
-      // .attr('src','/maps/topoMap.png')
-      // .attr('width', 800)
-      // .attr('height', 618)
+
+      .attr('src','/maps/topoMap.png')
+      .attr('width', 800)
+      .attr('height', 618)
 
     // drive way & hiking path
     // imageContainer
@@ -196,6 +196,21 @@
         .attr("width", function(d) { return d.w })
         .attr("height", function(d) { return d.h })
         .attr("fill", "grey")
+
+      var elevationData = [
+        {x: 390, y: 80,  t: '7560 ft'},
+        {x: 364, y: 480, t: '7400 ft'}
+      ]
+
+      var elevationContainer = container.append('g')
+      var elevations = elevationContainer.selectAll('text')
+      .data(elevationData).enter().append('text')
+      .attr('x', function(d) { return d.x })
+      .attr('y', function(d) { return d.y })
+      .text(function(d) { return d.t })
+      .attr("font-family", "sans-serif")
+      .attr("font-size", "6px")
+      .attr("fill", "black");
 
     var accumData = []
     container.on("click", function() {
