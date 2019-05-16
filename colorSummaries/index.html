@@ -21,20 +21,28 @@
     // SERVER on 8000: python -m http.server
     const data = {
       'places': [ 
+        {'hex': '#5A563B', 'percent': 0.173633333333333},
         {'hex': '#6E6F41', 'percent': 0.140733333333333},
+        {'hex': '#413928', 'percent': 0.137033333333333},
         {'hex': '#D0A37C', 'percent': 0.115633333333333},
+        {'hex': '#96775A', 'percent': 0.0989},
         {'hex': '#6894D0', 'percent': 0.0931666666666667},
+        {'hex': '#84877A', 'percent': 0.0663333333333333},
         {'hex': '#DAE2E9', 'percent': 0.0568},
         {'hex': '#4E5D6B', 'percent': 0.0261333333333333}
       ],
 
       'flowers': [
-         {'hex': '#F56605', 'percent': 0.187825},
-         {'hex': '#E53E02', 'percent': 0.13245},
-         {'hex': '#678459', 'percent': 0.112275},
-         {'hex': '#FBC42B', 'percent': 0.081575},
-         {'hex': '#9BAC7C', 'percent': 0.0687}
-       ],
+        {'hex': '#F56605', 'percent': 0.187825},
+        {'hex': '#E53E02', 'percent': 0.13245},
+        {'hex': '#365218', 'percent': 0.113875},
+        {'hex': '#678459', 'percent': 0.112275},
+        {'hex': '#F89115', 'percent': 0.110075},
+        {'hex': '#AC2604', 'percent': 0.084275},
+        {'hex': '#FBC42B', 'percent': 0.071575},
+        {'hex': '#9BAC7C', 'percent': 0.0687},
+        {'hex': '#785F20', 'percent': 0.02465},
+      ],
     }
 
     // TODO: REFACTOR EVERYWHERE THIS IS TO BE STATIC DATA.
@@ -44,7 +52,7 @@
 
     Object.keys(data).forEach(function(key, i) {
       var container = d3.selectAll('.menu-list').append('svg')
-        .attr('height', 225).attr('width', 800);
+        .attr('height', 340).attr('width', 680);
 
       container.append('g')
         .selectAll("rect").data(data[key]).enter()
@@ -58,7 +66,7 @@
         .append('text').attr('class', 'menu')
         .attr("font-size", "50px")
         .attr("text-anchor", "end")
-        .attr("x", 620).attr('y', 215)
+        .attr("x", 620).attr('y', 325)
         .text(function(d) { return key});
     })
   </script>
