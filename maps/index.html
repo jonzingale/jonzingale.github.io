@@ -99,19 +99,18 @@
 
 
     const parkingData = [
-      {t: "translate(292, 354) rotate(-69)", w: 12, h: 6},
+      {t: "translate(291, 354) rotate(-69)", w: 12, h: 6.5},
       {t: "translate(339, 193) rotate(50)", w: 22, h: 10},
       {t: "translate(359, 175) rotate(42)", w: 22, h: 10},
     ]
 
     // Campus Buildings
-    var parkingContainer = container.append("g")
-    var parking = parkingContainer.selectAll('rect')
+    var parkingContainer = container.append("g").attr('class','parking-lots')
+    var parking = parkingContainer.selectAll('.parking-lots')
       .data(parkingData).enter().append('rect')
       .attr("transform", function(d) { return d.t })
       .attr("width", function(d) { return d.w })
       .attr("height", function(d) { return d.h })
-      .attr("fill", "black")
 
 
     // Roads
