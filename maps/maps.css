@@ -16,12 +16,18 @@ html {
   padding-bottom: 50px;
 }
 
+img {
+  border: none;
+}
+
 /* topo */
 .bottom-img { 
   top: 10;
   opacity: 1;
   padding-left: 93px;
   padding-top: 6px;
+  border-radius: 0px;
+  border: none;
 }
 
 .top-img {
@@ -30,6 +36,7 @@ html {
   left: 0;
   top: 10;
   padding-left: 120px;
+  border: none;
 }
 
 .trace {

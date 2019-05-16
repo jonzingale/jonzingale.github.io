@@ -27,18 +27,21 @@
 
     imageContainer
       .append('img')
+      .attr('border-width', 20)
       // .attr('src','/maps/topoMap.png')
       .attr('width', 800)
       .attr('height', 618)
+      .attr('border', 0)
+
       .attr('class','bottom-img')
 
     // drive way & hiking path
-    imageContainer
-      .append('img')
-      // .attr('src','/maps/mapSfi.png')
-      .attr('width', 800)
-      .attr('height', 618)
-      .attr('class','top-img')
+    // imageContainer
+    //   .append('img')
+    //   // .attr('src','/maps/mapSfi.png')
+    //   .attr('width', 800)
+    //   .attr('height', 618)
+    //   .attr('class','top-img')
 
     const buildingData = [
       // heliotown II
@@ -123,7 +126,7 @@
       //driveway
       [[275,610],[266,567],[270,540],[283,521],[304,504],[312,479],[309,448],[294,401],[287,372],[293,349],[311,301],[327,270],[342,250],[352,238],[354,224],[339,203],[332,190],[336,176],[352,176],[366,187],[394,217]],
       //hydepark
-      [[258,623], [321,568], [405,492], [456,431], [490,317], [518,219],[565,128], [608,62], [637,9]],
+      [[258,623], [321,568], [405,492], [456,431], [490,317], [518,219],[565,128], [608,62], [637,6]],
       // gonzales
       [[2,57], [38,76], [51,125], [55,193], [53,244], [61,267], [91,325], [127,396], [175,489], [184,546], [185,622]],
       // wings off gonzales
