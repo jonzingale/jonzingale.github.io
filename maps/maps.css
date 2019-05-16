@@ -50,6 +50,12 @@ html {
 
 .contours {
   fill: none;
+  stroke: #c4c4a1;
+  stroke-width: 1px;
+}
+
+.trails {
+  fill: none;
   stroke: brown;
   stroke-width: 1px;
 }
