@@ -5,9 +5,7 @@
     <link href="/colorSummaries/css/merriweather.css" rel="stylesheet" />
     <link href="/maps/maps.css" rel="stylesheet" type="text/css" /> 
     <script type="text/javascript" src="/colorSummaries/js/d3.v4.min.js"></script>
-
-    <script src="/explorables/js/d3-scale-chromatic.v1.min.js"></script>
-    <!-- <script type='text/javascript' src='/maps/helpers.js'></script> -->
+    <script type='text/javascript' src='/maps/helpers.js'></script>
   </head>
   <div class='title'>Ann Nitze Hiking Trail:</div>
   <main role="main">
@@ -21,6 +19,7 @@
   <script>
     // Todo: d3 coordinate finder
     var lineGenerator = d3.line().curve(d3.curveCardinal);
+
     var container = d3.selectAll('.map-img').selectAll('.trace')
       .append('svg').attr('height', 630).attr('width', 820)
 
@@ -33,19 +32,28 @@
       .attr('height', 618)
       .attr('class','bottom-img')
 
-    imageContainer
-      .append('img')
-      .attr('src','/maps/mapSfi.png')
-      .attr('width', 800)
-      .attr('height', 618)
-      .attr('class','top-img')
+    // hiking path
+    // imageContainer
+    //   .append('img')
+    //   .attr('src','/maps/mapSfi.png')
+    //   .attr('width', 800)
+    //   .attr('height', 618)
+    //   .attr('class','top-img')
 
     const mainRoadData = [
-      {x: 394, y: 216}, {x: 354, y: 178}, {x: 336, y: 178},
-      {x: 333, y: 192}, {x: 353, y: 218}, {x: 352, y: 218},
-      {x: 355, y: 236}, {x: 318, y: 288}, {x: 289, y: 369},
-      {x: 312, y: 455}, {x: 304, y: 503}, {x: 268, y: 546},
-      {x: 272, y: 600}] 
+      [394,216], [354,178], [336,178], [333,192], [353,218], [352,218], 
+      [355,236], [318,288], [289,369], [312,455], [304,503], [268,546],
+      [274,610]]
+
+    const hydeParkData = [
+      [258,623], [321,568], [405,492], [456,431], [490,317], [518,219],
+      [565,128], [608,62], [637,9]]
+
+    const gonzalesData = [
+      [2,57], [38,76], [51,125], [55,193], [53,244], [61,267],
+      [91,325], [127,396], [175,489], [184,546], [185,622]]
+
+    const wingData = [[37,74],[68,38],[79,7]]
 
     const buildingData = [
       {t: "translate(392, 198) rotate(-20)", w: 15, h: 8},
@@ -59,19 +67,21 @@
       {t: "translate(390, 328) rotate(40)", w: 23, h: 12},
     ]
 
-    // Driveway
-    var mainRoad = container.append("g")
-    var roadPath = lineGenerator(mainRoadData.map(item => [item.x, item.y]))
-    mainRoad.append('path').attr('d', roadPath);
+    // Roads
+    var roads = container.append("g")
 
-    // console.log(JSON.stringify(roadPath))
+    var wing = lineGenerator(wingData)
+    roads.append('path').attr('d', wing);
 
-    // Dots along the way
-    var roadCircles = mainRoad.selectAll('circle')
-      .data(mainRoadData).enter().append('circle')
-      .attr('cx', function(d){ return d.x})
-      .attr('cy', function(d){ return d.y})
-      .attr('r', 3).attr('fill', 'black')
+    var gonzales = lineGenerator(gonzalesData)
+    roads.append('path').attr('d', gonzales);
+
+    var hydePark = lineGenerator(hydeParkData)
+    roads.append('path').attr('d', hydePark);
+
+    var driveway = lineGenerator(mainRoadData)
+    roads.append('path').attr('d', driveway);
+
 
     // Campus Buildings
     var mainBuilding = container.append("g")
@@ -81,6 +91,12 @@
       .attr("width", function(d) { return d.w })
       .attr("height", function(d) { return d.h })
       .attr("fill", "grey")
+
+    var accumData = []
+    container.on("click", function() {
+      accumData.push(d3.mouse(this))
+      console.log(JSON.stringify(accumData))
+    })
 
   </script>
 </html>
