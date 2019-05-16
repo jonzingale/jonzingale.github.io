@@ -40,50 +40,6 @@
     //   .attr('height', 618)
     //   .attr('class','top-img')
 
-    const buildingData = [
-      // heliotown II
-      {t: "translate(356, 320) rotate(-55)", w: 8, h: 6},
-      // gatehouse
-      {t: "translate(250, 528) rotate(-45)", w: 16, h: 16},
-      {t: "translate(245, 528) rotate(-45)", w: 16, h: 10},
-      // annex
-      {t: "translate(392, 198) rotate(-20)", w: 15, h: 8},
-      {t: "translate(406, 199) rotate(-20)", w: 9, h: 9},
-      // main building
-      {t: "translate(368, 272) rotate(-50)", w: 40, h: 20},
-      {t: "translate(394, 293) rotate(-50)", w: 45, h: 10},
-      {t: "translate(390, 313) rotate(-50)", w: 10, h: 10},
-      {t: "translate(388, 333) rotate(-50)", w: 10, h: 10},
-      {t: "translate(392, 270) rotate(40)", w: 17, h: 12},
-      {t: "translate(405, 255) rotate(40)", w: 17, h: 12},
-      {t: "translate(390, 288) rotate(40)", w: 27, h: 12},
-      {t: "translate(390, 308) rotate(40)", w: 25, h: 12},
-      {t: "translate(390, 328) rotate(40)", w: 23, h: 12},
-    ]
-
-    // Campus Buildings
-    var buildingContainer = container.append("g")
-    var buildings = buildingContainer.selectAll('rect')
-      .data(buildingData).enter().append('rect')
-      .attr("transform", function(d) { return d.t })
-      .attr("width", function(d) { return d.w })
-      .attr("height", function(d) { return d.h })
-      .attr("fill", "grey")
-
-    const parkingData = [
-      {t: "translate(292, 354) rotate(-69)", w: 12, h: 6},
-
-    ]
-
-    // Campus Buildings
-    var parkingContainer = container.append("g")
-    var parking = parkingContainer.selectAll('rect')
-      .data(parkingData).enter().append('rect')
-      .attr("transform", function(d) { return d.t })
-      .attr("width", function(d) { return d.w })
-      .attr("height", function(d) { return d.h })
-      .attr("fill", "black")
-
     // Contours
     const contourData = [
       [[304,7],[307,46],[321,80],[338,114],[365,150],[406,169],[432,151],[443,124],[455,101],[472,89],[495,79],[511,65],[523,44],[541,20],[554,6]],
@@ -142,6 +98,21 @@
       .attr('d', function(d){ return lineGenerator(d)})
 
 
+    const parkingData = [
+      {t: "translate(292, 354) rotate(-69)", w: 12, h: 6},
+
+    ]
+
+    // Campus Buildings
+    var parkingContainer = container.append("g")
+    var parking = parkingContainer.selectAll('rect')
+      .data(parkingData).enter().append('rect')
+      .attr("transform", function(d) { return d.t })
+      .attr("width", function(d) { return d.w })
+      .attr("height", function(d) { return d.h })
+      .attr("fill", "black")
+
+
     // Roads
     const roadData = [
       // mainhouse turnabout
@@ -188,6 +159,36 @@
       .data(trailData).enter().append('path')
       .attr('d', function(d){ return lineGenerator(d)})
 
+
+      const buildingData = [
+        // heliotown II
+        {t: "translate(356, 320) rotate(-55)", w: 8, h: 6},
+        // gatehouse
+        {t: "translate(250, 528) rotate(-45)", w: 16, h: 16},
+        {t: "translate(245, 528) rotate(-45)", w: 16, h: 10},
+        // annex
+        {t: "translate(392, 198) rotate(-20)", w: 15, h: 8},
+        {t: "translate(406, 199) rotate(-20)", w: 9, h: 9},
+        // main building
+        {t: "translate(368, 272) rotate(-50)", w: 40, h: 20},
+        {t: "translate(394, 293) rotate(-50)", w: 45, h: 10},
+        {t: "translate(390, 313) rotate(-50)", w: 10, h: 10},
+        {t: "translate(388, 333) rotate(-50)", w: 10, h: 10},
+        {t: "translate(392, 270) rotate(40)", w: 17, h: 12},
+        {t: "translate(405, 255) rotate(40)", w: 17, h: 12},
+        {t: "translate(390, 288) rotate(40)", w: 27, h: 12},
+        {t: "translate(390, 308) rotate(40)", w: 25, h: 12},
+        {t: "translate(390, 328) rotate(40)", w: 23, h: 12},
+      ]
+
+      // Campus Buildings
+      var buildingContainer = container.append("g")
+      var buildings = buildingContainer.selectAll('rect')
+        .data(buildingData).enter().append('rect')
+        .attr("transform", function(d) { return d.t })
+        .attr("width", function(d) { return d.w })
+        .attr("height", function(d) { return d.h })
+        .attr("fill", "grey")
 
     var accumData = []
     container.on("click", function() {
