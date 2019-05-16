@@ -198,8 +198,8 @@
         .attr("fill", "grey")
 
       var elevationData = [
-        {x: 390, y: 80,  t: '7560 ft'},
-        {x: 364, y: 480, t: '7400 ft'}
+        {x: 388, y: 82,  t: '7560 ft'},
+        {x: 360, y: 480, t: '7400 ft'}
       ]
 
       var elevationContainer = container.append('g')
@@ -209,7 +209,7 @@
       .attr('y', function(d) { return d.y })
       .text(function(d) { return d.t })
       .attr("font-family", "sans-serif")
-      .attr("font-size", "6px")
+      .attr("font-size", "9px")
       .attr("fill", "black");
 
     var accumData = []
