@@ -3,7 +3,7 @@ a {
 }
 
 html {
-  background: #eee;
+  background: #fff;
   font-family: 'Nunito Sans';
 }
 
@@ -48,7 +48,7 @@ html {
 .roads {
   fill: none;
   stroke: black;
-  stroke-width: 3px;
+  stroke-width: 1.9px;
 }
 
 .contours {
@@ -60,7 +60,7 @@ html {
 .trails {
   fill: none;
   stroke: brown;
-  stroke-width: 1px;
+  stroke-width: 1.5px;
 }
 
 .footer {
