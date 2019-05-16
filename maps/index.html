@@ -6,17 +6,14 @@
     <link href="/maps/maps.css" rel="stylesheet" type="text/css" /> 
     <script type="text/javascript" src="/colorSummaries/js/d3.v4.min.js"></script>
   </head>
-
+  <div class='title'>Ann Nitze Hiking Trail:</div>
   <main role="main">
-    <div class='title'>
-      Ann Nitze Hiking Trail:
-    </div>
-
     <div class='map-img'>
       <img src='/maps/topoMap.png' width= 800 height= 618 class='bottom-img'/>
       <img src='/maps/mapSfi.png' width= 800 height= 618 class='top-img'/>
       <path class='trace' />
     </div>
+
     <div class='footer'></div>
   </main>
 
@@ -36,6 +33,19 @@
     var container = d3.selectAll('.map-img').selectAll('.trace')
       .append('svg').attr('height', 630).attr('width', 820)
 
+    // var imageContainer = d3.selectAll('.map-img')//.append('g')
+
+    // imageContainer
+    //   .append('img')
+    //    width= 800 height= 618 class='bottom-img'
+    //   .attr('src','/maps/topoMap.png')
+    //   .attr('width', 800)
+    //   .attr('height', 618)
+    //   .attr('class','bottom-img')
+
+    // <img src='/maps/topoMap.png' width= 800 height= 618 class='bottom-img'/>
+    // <img src='/maps/mapSfi.png' width= 800 height= 618 class='top-img'/>
+
     var lineGenerator = d3.line().curve(d3.curveCardinal);
     var pathString = lineGenerator(data);
 
@@ -43,14 +53,18 @@
     var annex = container.append('g')
     var dots = container.append('g')
 
-    var dotsData = [    
-     // {x: 353, y: 218},
-     {x: 355, y: 235},
-     {x: 290, y: 360},
-     {x: 312, y: 455},
-     {x: 302, y: 508},
-     {x: 269, y: 548},
-     {x: 272, y: 600}
+    var dotsData = [
+    {x: 394, y: 216}, {x: 354, y: 178}, {x: 336, y: 178},
+    {x: 333, y: 192}, {x: 353, y: 218},
+
+    {x: 352, y: 218},
+    {x: 355, y: 236},
+    {x: 318, y: 288},
+    {x: 289, y: 369},
+    {x: 312, y: 455},
+    {x: 304, y: 503},
+    {x: 268, y: 546},
+    {x: 272, y: 600}
     ] 
 
     var dotsString = lineGenerator(dotsData.map(item => [item.x, item.y]))

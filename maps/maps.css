@@ -11,24 +11,16 @@ html {
   font-family: 'Merriweather';
   color: #413928;
   font-size: 50px;
+  padding-top: 20px;
   padding-left: 70px;
-
-}
-
-.footer {
-  margin-bottom: 160px;
-}
-
-div {
-  position: relative;
-  display: inline;
+  padding-bottom: 50px;
 }
 
 /* topo */
 .bottom-img { 
   top: 10;
   opacity: 1;
-  padding-left: 100px;
+  padding-left: 93px;
   padding-top: 6px;
 }
 
@@ -41,12 +33,10 @@ div {
 }
 
 .trace {
-  z-index: 1;
   position: absolute;
+  padding-left: 100px;
   top: 10;
   left: 0;
-  padding-left: 100px;
-
   fill: none;
   stroke: none;
 }
@@ -55,4 +45,8 @@ path {
   fill: none;
   stroke: black;
   stroke-width: 2px;
+}
+
+.footer {
+  margin-bottom: 160px;
 }
