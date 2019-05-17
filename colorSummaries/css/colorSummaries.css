@@ -3,8 +3,13 @@ a {
 }
 
 html {
-  background: #eee;
+  background: #fefffc;
   font-family: 'Nunito Sans';
+}
+
+.main-menu {
+  padding-top: 10%;
+  padding-left: 8%;
 }
 
 .title {

@@ -7,14 +7,56 @@ html {
   font-family: 'Nunito Sans';
 }
 
-.title {
-  font-family: 'Merriweather';
+@font-face {
+    font-family: "Chap Light";
+    src: url(./chap-light.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "DIN Light";
+    src: url('/maps/DIN_light.woff') format("woff"),
+    font-weight: normal;
+    font-style: normal;
+}
+
+.sfi-title {
+  /*font-family: 'Merriweather';*/
+  font-family: 'Chap Light';
   color: #413928;
   font-size: 30px;
   padding-top: 20px;
-  padding-left: 70px;
+  padding-left: 5%;
+}
+
+.title {
+  /*font-family: 'Merriweather';*/
+  font-family: 'DIN Light'
+  color: #413928;
+  font-size: 40px;
+  padding-left: 6%;
   padding-bottom: 30px;
 }
+
+.sfi-title-sideview {
+  font-family: 'Chap Light';
+  color: #413928;
+  font-size: 30px;
+  padding-top: 20px;
+  padding-left: 8%;
+}
+
+.title-sideview {
+  font-family: 'DIN Light'
+  color: #413928;
+  /*width: 15%;*/
+  font-size: 40px;
+  /*padding-top: 20px;*/
+  padding-left: 6%;
+  padding-bottom: 20px;
+}
+
 
 /* topo */
 .bottom-img { 

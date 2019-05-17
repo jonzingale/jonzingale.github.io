@@ -7,7 +7,7 @@
     <script type="text/javascript" src="/colorSummaries/js/d3.v4.min.js"></script>
   </head>
   <div class='sfi-title-sideview'>SANTA FE INSTITUTE</div>
-  <div class='title'>Ann Nitze Hiking Trails</div>
+  <div class='title-sideview'>Ann Nitze Hiking Trails</div>
   <main role="main">
     <div class='map-img'>
       <path class='trace' />
@@ -21,7 +21,8 @@
     var lineGenerator = d3.line().curve(d3.curveCardinal);
 
     var container = d3.selectAll('.map-img').selectAll('.trace')
-      .append('svg').attr('height', 660).attr('width', 820)
+      .append('svg').attr('height', 660).attr('width', 600)
+      .attr('class', 'svg-container')
 
     var imageContainer = d3.selectAll('.map-img')
 
@@ -98,13 +99,13 @@
       .attr('d', function(d){ return lineGenerator(d)})
 
 
+    // Parking Buildings
     const parkingData = [
       {t: "translate(291, 354) rotate(-69)", w: 12, h: 6.5},
       {t: "translate(339, 193) rotate(50)", w: 22, h: 10},
       {t: "translate(359, 175) rotate(42)", w: 22, h: 10},
     ]
 
-    // Campus Buildings
     var parkingContainer = container.append("g").attr('class','parking-lots')
     var parking = parkingContainer.selectAll('.parking-lots')
       .data(parkingData).enter().append('rect')
@@ -210,6 +211,9 @@
       .attr("font-family", "sans-serif")
       .attr("font-size", "9px")
       .attr("fill", "black");
+
+    d3.selectAll('.svg-container')
+      .attr('transform', "translate(0, 0) rotate(270)")
 
     var accumData = []
     container.on("click", function() {
