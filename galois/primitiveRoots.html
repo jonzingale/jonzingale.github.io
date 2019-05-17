@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en-us">
+  <head>
+    <link href="/galois/primitive-roots.css" rel="stylesheet" type="text/css" /> 
+    <script type="text/javascript" src="/colorSummaries/js/d3.v4.min.js"></script>
+    <script src="/explorables/js/d3-scale-chromatic.v1.min.js"></script>
+  </head>
+
+  <div class='din-title'>primitive roots modulo p</div>
+  <main role="main">
+    <div class='grid-container'></div>
+    <div class='footer'></div>
+  </main>
+
+  <script>
+    function mod(a,b){return(((a % b) + b) % b)}
+    function div(a,b){return Math.floor(a/b)}
+
+    var myScale = d3.scaleLinear()
+      .domain([0, 10])
+      .range([0, 600]);
+
+    console.log(JSON.stringify(myScale(2)))
+
+    var container = 
+      d3.selectAll('.grid-container')
+      .append('svg').attr('height', 360).attr('width', 820)
+
+      const gridData = [
+        {t: "translate(0, 0) rotate(0)", w: 50, h: 50},
+        {t: "translate(0, 0) rotate(0)", w: 50, h: 50},
+        {t: "translate(0, 0) rotate(0)", w: 50, h: 50},
+      ]
+
+      // Campus Buildings
+      var groupContainer = container.append("g")
+      var grid = groupContainer.selectAll('rect')
+        .data(gridData).enter().append('rect')
+        .attr('x', function(d,i) { return 50 * mod(i, 5) })
+        .attr('y', function(d,i) { return 50 * div(i, 5) })
+        .attr("width", function(d ) { return d.w })
+        .attr("height", function(d) { return d.h })
+
+        .attr("fill", function(d, i) { return d3.interpolateYlGn(i/5)})
+
+    var accumData = []
+    container.on("click", function() {
+      accumData.push(d3.mouse(this))
+      console.log(JSON.stringify(accumData))
+    })
+
+  </script>
+</html>
