@@ -88,13 +88,16 @@ html {
 }
 
 .parking-lots {
-  fill: #413928;
+  fill: grey;
+  /*fill: #413928;*/
 }
 
 .roads {
   fill: none;
-  stroke: #413928;
+  /*stroke: #413928;*/
+  stroke: grey;
   stroke-width: 1.9px;
+
 }
 
 .contours {
