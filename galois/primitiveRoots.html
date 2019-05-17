@@ -5,6 +5,7 @@
     <link href="/galois/primitive-roots.css" rel="stylesheet" type="text/css" /> 
     <script type="text/javascript" src="/colorSummaries/js/d3.v4.min.js"></script>
     <script src="/explorables/js/d3-scale-chromatic.v1.min.js"></script>
+    <script type='text/javascript' src='/galois/helpers.js'></script>
   </head>
 
   <div class='din-title'>primitive roots modulo p</div>
@@ -14,41 +15,49 @@
   </main>
 
   <script>
-    function mod(a,b){return(((a % b) + b) % b)}
-    function div(a,b){return Math.floor(a/b)}
+    const gSize = 11
+    const width = 500
+    const k = 0.9
 
-    var myScale = d3.scaleLinear()
-      .domain([0, 10])
-      .range([0, 600]);
-
-    console.log(JSON.stringify(myScale(2)))
+    var cat10 = d3.scaleOrdinal(d3.schemeCategory10);
 
     var container = 
-      d3.selectAll('.grid-container')
-      .append('svg').attr('height', 360).attr('width', 820)
+      d3.selectAll('.grid-container').append('svg')
+      .attr('height', width+100).attr('width', width+100)
 
-      const gridData = [
-        {t: "translate(0, 0) rotate(0)", w: 50, h: 50},
-        {t: "translate(0, 0) rotate(0)", w: 50, h: 50},
-        {t: "translate(0, 0) rotate(0)", w: 50, h: 50},
-      ]
+    var prims = primitives(gSize)
+    var pLen = Math.sqrt(prims.length)
+    var cSize = width / pLen
 
-      // Campus Buildings
-      var groupContainer = container.append("g")
-      var grid = groupContainer.selectAll('rect')
-        .data(gridData).enter().append('rect')
-        .attr('x', function(d,i) { return 50 * mod(i, 5) })
-        .attr('y', function(d,i) { return 50 * div(i, 5) })
-        .attr("width", function(d ) { return d.w })
-        .attr("height", function(d) { return d.h })
+    var gridContainer = container.append('rect')
+      .attr('fill', 'lightgrey')
+      .attr('width', width+10)
+      .attr('height', width+10)
 
-        .attr("fill", function(d, i) { return d3.interpolateYlGn(i/5)})
+    var groupContainer = container.append("g")
+    var group = groupContainer.selectAll('rect')
+      .data(prims).enter().append('rect')
+      .attr('transform', 'translate(5,5)')
+      .attr('x', function(d, i) { return cSize * mod(i, pLen) })
+      .attr('y', function(d, i) { return cSize * div(i, pLen) })
+      .attr("width", function(d) { return cSize * k})
+      .attr("height", function(d) { return cSize * k})
+      .attr("fill", function(d) {
+        return cat10(d/gSize)
+      })
 
-    var accumData = []
-    container.on("click", function() {
-      accumData.push(d3.mouse(this))
-      console.log(JSON.stringify(accumData))
-    })
+    // should be gcd not mod
+    function primitives(p, tot=[]) {
+      var phi = range(p).filter(y => mod(y,p) != 0 )
+
+      phi.forEach(function(i) {
+        phi.forEach(function(j){
+          tot.push(mod(i*j, p)) 
+        })
+      })
+
+      return tot
+    }
 
   </script>
 </html>
