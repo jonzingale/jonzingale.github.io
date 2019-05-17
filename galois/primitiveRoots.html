@@ -46,6 +46,17 @@
         return cat10(d/gSize)
       })
 
+    function gcd(a, b, d=Infinity) {
+      if (b<a) { var [a,b] = [b,a] }
+      while (b > 1) {
+        d = mod(b,a)
+        a = b
+        b = d
+      }
+      return(a)
+    }
+    pp(gcd(18,7))
+
     // should be gcd not mod
     function primitives(p, tot=[]) {
       var phi = range(p).filter(y => mod(y,p) != 0 )
