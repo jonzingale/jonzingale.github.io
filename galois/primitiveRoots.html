@@ -8,67 +8,39 @@
     <script type='text/javascript' src='/galois/helpers.js'></script>
   </head>
 
-  <div class='din-title'>primitive roots modulo p</div>
+  <div class='din-title'>primitive roots modulo n</div>
   <main role="main">
     <div class='grid-container'></div>
     <div class='footer'></div>
   </main>
 
   <script>
-    const gSize = 11
+    const gSize = 13
     const width = 500
     const k = 0.9
 
     var cat10 = d3.scaleOrdinal(d3.schemeCategory10);
+    var prims = primitives(gSize)
+    var pLen = Math.sqrt(prims.length)
+    var cSize = width / pLen
 
     var container = 
       d3.selectAll('.grid-container').append('svg')
       .attr('height', width+100).attr('width', width+100)
 
-    var prims = primitives(gSize)
-    var pLen = Math.sqrt(prims.length)
-    var cSize = width / pLen
-
     var gridContainer = container.append('rect')
+      .attr('height', width+10*k)
+      .attr('width', width+10*k)
       .attr('fill', 'lightgrey')
-      .attr('width', width+10)
-      .attr('height', width+10)
 
     var groupContainer = container.append("g")
     var group = groupContainer.selectAll('rect')
       .data(prims).enter().append('rect')
-      .attr('transform', 'translate(5,5)')
+      .attr('transform', 'translate(6,6)')
       .attr('x', function(d, i) { return cSize * mod(i, pLen) })
       .attr('y', function(d, i) { return cSize * div(i, pLen) })
       .attr("width", function(d) { return cSize * k})
       .attr("height", function(d) { return cSize * k})
-      .attr("fill", function(d) {
-        return cat10(d/gSize)
-      })
-
-    function gcd(a, b, d=Infinity) {
-      if (b<a) { var [a,b] = [b,a] }
-      while (b > 1) {
-        d = mod(b,a)
-        a = b
-        b = d
-      }
-      return(a)
-    }
-    pp(gcd(18,7))
-
-    // should be gcd not mod
-    function primitives(p, tot=[]) {
-      var phi = range(p).filter(y => mod(y,p) != 0 )
-
-      phi.forEach(function(i) {
-        phi.forEach(function(j){
-          tot.push(mod(i*j, p)) 
-        })
-      })
-
-      return tot
-    }
-
+      .attr("fill", function(d) { return cat10(d/gSize) })
   </script>
 </html>
