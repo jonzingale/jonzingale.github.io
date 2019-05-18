@@ -22,7 +22,6 @@ html {
 }
 
 .sfi-title {
-  /*font-family: 'Merriweather';*/
   font-family: 'Chap Light';
   color: #413928;
   font-size: 30px;
@@ -31,7 +30,6 @@ html {
 }
 
 .title {
-  /*font-family: 'Merriweather';*/
   font-family: 'DIN Light'
   color: #413928;
   font-size: 40px;
