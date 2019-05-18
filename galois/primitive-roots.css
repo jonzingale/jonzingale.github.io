@@ -18,6 +18,14 @@ html {
   padding-bottom: 30px;
 }
 
+.group-controls {
+  
+}
+
 .grid-container {
   padding-left: 6%;
+}
+
+.grid {
+  fill: #413928;
 }
