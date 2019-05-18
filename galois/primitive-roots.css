@@ -5,44 +5,19 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: "DIN Light";
-    src: url('/maps/DIN_light.woff') format("woff"),
-    font-weight: normal;
-    font-style: normal;
-}
-
-a {
-  text-decoration: none;
-}
-
 html {
   background: #feffef;
   font-family: 'Chap Light';
 }
 
-.chap-title {
-  font-family: 'Chap Light';
-  color: #413928;
-  font-size: 30px;
-  padding-top: 20px;
-  padding-left: 5%;
-}
-
 .din-title {
-  font-family: 'DIN Light'
   color: #413928;
   font-size: 40px;
-  padding-top: 5%;
+  padding-top: 1%;
   padding-left: 6%;
   padding-bottom: 30px;
 }
 
 .grid-container {
   padding-left: 6%;
-
-}
-
-.footer {
-  margin-bottom: 160px;
 }
