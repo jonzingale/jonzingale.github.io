@@ -18,8 +18,8 @@ html {
   padding-bottom: 30px;
 }
 
-.group-controls {
-  
+.group_widgets {
+  width: 100%;
 }
 
 .grid-container {
@@ -29,3 +29,4 @@ html {
 .grid {
   fill: #413928;
 }
+
