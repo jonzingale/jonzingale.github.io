@@ -14,11 +14,10 @@
   </main>
 
   <script>
-    const gSize = 17
+    const gSize = 13
     const width = 500
     const k = 0.9
 
-    var cat10 = d3.scaleOrdinal(d3.schemeCategory10);
     var prims = primitives(gSize)
     var pLen = Math.sqrt(prims.length)
     var cSize = width / pLen
@@ -40,6 +39,6 @@
       .attr('y', function(d, i) { return cSize * div(i, pLen) })
       .attr("width", function(d) { return cSize * k})
       .attr("height", function(d) { return cSize * k})
-      .attr("fill", function(d) { return cat10(d/gSize) })
+      .attr("fill", function(d) { return d3.interpolateSpectral(d/gSize) })
   </script>
 </html>
