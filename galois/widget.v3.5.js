@@ -8,21 +8,23 @@ var widget = (function(){
   
   var grid = function(W,H,Nx,Ny){
     
-      var X = d3.scaleLinear().domain([0,Nx]).range([0,W]);
+    var X = d3.scaleLinear().domain([0,Nx]).range([0,W]);
     var Y = d3.scaleLinear().domain([0,Ny]).range([H,0]);
     
     var lattice = function(){
       return d3.range((Nx+1)*(Ny+1)).map(function(i){
-          return { m:(i % (Nx+1)), n: Math.floor(i / (Nx+1)), x: X((i % (Nx+1))), y: Y(Math.floor(i / (Nx+1)))}
+          let nn = Math.floor(i / (Nx+1))
+          let xx = X((i % (Nx+1)))
+          let yy = Y(Math.floor(i / (Nx+1)))
+          return { m:(i % (Nx+1)), n: n1, x: xx, y: yy}
         })    
     }
     
 
     var block = function(position){
-      
       var x0,y0,w,h,nx,ny;
-      var edge = "[]";    
-      
+      var edge = "[]";
+
       if ("undefined" === typeof position) {
         x0 = 0; y0 = 0; w = 1; h = 1;
       } else {
