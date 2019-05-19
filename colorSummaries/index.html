@@ -45,22 +45,25 @@
       ],
 
       'petroglyphs': [
-        // "batchlorsButton" : {
-           { "hex" : "#45583F", 'percent': 0.25},
-           { "hex" : "#90A086", 'percent': 0.25},
-           { "hex" : "#664BC4", 'percent': 0.25},
-           { "hex" : "#958FD5", 'percent': 0.25}
+        {'hex': '#5A4A59', 'percent': 0.1749},
+        {'hex': '#7C6B7C', 'percent': 0.137566666666667},
+        {'hex': '#362A39', 'percent': 0.128166666666667},
+        {'hex': '#A5A370', 'percent': 0.104066666666667},
+        {'hex': '#99949A', 'percent': 0.0972},
+        {'hex': '#898364', 'percent': 0.0895},
+        {'hex': '#C0C1C3', 'percent': 0.0855666666666667},
+        {'hex': '#6A6057', 'percent': 0.0728666666666667},
+        {'hex': '#C5C684', 'percent': 0.0677333333333333},
+        {'hex': '#3E396A', 'percent': 0.0424333333333333}
       ],
     }
 
     // TODO: REFACTOR EVERYWHERE THIS IS TO BE STATIC DATA.
     Object.values(data).forEach( d => normalize(d))
 
-    const urls = ['places', 'flowers', 'petroglyphs']
-
     Object.keys(data).forEach(function(key, i) {
       var container = d3.selectAll('.menu-list').append('svg')
-        .attr('height', 340).attr('width', 680);
+        .attr('height', 360).attr('width', 680);
 
       container.append('g')
         .selectAll("rect").data(data[key]).enter()

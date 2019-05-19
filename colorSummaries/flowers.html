@@ -33,6 +33,19 @@
        {'hex': '#9BAC7C', 'percent': 0.0687},
        {'hex': '#785F20', 'percent': 0.02465}],
 
+      // "bachelor's button"
+      [{'hex': '#4E6744', 'percent': 0.209233333333333},
+       {'hex': '#30402C', 'percent': 0.1901},
+       {'hex': '#8DA583', 'percent': 0.149066666666667},
+       {'hex': '#727E6B', 'percent': 0.140066666666667},
+       {'hex': '#6348D5', 'percent': 0.0735666666666667},
+       {'hex': '#8C80EE', 'percent': 0.0629},
+       {'hex': '#D6D3CC', 'percent': 0.0618333333333333},
+       {'hex': '#B3ADF1', 'percent': 0.0463},
+       {'hex': '#462487', 'percent': 0.0383666666666667},
+       {'hex': '#595780', 'percent': 0.0285666666666667}
+      ],
+
       // daffodil
       [{'hex': '#C6B30E', 'percent': 0.287683215130024},
        {'hex': '#33451A', 'percent': 0.234787234042553},
@@ -108,8 +121,9 @@
 
     data.forEach( d => normalize(d))
 
-    const tags = ['orange tulip', 'daffodil', 'morning glory', 'poppy',
-                  'poppy with sky', 'red tulip', 'apple blossom']
+    const tags = ['orange tulip', "bachelor's button", 'daffodil',
+                  'morning glory', 'poppy', 'poppy with sky',
+                  'red tulip', 'apple blossom']
 
     data.forEach(function(datum, i) {
       var container = d3.selectAll('.menu-list').append('svg')

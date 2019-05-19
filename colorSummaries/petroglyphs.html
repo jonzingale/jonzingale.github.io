@@ -21,11 +21,17 @@
     // SERVER on 8000: python -m http.server
 
     const data = [
-      // bachelor's button
-      [{"hex" : "#45583F", 'percent': 0.25},
-       {"hex" : "#90A086", 'percent': 0.25},
-       {"hex" : "#664BC4", 'percent': 0.25},
-       {"hex" : "#958FD5", 'percent': 0.25}],
+      // petroglyphs with lichen
+      [{'hex': '#5A4A59', 'percent': 0.1749},
+       {'hex': '#7C6B7C', 'percent': 0.137566666666667},
+       {'hex': '#362A39', 'percent': 0.128166666666667},
+       {'hex': '#A5A370', 'percent': 0.104066666666667},
+       {'hex': '#99949A', 'percent': 0.0972},
+       {'hex': '#898364', 'percent': 0.0895},
+       {'hex': '#C0C1C3', 'percent': 0.0855666666666667},
+       {'hex': '#6A6057', 'percent': 0.0728666666666667},
+       {'hex': '#C5C684', 'percent': 0.0577333333333333},
+       {'hex': '#3E396A', 'percent': 0.0424333333333333}],
 
       [{"hex" : "#BCA36F", 'percent': 0.25},
        {"hex" : "#876E45", 'percent': 0.25},
@@ -75,7 +81,11 @@
 
     data.forEach( d => normalize(d))
 
-    const tags = ["bachelor's button","sprouts and grass","paprika","petroglyph and I","petroglphy1","petroglyph and II","lychen green","lychen blue-green","santa fe cholla","goat heads",]
+    const tags = ["petroglyph & lichen","sprouts and grass",
+      "paprika yarrow",
+      "petroglyph and I","petroglyph","petroglyph and II",
+      "lichen green","lichen blue-green","santa fe cholla",
+      "goathead",]
 
     data.forEach(function(datum, i) {
       var container = d3.selectAll('.menu-list').append('svg')
