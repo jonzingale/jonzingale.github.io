@@ -12,10 +12,10 @@ html {
 }
 
 .theorem {
+  font-size: 20px;
   padding-left: 100px;
-  height: 670px !important;
-  width: 500px !important;
-  /*width: 50% !important;*/
+  height: 700px !important;
+  width: 600px !important;
 }
 
 .mjx-chtml {
