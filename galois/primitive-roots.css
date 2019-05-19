@@ -11,6 +11,17 @@ html {
   font-family: 'Chap Light';
 }
 
+.theorem {
+  padding-left: 100px;
+  height: 670px !important;
+  width: 500px !important;
+  /*width: 50% !important;*/
+}
+
+.mjx-chtml {
+  /*text-align: left !important;*/
+}
+
 .din-title {
   color: #413928;
   font-size: 40px;

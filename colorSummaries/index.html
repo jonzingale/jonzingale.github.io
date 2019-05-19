@@ -43,12 +43,20 @@
         {'hex': '#9BAC7C', 'percent': 0.0687},
         {'hex': '#785F20', 'percent': 0.02465},
       ],
+
+      'petroglyphs': [
+        // "batchlorsButton" : {
+           { "hex" : "#45583F", 'percent': 0.25},
+           { "hex" : "#90A086", 'percent': 0.25},
+           { "hex" : "#664BC4", 'percent': 0.25},
+           { "hex" : "#958FD5", 'percent': 0.25}
+      ],
     }
 
     // TODO: REFACTOR EVERYWHERE THIS IS TO BE STATIC DATA.
     Object.values(data).forEach( d => normalize(d))
 
-    const urls = ['places', 'flowers']
+    const urls = ['places', 'flowers', 'petroglyphs']
 
     Object.keys(data).forEach(function(key, i) {
       var container = d3.selectAll('.menu-list').append('svg')

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en-us">
+  <head>
+    <link href="/colorSummaries/css/nunitoSans.css" rel="stylesheet">
+    <link href="/colorSummaries/css/colorSummaries.css" rel="stylesheet" type="text/css"></link> 
+    <script type='text/javascript' src='/colorSummaries/js/helpers.js'></script>
+    <script type="text/javascript" src="/colorSummaries/js/d3.v4.min.js"></script>
+  </head>
+
+  <main role="main">
+    <div class='title'>
+      Color Summaries of Some Flowers:
+    </div>
+
+    <div class='menu-list'></div>
+    <div class='footer'></div>
+  </main>
+
+  <script>
+    // SERVER on 8000: python -m http.server
+
+    const data = [
+      // bachelor's button
+      [{"hex" : "#45583F", 'percent': 0.25},
+       {"hex" : "#90A086", 'percent': 0.25},
+       {"hex" : "#664BC4", 'percent': 0.25},
+       {"hex" : "#958FD5", 'percent': 0.25}],
+
+      [{"hex" : "#BCA36F", 'percent': 0.25},
+       {"hex" : "#876E45", 'percent': 0.25},
+       {"hex" : "#6F7C3E", 'percent': 0.25},
+       {"hex" : "#40371C", 'percent': 0.25}],
+
+      [{"hex" : "#696162", 'percent': 0.25},
+       {"hex" : "#627A4E", 'percent': 0.25},
+       {"hex" : "#A2AB8C", 'percent': 0.25},
+       {"hex" : "#F065A8", 'percent': 0.25}],
+
+      [{"hex" : "#605E60", 'percent': 0.25},
+       {"hex" : "#2C303D", 'percent': 0.25},
+       {"hex" : "#889282", 'percent': 0.25},
+       {"hex" : "#F8F9F9", 'percent': 0.25}],
+
+      [{"hex" : "#908D8A", 'percent': 0.25},
+       {"hex" : "#767679", 'percent': 0.25},
+       {"hex" : "#B2AC9C", 'percent': 0.25},
+       {"hex" : "#494E59", 'percent': 0.25}],
+
+      [{"hex" : "#847F7A", 'percent': 0.25},
+       {"hex" : "#5C6068", 'percent': 0.25},
+       {"hex" : "#21273B", 'percent': 0.25},
+       {"hex" : "#BEBDB5", 'percent': 0.25}],
+
+      [{"hex" : "#6B5F5B", 'percent': 0.25},
+       {"hex" : "#35323C", 'percent': 0.25},
+       {"hex" : "#C3C65C", 'percent': 0.25},
+       {"hex" : "#959156", 'percent': 0.25}],
+
+      [{"hex" : "#73656C", 'percent': 0.25},
+       {"hex" : "#9E9A70", 'percent': 0.25},
+       {"hex" : "#473A4D", 'percent': 0.25},
+       {"hex" : "#A6A4A8", 'percent': 0.25}],
+
+      [{"hex" : "#887B55", 'percent': 0.25},
+       {"hex" : "#48432D", 'percent': 0.25},
+       {"hex" : "#669ADB", 'percent': 0.25},
+       {"hex" : "#A0C3D6", 'percent': 0.25}],
+
+      [{"hex" : "#4D5838", 'percent': 0.25},
+       {"hex" : "#778453", 'percent': 0.25},
+       {"hex" : "#292D23", 'percent': 0.25},
+       {"hex" : "#A890AF", 'percent': 0.25}],
+    ]
+
+    data.forEach( d => normalize(d))
+
+    const tags = ["bachelor's button","sprouts and grass","paprika","petroglyph and I","petroglphy1","petroglyph and II","lychen green","lychen blue-green","santa fe cholla","goat heads",]
+
+    data.forEach(function(datum, i) {
+      var container = d3.selectAll('.menu-list').append('svg')
+        .attr('height', 400).attr('width', 800);
+
+      container.append('g')
+        .selectAll("rect").data(datum).enter()
+          .append("rect").attr("x", 20).attr('height', 40)
+          .attr("y", function(d, i) { return i*30 + 50 })
+          .attr('width', function(d) { return d['percent'] * 600})
+          .attr('fill', function(d, i) { return d['hex'] });
+
+      container.append('a')
+        .attr('href', `/colorSummaries/index.html`)
+        .append('text').attr('class', 'flower-menu')
+        .attr("font-size", "50px")
+        .attr("text-anchor", "end")
+        .attr("x", 620).attr('y', 360)
+        .text(function(d) { return tags[i]});
+    })
+
+  </script>
+</html>
