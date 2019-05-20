@@ -37,7 +37,6 @@ html {
 }
 
 .trace {
-  /*align-content: left;*/
   z-index: 1;
   fill: none;
   stroke: none;
@@ -64,6 +63,17 @@ html {
   fill: none;
   stroke: brown;
   stroke-width: 1.5px;
+}
+
+.key-rect {
+  stroke: grey;
+  stroke-width: 3px;
+  fill: white;
+}
+
+.key-title {
+  font-size: 30px;
+  fill: black;
 }
 
 .footer {

@@ -20,8 +20,9 @@
     var lineGenerator = d3.line().curve(d3.curveCardinal);
 
     var container = d3.selectAll('.map-img').selectAll('.trace')
-      .append('svg').attr('height', 660).attr('width', 540) // cropped
+      .append('svg').attr('height', 660).attr('width', 740) // cropped
       .attr('transform','translate(-145)')
+      // .attr('transform','translate(50) rotate(-90)')
 
     // Contours
     const contourData = [
@@ -179,6 +180,94 @@
       .attr("font-family", "sans-serif")
       .attr("font-size", "9px")
       .attr("fill", "black");
+
+    // Map Key
+    container
+      .append('rect')
+      .attr("transform", function(d) { return 'translate(400,443)'})
+      .attr('fill','white')
+      .attr("width", function(d) { return 130 })
+      .attr("height", function(d) { return 40 })
+
+    var mapKeyContainer = container.append("g").attr('class','map-key')
+
+    mapKeyContainer
+      .append('rect').attr('class','key-rect')
+      .attr("transform", 'translate(410,480)')
+      .attr('rx', 6)
+      .attr('ry', 6)
+      .attr("width", function(d) { return 310 })
+      .attr("height", function(d) { return 130 })
+
+    mapKeyContainer
+      .append('text').attr('class','key-title')
+      .attr('x', 410)
+      .attr('y', 470)
+      .text('Path Key')
+      .attr("font-size", "30px")
+      .attr("fill", "black")
+
+    const keyData = [
+      {color: 'brown', text: 'Handicap Access', dist: "0.3 miles"},
+      {color: '#80cdc1', text: 'Gatehouse Path', dist: "0.21 miles"},
+      {color: '#01665e', text: 'Moderate', dist: "0.22 miles"},
+      {color: '#9C3DF4', text: 'Challenging', dist: "0.66 miles"},
+      ]
+
+    var keyRows = mapKeyContainer.selectAll('key-data')
+
+    var keyText = keyRows
+      .data(keyData).enter()
+      .append('text')
+      .attr('class','key-text')
+      .attr('x', 450)
+      .attr('y', function(d, i) { return i*30 + 506 })
+      .attr("font-size", "18px")
+      .attr("fill", "black")
+      .text(function(d) { return d.text})
+
+      var keyDist = keyRows
+        .data(keyData).enter()
+        .append('text')
+        .attr('class','key-text')
+        .attr('x', 610)
+        .attr('y', function(d, i) { return i*30 + 506 })
+        .attr("font-size", "18px")
+        .attr("fill", "black")
+        .text(function(d) { return d.dist})
+
+    var keyCircles = keyRows
+      .data(keyData).enter()
+        .append("circle")
+        .attr("transform", 'translate(410,480)')
+        .attr("cx", 20).attr("r", 10)
+        .attr("cy", function(d, i) { return i*30 + 20 })
+        .attr('fill', function(d) { return d.color })
+
+    // compass
+    const compassData = [
+      {x1: 710, y1: 70, x2: 710, y2: 140},
+      {x1: 710, y1: 70, x2: 705, y2: 100},
+    ]
+
+    var compass = container.append('g').attr('class','compass')
+    compass.append('text')
+    .attr('x', 670)
+    .attr('y', 140)
+    .attr("font-size", "40px")
+    .attr("fill", "black")
+    .text('N')
+
+    compass.selectAll('.compass')
+      .data(compassData).enter()
+      .append('line')//.attr('class','compass')
+      .attr('x1', function(d) { return d.x1 })
+      .attr('y1', function(d) { return d.y1 })
+      .attr('x2', function(d) { return d.x2 })
+      .attr('y2', function(d) { return d.y2 })
+      .attr('stroke','black')
+      .attr('stroke-width', '4px')
+
 
     var accumData = []
     container.on("click", function() {
