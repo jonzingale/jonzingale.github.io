@@ -252,21 +252,18 @@
 
     var compass = container.append('g').attr('class','compass')
     compass.append('text')
+    .attr("font-size", "40px")
     .attr('x', 670)
     .attr('y', 140)
-    .attr("font-size", "40px")
-    .attr("fill", "black")
     .text('N')
 
     compass.selectAll('.compass')
-      .data(compassData).enter()
-      .append('line')//.attr('class','compass')
+      .data(compassData).enter().append('line')
+      .attr('stroke-width', '4px')
       .attr('x1', function(d) { return d.x1 })
       .attr('y1', function(d) { return d.y1 })
       .attr('x2', function(d) { return d.x2 })
       .attr('y2', function(d) { return d.y2 })
-      .attr('stroke','black')
-      .attr('stroke-width', '4px')
 
 
     var accumData = []

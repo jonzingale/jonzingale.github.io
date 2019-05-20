@@ -76,6 +76,11 @@ html {
   fill: black;
 }
 
+.compass {
+  fill: black;
+  stroke: black;
+}
+
 .footer {
   margin-bottom: 4%;
 }
