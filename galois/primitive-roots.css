@@ -6,7 +6,6 @@
 }
 
 html {
-  /*background: #feffef;*/
   background: #fff;
   font-family: 'Chap Light';
 }
@@ -14,12 +13,8 @@ html {
 .theorem {
   font-size: 20px;
   padding-left: 100px;
-  height: 700px !important;
-  width: 600px !important;
-}
-
-.mjx-chtml {
-  /*text-align: left !important;*/
+  height: 700px;
+  width: 600px;
 }
 
 .din-title {
