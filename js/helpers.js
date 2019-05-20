@@ -5,3 +5,7 @@ function normalize(array, total=0) {
     array[i]['percent'] = item.percent / biggest
   })
 }
+
+function pp(data) {
+  console.log(JSON.stringify(data))
+}

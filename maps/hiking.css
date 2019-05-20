@@ -5,6 +5,7 @@ a {
 html {
   background: #fff;
   font-family: 'Nunito Sans';
+  padding-left: 6%;
 }
 
 @font-face {
@@ -25,74 +26,29 @@ html {
   font-family: 'Chap Light';
   color: #413928;
   font-size: 30px;
-  padding-top: 20px;
-  padding-left: 5%;
+  padding-top: 3%;
 }
 
 .title {
   font-family: 'DIN Light'
   color: #413928;
   font-size: 40px;
-  padding-left: 6%;
   padding-bottom: 30px;
 }
 
-.sfi-title-sideview {
-  font-family: 'Chap Light';
-  color: #413928;
-  font-size: 30px;
-  padding-top: 20px;
-  padding-left: 8%;
-}
-
-.title-sideview {
-  font-family: 'DIN Light'
-  color: #413928;
-  /*width: 15%;*/
-  font-size: 40px;
-  /*padding-top: 20px;*/
-  padding-left: 6%;
-  padding-bottom: 20px;
-}
-
-
-/* topo */
-.bottom-img { 
-  top: 10;
-  opacity: 1;
-  padding-left: 93px;
-  padding-top: 6px;
-  border-radius: 0px;
-  border: none;
-}
-
-.top-img {
-  position: absolute;
-  opacity: 0.6;
-  left: 0;
-  top: 10;
-  padding-left: 120px;
-  border: none;
-}
-
 .trace {
+  /*align-content: left;*/
   z-index: 1;
-  position: absolute;
-  padding-left: 100px;
-  top: 10;
-  left: 0;
   fill: none;
   stroke: none;
 }
 
 .parking-lots {
   fill: grey;
-  /*fill: #413928;*/
 }
 
 .roads {
   fill: none;
-  /*stroke: #413928;*/
   stroke: grey;
   stroke-width: 1.9px;
 
@@ -111,5 +67,5 @@ html {
 }
 
 .footer {
-  margin-bottom: 160px;
+  margin-bottom: 4%;
 }
