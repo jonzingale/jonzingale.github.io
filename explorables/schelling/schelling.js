@@ -16,8 +16,8 @@
       freeBoard
 
   var vacantColor = '#330C00', // darkbrown
-      agentColor1 = '#D3AC8B', // peru
-      agentColor2 = '#8B4513' // coffee
+      agentColor1 = '#80cdc1', // peru
+      agentColor2 = '#a6611a' // coffee
 
   // moore neighborhood
   var moore = [[ 1, -1],[ 1, 0],[ 1, 1],
@@ -128,9 +128,9 @@
 
   function toggleColors(d) {
     if (d.value) {
-      vacantColor = '#330C00' // darkbrown
-      agentColor1 = '#D3AC8B' // peru
-      agentColor2 = '#8B4513' // coffee
+      vacantColor = '#330C00', // darkbrown
+      agentColor1 = '#80cdc1', // peru
+      agentColor2 = '#a6611a' // coffee
       colorRule.value = true
     }
     else {
