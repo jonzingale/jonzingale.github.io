@@ -21,9 +21,10 @@
 
   <script>
     var lineGenerator = d3.line().curve(d3.curveCardinal);
-    // var accent = d3.scaleOrdinal(d3.schemeCategory10)
+    var accent = d3.scaleOrdinal(d3.schemeCategory10)
+
     // var accent = d3.scaleOrdinal(['#a6611a', '#dfc27d', '#80cdc1', '#018571']) // OK
-    var accent = d3.scaleOrdinal(['#a6cee3','#1f78b4','#b2df8a','#33a02c']) // OK colorblind safe
+    var accent = d3.scaleOrdinal(['#a6611a', '#dfc27d', '#80cdc1', '#1f77b4']) // OK Tim's Blue
 
     var container = d3.selectAll('.map-img').selectAll('.trace')
       .append('svg').attr('height', 660).attr('width', 740) // cropped
@@ -176,7 +177,7 @@
         .attr("transform", function(d) { return d.t })
         .attr("width", function(d) { return d.w })
         .attr("height", function(d) { return d.h })
-        .attr("fill", "grey")
+        .attr("fill", "#333")
 
       var elevationData = [
         {x: 388, y: 82,  t: '7560 ft'},
