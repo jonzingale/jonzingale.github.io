@@ -23,7 +23,7 @@
     var lineGenerator = d3.line().curve(d3.curveCardinal);
     // var accent = d3.scaleOrdinal(d3.schemeCategory10)
     // var accent = d3.scaleOrdinal(['#a6611a', '#dfc27d', '#80cdc1', '#018571']) // OK
-    var accent = d3.scaleOrdinal(['#a6cee3','#1f78b4','#b2df8a','#33a02c']) // OK
+    var accent = d3.scaleOrdinal(['#a6cee3','#1f78b4','#b2df8a','#33a02c']) // OK colorblind safe
 
     var container = d3.selectAll('.map-img').selectAll('.trace')
       .append('svg').attr('height', 660).attr('width', 740) // cropped
