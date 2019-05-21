@@ -62,7 +62,7 @@ html {
 .trails {
   fill: none;
   stroke: brown;
-  stroke-width: 1.5px;
+  stroke-width: 4px;
 }
 
 .key-rect {
