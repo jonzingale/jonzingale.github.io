@@ -4,7 +4,10 @@
   <head>
     <link href="/maps/hiking.css" rel="stylesheet" type="text/css" /> 
     <script src="/js/d3.v4.min.js" type="text/javascript"></script>
+    <script src="https://d3js.org/d3-color.v1.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
     <script src="/js/d3-scale-chromatic.v1.min.js"></script>
+    <script src="/js/helpers.js"></script>
   </head>
   <div class='sfi-title'>SANTA FE INSTITUTE</div>
   <div class='title'>Ann Nitze Hiking Trails</div>
@@ -17,9 +20,10 @@
   </main>
 
   <script>
-    // Todo: d3 coordinate finder
     var lineGenerator = d3.line().curve(d3.curveCardinal);
-    var accent = d3.scaleOrdinal(d3.schemeCategory10);
+    // var accent = d3.scaleOrdinal(d3.schemeCategory10)
+    // var accent = d3.scaleOrdinal(['#a6611a', '#dfc27d', '#80cdc1', '#018571']) // OK
+    var accent = d3.scaleOrdinal(['#a6cee3','#1f78b4','#b2df8a','#33a02c']) // OK
 
     var container = d3.selectAll('.map-img').selectAll('.trace')
       .append('svg').attr('height', 660).attr('width', 740) // cropped
@@ -119,6 +123,7 @@
       .attr('d', function(d){ return lineGenerator(d)})
 
     const trailColors = [1,1,2,2,3,3,0]
+
     const trailData = [
         // gatehouse
         [[366,294],[350,316],[337,324],[322,333],[311,348],[312,369],[316,411],[324,445],[339,474],[358,483],[365,487],[361,494],[328,523],[312,526],[290,516]],
@@ -215,11 +220,11 @@
       .attr("fill", "black")
 
     const keyData = [
-      {color: 'brown', text: 'Handicap Access', dist: "0.30 miles"},
-      {color: '#80cdc1', text: 'Gatehouse Path', dist: "0.21 miles"},
-      {color: '#01665e', text: 'Moderate', dist: "0.22 miles"},
-      {color: '#9C3DF4', text: 'Challenging', dist: "0.66 miles"},
-      ]
+      { text: 'Handicap Access', dist: "0.30 miles"},
+      { text: 'Gatehouse Path', dist: "0.21 miles"},
+      { text: 'Moderate', dist: "0.22 miles"},
+      { text: 'Challenging', dist: "0.66 miles"},
+    ]
 
     var keyRows = mapKeyContainer.selectAll('key-data')
 
