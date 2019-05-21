@@ -128,9 +128,9 @@
 
   function toggleColors(d) {
     if (d.value) {
-      vacantColor = '#330C00', // darkbrown
-      agentColor1 = '#80cdc1', // peru
-      agentColor2 = '#a6611a' // coffee
+      vacantColor = '#330C00'
+      agentColor1 = '#80cdc1'
+      agentColor2 = '#a6611a' 
       colorRule.value = true
     }
     else {
