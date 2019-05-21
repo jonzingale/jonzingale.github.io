@@ -45,6 +45,15 @@
     var col = d3.selectAll('.first-col').append('svg')
                  .attr('height', 400).attr('width', 470)
 
+    // careful not to upload this.
+    // const imgData = [554.88,416.16]
+    // var img = d3.selectAll('.second-col').append('img')
+    //     .attr('src','IMG_7387.jpg') // 3264 × 2448
+    //     .attr('width', imgData[0])
+    //     .attr('height',imgData[1])
+    //     .attr('class','top-img')
+
+
 		var modelLinks = col.selectAll("text").data(data).enter()
 
 		modelLinks.append('g')
