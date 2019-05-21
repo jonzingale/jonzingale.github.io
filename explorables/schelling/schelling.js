@@ -8,7 +8,7 @@
         controlbox_height = 380,
         n_grid_x = 24,
         n_grid_y = 24,
-        stateK = .99 // population/availability
+        stateK = .999 // population/availability
 
   var tolerance = 4, // dynamic for tol > 4
       satisfied = 0,
