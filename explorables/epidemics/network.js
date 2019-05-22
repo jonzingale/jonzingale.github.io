@@ -1,5 +1,5 @@
 function network() {
-  var svg = d3.select("svg"),
+  var svg = d3.select('#network'),
       width = +svg.attr("width"),
       height = +svg.attr("height");
 

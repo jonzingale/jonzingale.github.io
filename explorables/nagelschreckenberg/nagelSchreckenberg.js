@@ -10,7 +10,6 @@
   var world = d3.selectAll("#traffic_display").append('canvas')
     .attr('width', world_width)
     .attr('height', world_height)
-    .attr("class",'traffic_display')
 
   var context = world.node().getContext('2d')
 
