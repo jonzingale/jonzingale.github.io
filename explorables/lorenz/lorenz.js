@@ -2,8 +2,8 @@
 
   // var widget = new widgetModule(); // instantiate widget
 
-  var world_width = 400,
-      world_height = 400,
+  var world_width = 600,
+      world_height = 600,
       controlbox_width = 400,
       controlbox_height = 400,
       n_grid_x = 24,
@@ -157,7 +157,7 @@
   }
 
   function clearCanvas() {
-    context.fillStyle = "#e6e6e6"
+    context.fillStyle = "#fff"
     context.fillRect(0,0, world_width, world_height)
   }
 
