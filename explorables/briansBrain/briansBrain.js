@@ -1,12 +1,12 @@
 (function(){
 
-  var world_width = 400,
-      world_height = 400,
+  var world_width = 600,
+      world_height = 600,
       controlbox_width = 400,
       controlbox_height = 400,
       n_grid_x = 24,
       n_grid_y = 24,
-      L = 150,
+      L = 180,
       k = world_width/L
 
   // moore neighborhood
@@ -130,7 +130,7 @@
       else if (d.state == 1) { context.fillStyle = "orange" }
       else { context.fillStyle = "red" }
 
-      context.fillRect(X(d.x), Y(d.y), 3.5, 3.5);
+      context.fillRect(X(d.x), Y(d.y), 3.8, 3.8);
     })
   }
 
