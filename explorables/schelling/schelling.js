@@ -17,7 +17,8 @@
 
   var vacantColor = '#330C00', // darkbrown
       agentColor1 = '#80cdc1', // peru
-      agentColor2 = '#a6611a' // coffee
+      // agentColor2 = '#a6611a' // coffee
+      agentColor2 = 'rgb(255, 214, 162)' // coffee
 
   // moore neighborhood
   var moore = [[ 1, -1],[ 1, 0],[ 1, 1],
@@ -130,7 +131,8 @@
     if (d.value) {
       vacantColor = '#330C00'
       agentColor1 = '#80cdc1'
-      agentColor2 = '#a6611a' 
+      // agentColor2 = '#a6611a'
+      agentColor2 = 'rgb(255, 214, 162)' // coffee
       colorRule.value = true
     }
     else {
