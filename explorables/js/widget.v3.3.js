@@ -310,9 +310,7 @@ var widget = (function(){
 			trackBorder = 0.5,
 			label = "top-left", 
 			update = function(x){};
-			
-		
-	
+
 		var click = function(x) {
 			
 			var X = d3.scaleLinear().domain(parameter.range).range([0, width]).clamp(true);
@@ -332,6 +330,7 @@ var widget = (function(){
 			fontSize: function(arg) { if ("undefined" === typeof arg) { return fontSize } else { fontSize = arg; return this }},
 			parameter: function(arg) { if ("undefined" === typeof arg) { return parameter } else { parameter = arg; return this }},
 			name: function() {return  parameter.name},
+			nameR: function() {return parameter.nameR},
 			id: function() {return parameter.id},
 			range: function() {return parameter.range},
 			value: function() {return parameter.value},
@@ -392,7 +391,19 @@ var widget = (function(){
 			ypos = d.label().match(/bottom/i)!=null ? 2 * d.handleSize() : - 2 * d.handleSize();
 			xpos = d.label().match(/right/i)!=null ? d.width() : (d.label().match(/center/i)!=null ? d.width() / 2 : 0);
 			anchor = d.label().match(/right/i)!=null ? "end" : (d.label().match(/center/i)!=null ? "middle" : "start")
-				
+
+			yposR = d.label().match(/bottom/i)!=null ? 2 * d.handleSize() : - 2 * d.handleSize();
+			xposR = d.label().match(/left/i)!=null ? d.width() : (d.label().match(/center/i)!=null ? d.width() / 2 : 0);
+			anchorR = d.label().match(/left/i)!=null ? "end" : (d.label().match(/center/i)!=null ? "middle" : "start")
+
+			s.append("text").text(d.nameR())
+			  .attr("class", "tag")
+			  .style("text-anchor",anchorR)
+			  .style("alignment-baseline",valign)
+			  .style("font-size",d.fontSize())
+			  .style("opacity",1)
+			  .attr("transform", "translate(" + (xposR) + "," + (yposR) + ")")
+
 			s.append("text").text(d.name())
 				.attr("class", "tag")
 				.style("text-anchor",anchor)
