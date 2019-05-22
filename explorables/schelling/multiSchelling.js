@@ -15,9 +15,10 @@
       freeBoard
 
   var vacantColor = '#330C00' // darkbrown
+  const twoSpecies = ['#80cdc1', 'rgb(255, 214, 162)']
   const lightColors = ['#F56605', '#E53E02', '#365218', '#678459', '#F89115']
-  const darkColors = ['#4E6744','#30402C','#8DA583','#6348D5','#8C80EE',]
-  var agentColors = lightColors
+  // const darkColors = ['#4E6744','#30402C','#8DA583','#6348D5','#8C80EE',]
+  var agentColors = twoSpecies
 
   // moore neighborhood
   var moore = [[ 1, -1],[ 1, 0],[ 1, 1],
@@ -69,7 +70,7 @@
   var sliderwidth = sliderBlock.w();
   var handleSize = 12, trackSize = 8;
 
-  var colorRule = {id:"t1", name: "dark or light", value: true};
+  var colorRule = {id:"t1", name: "Species: 5 or 2", value: true};
 
   var playpause = { id:"b4", name:"run simulation",
                     actions: ["play","pause"], value: 0};
@@ -125,13 +126,11 @@
 
   function toggleColors(d) {
     if (d.value) {
-      vacantColor = '#330C00'
-      agentColors = lightColors
+      agentColors = twoSpecies
       colorRule.value = true
     }
     else {
-      vacantColor = '#330C00' // darkbrown
-      agentColors = darkColors
+      agentColors = lightColors
       colorRule.value = false
     } ; resetpositions()
   }
