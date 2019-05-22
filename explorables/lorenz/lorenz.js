@@ -12,7 +12,6 @@
   var world = d3.selectAll("#lorenz_display").select("canvas")
   var context = world.node().getContext('2d')
   context.fillStyle = "black"
-  // context.attr('border', '1px solid black')
 
   var controls = d3.selectAll("#lorenz_controls").append("svg")
     .attr("width",controlbox_width)
