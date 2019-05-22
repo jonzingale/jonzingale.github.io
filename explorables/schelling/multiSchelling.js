@@ -2,7 +2,7 @@
 (function(){
   const L = 130,
         population = L**2,
-        world_width = 400,
+        world_width = 600,
         kk = Math.ceil(world_width/L), // agent size
         controlbox_width = 500,
         controlbox_height = 380,
@@ -36,7 +36,7 @@
           y = Math.floor(i/L),
           ptype = Math.floor(Math.random() * agentColors.length)
 
-      if (i < 3 ) {
+      if (i < 6) {
         freeBoard[id] = {x: x, y: y, c: vacantColor}
       }
       else {
