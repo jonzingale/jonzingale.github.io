@@ -2,7 +2,7 @@
       .append('svg').attr('width', 70).attr('height', 50)
       .append('a').attr('href', function(d) { return '/' })
 
-    backButton      
+    backButton
       .append('circle').style('fill','#fff')
       .attr("cx", 21).attr("cy", 21).attr("r", 20)
       .style('stroke','black').attr("stroke-width", 2)
