@@ -21,8 +21,10 @@
     var lineGenerator = d3.line().curve(d3.curveCardinal);
     var accent = d3.scaleOrdinal(d3.schemeCategory10)
 
-    // var accent = d3.scaleOrdinal(['#a6611a', '#dfc27d', '#80cdc1', '#018571']) // OK with brown
-    var accent = d3.scaleOrdinal(['#d7b5d8', '#dfc27d', '#80cdc1', '#1f77b4']) // OK Tim's Blue
+    // gatehouse, moderate, challenging, handicap
+    // var accent = d3.scaleOrdinal(['#a6611a', '#dfc27d', '#80cdc1', '#018571']) // G.H brown
+    // var accent = d3.scaleOrdinal(['#d7b5d8', '#dfc27d', '#80cdc1', '#1f77b4']) // Tim's Blue
+    var accent = d3.scaleOrdinal(['#a6cee3', '#dfc27d', '#b2df8a', '#1f77b4']) // Best of Both?
 
     var container = d3.selectAll('.map-img').selectAll('.trace')
       .append('svg').attr('height', 660).attr('width', 740) // cropped
