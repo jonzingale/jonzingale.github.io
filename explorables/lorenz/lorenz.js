@@ -1,9 +1,7 @@
 (function(){
 
-  // var widget = new widgetModule(); // instantiate widget
-
-  var world_width = 600,
-      world_height = 600,
+  var world_width = 500,
+      world_height = 500,
       controlbox_width = 400,
       controlbox_height = 400,
       n_grid_x = 24,
@@ -23,7 +21,7 @@
   // fixed parameters
   var dt = 0.005, // euler step size
       N = 7000, // # of points
-      L = 60, // world size
+      L = 65, // world size
       ptSize = 2
 
   var def_sig_param = 10, // viscous diffusion / thermal diffusion

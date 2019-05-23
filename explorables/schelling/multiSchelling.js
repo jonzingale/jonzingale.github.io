@@ -2,7 +2,7 @@
 (function(){
   const L = 130,
         population = L**2,
-        world_width = 600,
+        world_width = 500,
         kk = Math.ceil(world_width/L), // agent size
         controlbox_width = 500,
         controlbox_height = 380,

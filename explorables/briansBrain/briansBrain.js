@@ -1,13 +1,13 @@
 (function(){
 
-  var world_width = 600,
-      world_height = 600,
+  var world_width = 500,
+      world_height = 500,
       controlbox_width = 400,
       controlbox_height = 400,
       n_grid_x = 24,
       n_grid_y = 24,
       L = 180,
-      k = world_width/L
+      k = Math.ceil(world_width/L) // agent size
 
   // moore neighborhood
   var moore = [[-1,-1],[-1, 0],[-1, 1],
@@ -23,9 +23,6 @@
       state: Math.floor(Math.random() + 0.02) // sparse randomness
     }
   })
-
-  var X = d3.scaleLinear().domain([0,L]).range([0,world_width]);
-  var Y = d3.scaleLinear().domain([0,L]).range([world_height,-3]);
 
   var world = d3.selectAll("#automata_display").append('canvas')
                 .attr('width', world_width)
@@ -129,8 +126,7 @@
       if (d.state == 0) { context.fillStyle = "black"}
       else if (d.state == 1) { context.fillStyle = "orange" }
       else { context.fillStyle = "red" }
-
-      context.fillRect(X(d.x), Y(d.y), 3.8, 3.8);
+      context.fillRect(d.x * k, d.y * k, k, k);
     })
   }
 
