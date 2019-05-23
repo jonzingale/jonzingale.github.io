@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <html lang="en-us">
   <head>
-    <link href="/cv.css" rel="stylesheet" type="text/css" /> 
+    <link href="/cv/cv.css" rel="stylesheet" type="text/css" />
     <script src="/js/d3.v4.min.js" type="text/javascript"></script>
     <script src="/js/d3-scale-chromatic.v1.min.js"></script>
   </head>
@@ -13,33 +13,55 @@
 
   <script>
     var body = d3.selectAll('.body')
-
     var header = body.append('g')
+    var skills = body.append('g')
 
-    var headerRect = header
-      .append('rect').attr('class','header-rect')
-      .attr('x', 2).attr('y',2)
+    var skillsRect = skills
+      .append('rect').attr('class','skills-rect')
+      .attr('x', 2).attr('y','10em')
       .attr("width", '28em')
-      .attr("height", '9em')
+      .attr("height", '30em')
       .attr('fill', 'none')
-      .attr('stroke', '#444')
+      .attr('stroke', '#888')
       .attr('stroke-width', '2px')
 
-    var headerData = [
-      { text: 'Jonathan S. Zingale | Software Developer', size: '25px', x: 18, y: 45},
-      { text: 'Santa Fe, New Mexico', size: '18px', size: '18px', x: 18, y: 80},
-      { text: 'jonzingale@gmail.com', size: '18px', size: '18px', x: 18, y: 105},
+    const skillsHeaderData = [
+      { text: 'Skills', size: '18px', x: 18, y: '12em'},
+      { text: 'Technical:', size: '18px', x: 18, y: '14em'},
+      { text: 'Soft:', size: '18px', x: 18, y: '17em'},
     ]
 
-    header.selectAll('.header-text')
-      .data(headerData).enter()
+    var skillsHeader = skills.selectAll('.skills-header')
+      .data(skillsHeaderData).enter()
       .append('text')
       .attr('x', function(d) { return d.x})
       .attr('y', function(d) { return d.y})
       .attr("font-size", function(d) { return d.size })
-      .attr("fill", "black")
+      .attr('font-family', 'arial')
       .text(function(d) { return d.text})
 
+    const skillsData = [
+      { header: 'Technical:', size: '18px', x: 18, y: '14em',
+        text: 'Haskell, Python ML (Scikit/TensorFlow), Django, React, Ruby on Rails, Linux, Git, SQL, Jupyter Notebook, LaTeX, REST, PureData/Max MSP, Processing, Rspec, QuickCheck and Unit testing. Familiarity with server maintenance, parallel processing, continuous delivery, and the Amazon AWS cloud platform. Talent for writing and editing accurate, robust and efficient code.'
+      },
+      { header: 'Soft:', size: '18px', x: 18, y: '17em',
+        text: 'Focused, organized, and highly productive work habits. Strong resource management and project coordination aptitude. Deadline driven. Clear, patient, and concise communication habits. Strong interests in machine learning, formal verification, cryptography, and mathematical modeling. Autodidact with a strong will for personal, professional, and intellectual development. Proven adaptability and breadth.'
+      },
+    ]
+
+    var skillsHeader = skills.selectAll('.skills')
+      .data(skillsData).enter()
+      .append('text')
+      .attr('x', function(d) { return d.x})
+      .attr('y', function(d) { return d.y})
+      .attr("font-size", function(d) { return d.size })
+      .attr('font-family', 'arial')
+      .text(function(d) { return d.text})
 
   </script>
+
+  <script src='/cv/header.js' type='text/javascript'></script>
+  <script src='/cv/skills.js' type='text/javascript'></script>
+  <link href="/cv/cv.css" rel="stylesheet" type="text/css" />
+
 </html>

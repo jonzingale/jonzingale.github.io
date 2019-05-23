@@ -1,5 +1,8 @@
 .header-text {
   /*font-family: 'Nunito Sans';*/
-  font-family: 'Merriweather';
+  /*font-family: 'Merriweather';*/
+  font-family: arial;
   fill: '#333';
+  stroke: 'grey';
+  width: 200px;
 }
