@@ -4,8 +4,8 @@ var headerRect = header
   .attr("width", '28em')
   .attr("height", '10em')
   .attr('fill', 'none')
-  .attr('stroke', '#888')
-  .attr('stroke-width', '2px')
+  // .attr('stroke', '#888')
+  // .attr('stroke-width', '2px')
 
 var headerData = [
   { text: 'Jonathan S. Zingale | Software Developer', size: '22px', x: 18, y: 45},
