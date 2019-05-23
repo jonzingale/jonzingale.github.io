@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en-us">
+  <head>
+    <link href="/cv.css" rel="stylesheet" type="text/css" /> 
+    <script src="/js/d3.v4.min.js" type="text/javascript"></script>
+    <script src="/js/d3-scale-chromatic.v1.min.js"></script>
+  </head>
+
+  <main role="main">
+    <svg class='body' width=900 height=700>
+  </main>
+
+  <script>
+    var body = d3.selectAll('.body')
+
+    var header = body.append('g')
+
+    var headerRect = header
+      .append('rect').attr('class','header-rect')
+      .attr('x', 2).attr('y',2)
+      .attr("width", '28em')
+      .attr("height", '9em')
+      .attr('fill', 'none')
+      .attr('stroke', '#444')
+      .attr('stroke-width', '2px')
+
+    var headerData = [
+      { text: 'Jonathan S. Zingale | Software Developer', size: '25px', x: 18, y: 45},
+      { text: 'Santa Fe, New Mexico', size: '18px', size: '18px', x: 18, y: 80},
+      { text: 'jonzingale@gmail.com', size: '18px', size: '18px', x: 18, y: 105},
+    ]
+
+    header.selectAll('.header-text')
+      .data(headerData).enter()
+      .append('text')
+      .attr('x', function(d) { return d.x})
+      .attr('y', function(d) { return d.y})
+      .attr("font-size", function(d) { return d.size })
+      .attr("fill", "black")
+      .text(function(d) { return d.text})
+
+
+  </script>
+</html>
