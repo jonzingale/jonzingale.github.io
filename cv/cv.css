@@ -1,8 +1,26 @@
-.header-text {
-  /*font-family: 'Nunito Sans';*/
+html {
+  font-family: 'Nunito Sans';
   /*font-family: 'Merriweather';*/
-  font-family: arial;
+  /*font-family: arial;*/
   fill: '#333';
-  stroke: 'grey';
+  stroke: '#000';
   width: 200px;
+  padding-left: 5%;
+  padding-top: 3%;
+}
+
+.header-rect {
+  width: 38.3em;
+  height: 10em;
+  fill: none;
+  /*stroke: #888;*/
+  /*stroke-width: 2px;*/
+}
+
+.header-text {
+
+}
+
+.experience {
+
 }
