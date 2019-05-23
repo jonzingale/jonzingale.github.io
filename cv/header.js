@@ -18,7 +18,6 @@ var headerData = [
 header.selectAll('.header-text')
   .data(headerData).enter()
   .append('text')
-  // .attr('width', 100)
   .attr('x', function(d) { return d.x})
   .attr('y', function(d) { return d.y})
   .attr("font-size", function(d) { return d.size })
