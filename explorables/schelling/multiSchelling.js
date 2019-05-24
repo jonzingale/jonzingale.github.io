@@ -15,9 +15,21 @@
       freeBoard
 
   var vacantColor = '#330C00' // darkbrown
-  const twoSpecies = ['#80cdc1', 'rgb(255, 214, 162)']
-  const lightColors = ['#F56605', '#E53E02', '#365218', '#678459', '#F89115']
+  // const twoSpecies = ['#80cdc1', 'rgb(255, 214, 162)']
+  // const lightColors = ['#F56605', '#E53E02', '#365218', '#678459', '#F89115']
   // const darkColors = ['#4E6744','#30402C','#8DA583','#6348D5','#8C80EE',]
+  const twoSpecies = // california poppy
+  ['#F9362B',
+   '#4F4027',
+   '#736A34',
+   '#F05D3E',
+   '#939D4C',
+   // '#BFCB80',
+   // '#998A72',
+   // '#723F20',
+   // '#DACDB5',
+   // '#EA9162'
+  ]
   var agentColors = twoSpecies
 
   // moore neighborhood
