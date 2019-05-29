@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Chap Light";
+  src: url(/fonts/chap-light.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  background: #fff;
+  font-family: 'Nunito Sans';
+  padding-left: 6%;
+}
+
+.title {
+  font-family: 'Chap Light';
+  color: #413928;
+  font-size: 30px;
+  padding-top: 1%;
+}
+
+.color-text {
+  font-family: 'Nunito Sans'
+  color: #413928;
+  font-size: 20px;
+}
+
+.footer {
+  margin-bottom: 1%;
+}
