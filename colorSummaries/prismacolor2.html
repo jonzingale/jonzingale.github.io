@@ -24,32 +24,43 @@
     const height = radius*2
     const modulus = 9
 
+    function rasterX(i) {
+      return mod(i, modulus)*height + height
+    } 
+
+    function rasterY(i, bool=false) {
+      var offset = bool ? 5*(-1)**(i) : 0
+      return div(i, modulus)*height + height + offset
+    } 
+
     d3.json("data_prismacolor.json", function(error, data){
       var container = d3.selectAll('.swatches')
         .append('svg').attr('height', 3000).attr('width', 1200)
 
-      var colorContainer = container.append('g')
-        .attr('class','colors')
+      var colorContainer = container.append('g').selectAll('.color')
 
-      var prismas = colorContainer.selectAll('.color')
+      var prismas = colorContainer
         .data(data).enter().append('circle')
-        .attr('cx', function(d,i) {return mod(i, modulus)*height + height})
-        .attr('cy', function(d,i) {return div(i, modulus)*height + height})
+        .attr('cx', function(d,i) {return rasterX(i) })
+        .attr('cy', function(d,i) {return rasterY(i) })
         .attr('fill', function(d) {return `rgb( ${d.rgb} )`})
         .attr("r", radius)
 
-      var colorNames = colorContainer.selectAll('.color')
+      var colorNames1 = colorContainer
         .data(data).enter().append('text')
         .attr('class','color-circle-text')
-        .attr('x', function(d,i) {
-          return mod(i, modulus)*height + radius + 10
+        .attr('x', function(d,i) { return rasterX(i) - 45 })
+        .attr('y', function(d,i) { return rasterY(i, true) - 10 })
+        .text(function(d) { return d.name.split(' ')[0] })
+
+      var colorNames2 = colorContainer
+        .data(data).enter().append('text')
+        .attr('class','color-circle-text')
+        .attr('x', function(d,i) { return rasterX(i) - 30 })
+        .attr('y', function(d,i) { return rasterY(i, true) + 15 })
+        .text(function(d) {
+          return d.name.split(' ').slice(1).join(' ')
         })
-        .attr('y', function(d,i) {
-          var centeredText = div(i, modulus)*height + height
-          var offset = 10*(-1)**(i)
-          return centeredText + offset
-        })
-        .text(function(d) { return d.name})
     });
   </script>
 </html>
