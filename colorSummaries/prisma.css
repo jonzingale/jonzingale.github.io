@@ -24,6 +24,12 @@ html {
   font-size: 20px;
 }
 
+.color-circle-text {
+  font-family: 'Nunito Sans'
+  color: #413928;
+  font-size: 20px;
+}
+
 .footer {
   margin-bottom: 1%;
 }

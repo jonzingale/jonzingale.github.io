@@ -2,9 +2,8 @@
 <meta charset="utf-8">
 <html lang="en-us">
   <head>
-
-    <link href="prisma.css" rel="stylesheet" type="text/css" /> 
     <link href='/fonts/nunitoSans.css' rel="stylesheet">
+    <link href="prisma.css" rel="stylesheet" type="text/css" /> 
     <script src="/js/d3.v4.min.js" type="text/javascript"></script>
     <script src="/js/d3-scale-chromatic.v1.min.js"></script>
     <script src="/js/helpers.js"></script>
@@ -21,28 +20,35 @@
     var accent = d3.scaleOrdinal(d3.schemeCategory10)
 
     var accent = d3.scaleOrdinal(['#a6cee3', '#dfc27d', '#b2df8a', '#1f77b4'])
-    const height = 20
+    const radius = 60
+    const height = radius*2
+    const modulus = 9
 
     d3.json("data_prismacolor.json", function(error, data){
       var container = d3.selectAll('.swatches')
-        .append('svg').attr('height', 4200).attr('width', 900)
+        .append('svg').attr('height', 3000).attr('width', 1200)
 
       var colorContainer = container.append('g')
         .attr('class','colors')
 
       var prismas = colorContainer.selectAll('.color')
-        .data(data).enter().append('rect')
-        .attr('y', function(d,i) {return i * height})
-        .attr('x', 20)
-        .attr("width", 800)
-        .attr("height", height)
-        .attr('fill', function(d) { return `rgb( ${d.rgb} )`})
+        .data(data).enter().append('circle')
+        .attr('cx', function(d,i) {return mod(i, modulus)*height + height})
+        .attr('cy', function(d,i) {return div(i, modulus)*height + height})
+        .attr('fill', function(d) {return `rgb( ${d.rgb} )`})
+        .attr("r", radius)
 
       var colorNames = colorContainer.selectAll('.color')
         .data(data).enter().append('text')
-        .attr('class','color-text')
-        .attr('x', 20)
-        .attr('y', function(d,i) {return i * height + 18})
+        .attr('class','color-circle-text')
+        .attr('x', function(d,i) {
+          return mod(i, modulus)*height + radius + 10
+        })
+        .attr('y', function(d,i) {
+          var centeredText = div(i, modulus)*height + height
+          var offset = 10*(-1)**(i)
+          return centeredText + offset
+        })
         .text(function(d) { return d.name})
     });
   </script>
