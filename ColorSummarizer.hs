@@ -4,6 +4,10 @@ import Data.KMeans
 
 file = "~/Downloads/20190407_180710.jpg"
 
+-- https://en.wikipedia.org/wiki/Mean_of_circular_quantities
+-- http://hackage.haskell.org/package/JuicyPixels-3.3.3/docs/Codec-Picture.html
+-- http://hackage.haskell.org/package/kmeans-0.1.3/docs/Data-KMeans.html
+
 -- pixelAt :: Image a -> Int -> Int -> a
 
 -- readImage :: FilePath -> IO (Either String DynamicImage)
