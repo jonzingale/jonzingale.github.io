@@ -56,7 +56,7 @@
       var colorNames2 = colorContainer
         .data(data).enter().append('text')
         .attr('class','color-circle-text')
-        .attr('x', function(d,i) { return rasterX(i) - 30 })
+        .attr('x', function(d,i) { return rasterX(i) - 40 })
         .attr('y', function(d,i) { return rasterY(i, true) + 15 })
         .text(function(d) {
           return d.name.split(' ').slice(1).join(' ')
