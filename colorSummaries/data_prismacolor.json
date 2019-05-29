@@ -1,0 +1,4483 @@
+[
+  {
+    "id": 23,
+    "name": "Cream",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "252,255,212",
+    "rgbp": "248,235,182",
+    "cmyk": "1,0,17,0",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 131,
+    "name": "Deco Yellow",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "245,245,140",
+    "rgbp": "242,216,121",
+    "cmyk": "4,4,45,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 19,
+    "name": "Canary Yellow",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "247,247,3",
+    "rgbp": "241,209,64",
+    "cmyk": "3,3,99,0",
+    "groups": {
+      "200": true,
+      "PrimarySecondary":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 21,
+    "name": "Tulip Yellow",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "252,240,89",
+    "rgbp": "229,189,94",
+    "cmyk": "1,6,65,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 17,
+    "name": "Sunburst Yellow",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "250,240,51",
+    "rgbp": "251,162,68",
+    "cmyk": "2,6,80,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 132,
+    "name": "Jasmine",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "255,212,115",
+    "rgbp": "230,177,70",
+    "cmyk": "0,17,55,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 18,
+    "name": "Yellow Ochre",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "252,212,3",
+    "rgbp": "199,148,62",
+    "cmyk": "1,17,99,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 123,
+    "name": "Spanish Orange",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "252,212,3",
+    "rgbp": "248,134,41",
+    "cmyk": "1,17,99,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 15,
+    "name": "Yellow Orange",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "252,168,3",
+    "rgbp": "246,94,41",
+    "cmyk": "1,34,99,0",
+    "groups": {
+      "200": true,
+      "PrimarySecondary":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 14,
+    "name": "Pale Vermilion",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "255,107,18",
+    "rgbp": "222,44,25",
+    "cmyk": "0,58,93,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 16,
+    "name": "Orange",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "255,140,3",
+    "rgbp": "228,60,23",
+    "cmyk": "0,45,99,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 13,
+    "name": "Poppy Red",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "255,84,61",
+    "rgbp": "211,33,21",
+    "cmyk": "0,67,76,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 130,
+    "name": "Deco Orange",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "255,186,140",
+    "rgbp": "253,129,93",
+    "cmyk": "0,27,45,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 69,
+    "name": "Goldenrod",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "237,166,112",
+    "rgbp": "166,106,52",
+    "cmyk": "7,35,56,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 93,
+    "name": "Burnt Ochre",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "245,166,64",
+    "rgbp": "169,72,37",
+    "cmyk": "4,35,75,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 154,
+    "name": "Mineral Orange",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "255,168,48",
+    "rgbp": "195,88,44",
+    "cmyk": "0,34,81,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 153,
+    "name": "Pumpkin Orange",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "222,83,43",
+    "rgbp": "153,39,28",
+    "cmyk": "12,67,83,1",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 11,
+    "name": "Deco Peach",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "255,222,222",
+    "rgbp": "254,166,162",
+    "cmyk": "0,13,13,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 12,
+    "name": "Light Peach",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "255,222,212",
+    "rgbp": "245,162,132",
+    "cmyk": "0,13,17,0",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 122,
+    "name": "Salmon Pink",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "255,196,184",
+    "rgbp": "255,129,122",
+    "cmyk": "0,23,28,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 170,
+    "name": "Peach",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "255,140,140",
+    "rgbp": "247,85,79",
+    "cmyk": "0,45,45,0",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 78,
+    "name": "Brick Beige",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "252,222,196",
+    "rgbp": "219,173,154",
+    "cmyk": "1,13,23,0",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 70,
+    "name": "Sand",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "237,196,140",
+    "rgbp": "174,114,86",
+    "cmyk": "7,23,45,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 90,
+    "name": "Walnut",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "219,148,133",
+    "rgbp": "83,37,22",
+    "cmyk": "14,42,48,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 65,
+    "name": "Sienna Brown",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "212,106,114",
+    "rgbp": "111,43,24",
+    "cmyk": "16,58,55,1",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 150,
+    "name": "Mahogany Red",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "105,22,91",
+    "rgbp": "59,9,18",
+    "cmyk": "42,88,50,29",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 61,
+    "name": "Dark Umber",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "57,23,22",
+    "rgbp": "42,21,21",
+    "cmyk": "43,77,78,61",
+    "groups": {
+      "200": true,
+      "PrimarySecondary":true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 82,
+    "name": "Terra Cotta",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "237,107,112",
+    "rgbp": "150,42,26",
+    "cmyk": "7,58,56,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 86,
+    "name": "Cherry",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "222,63,114",
+    "rgbp": "137,34,25",
+    "cmyk": "12,75,55,1",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 6,
+    "name": "Carmine Red",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "255,87,140",
+    "rgbp": "209,32,31",
+    "cmyk": "0,66,45,0",
+    "groups": {
+      "200": true,
+      "PrimarySecondary":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 5,
+    "name": "Scarlet Lake",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "255,38,112",
+    "rgbp": "165,16,22",
+    "cmyk": "0,85,56,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 4,
+    "name": "Crimson Red",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "225,2,7",
+    "rgbp": "122,9,5",
+    "cmyk": "10,99,97,2",
+    "groups": {
+      "200": true,
+      "PrimarySecondary":true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 152,
+    "name": "Henna",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "185,24,97",
+    "rgbp": "107,17,27",
+    "cmyk": "22,90,59,7",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 151,
+    "name": "Raspberry",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "174,7,101",
+    "rgbp": "85,10,17",
+    "cmyk": "24,97,56,10",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 10,
+    "name": "Blush Pink",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "255,168,212",
+    "rgbp": "240,94,100",
+    "cmyk": "0,34,17,0",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 73,
+    "name": "Flagstone Red",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "169,111,184",
+    "rgbp": "123,74,77",
+    "cmyk": "33,56,27,1",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 169,
+    "name": "Tuscan Red",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "148,45,123",
+    "rgbp": "96,21,23",
+    "cmyk": "34,80,45,12",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 1,
+    "name": "Process Red",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "252,140,255",
+    "rgbp": "144,26,58",
+    "cmyk": "1,45,0,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 8,
+    "name": "Pink",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "255,112,255",
+    "rgbp": "223,51,88",
+    "cmyk": "0,56,0,0",
+    "groups": {
+      "200": true,
+      "PrimarySecondary":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 7,
+    "name": "Magenta",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "255,61,245",
+    "rgbp": "174,33,50",
+    "cmyk": "0,76,4,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 55,
+    "name": "Rhodamine",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "245,3,252",
+    "rgbp": "174,28,111",
+    "cmyk": "4,99,1,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 53,
+    "name": "Mulberry",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "196,13,255",
+    "rgbp": "107,20,60",
+    "cmyk": "23,95,0,0",
+    "groups": {
+      "200": true,
+      "PrimarySecondary":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 133,
+    "name": "Deco Pink",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "255,222,255",
+    "rgbp": "222,162,176",
+    "cmyk": "0,13,0,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 208,
+    "name": "Ballet Pink",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "245,189,222",
+    "rgbp": "251,176,171",
+    "cmyk": "4,26,13,0",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 147,
+    "name": "Greyed Lavender",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "196,184,255",
+    "rgbp": "154,122,169",
+    "cmyk": "23,28,0,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 171,
+    "name": "Lilac",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "166,166,255",
+    "rgbp": "115,90,62",
+    "cmyk": "35,35,0,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 137,
+    "name": "Clay Rose",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "209,138,255",
+    "rgbp": "155,95,94",
+    "cmyk": "18,46,0,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 168,
+    "name": "Dark Purple",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "40,0,223",
+    "rgbp": "38,12,37",
+    "cmyk": "84,100,10,3",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 60,
+    "name": "Violet Mist",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "184,212,255",
+    "rgbp": "126,120,192",
+    "cmyk": "28,17,0,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 128,
+    "name": "Parma Violet",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "112,140,255",
+    "rgbp": "64,39,123",
+    "cmyk": "56,45,0,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 50,
+    "name": "Violet",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "38,15,252",
+    "rgbp": "52,14,75",
+    "cmyk": "85,94,1,0",
+    "groups": {
+      "200": true,
+      "PrimarySecondary":true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 134,
+    "name": "Deco Blue",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "184,255,245",
+    "rgbp": "112,192,225",
+    "cmyk": "28,0,4,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 48,
+    "name": "Light Cerulean Blue",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "199,242,255",
+    "rgbp": "123,167,213",
+    "cmyk": "22,5,0,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 202,
+    "name": "Sky Blue Light",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "130,209,255",
+    "rgbp": "174,211,237",
+    "cmyk": "49,18,0,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 39,
+    "name": "True Blue",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "105,212,255",
+    "rgbp": "34,111,190",
+    "cmyk": "59,17,0,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 40,
+    "name": "Copenhagen Blue",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "77,181,255",
+    "rgbp": "12,70,154",
+    "cmyk": "70,29,0,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 127,
+    "name": "Imperial Violet",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "87,122,247",
+    "rgbp": "35,40,131",
+    "cmyk": "66,52,3,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 44,
+    "name": "Ultramarine",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "51,112,250",
+    "rgbp": "15,33,135",
+    "cmyk": "80,56,2,0",
+    "groups": {
+      "200": true,
+      "PrimarySecondary":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 42,
+    "name": "Violet Blue",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "38,81,237",
+    "rgbp": "6,20,81",
+    "cmyk": "85,68,6,1",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 43,
+    "name": "Indigo Blue",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "31,62,187",
+    "rgbp": "10,21,53",
+    "cmyk": "87,74,22,6",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 45,
+    "name": "Navy Blue",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "6,29,143",
+    "rgbp": "10,11,29",
+    "cmyk": "97,86,31,19",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 144,
+    "name": "Cloud Blue",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "214,235,252",
+    "rgbp": "157,175,225",
+    "cmyk": "16,8,1,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 194,
+    "name": "Cold Stone",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "204,227,250",
+    "rgbp": "183,196,210",
+    "cmyk": "20,11,2,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 145,
+    "name": "Blue Slate",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "143,184,252",
+    "rgbp": "98,116,192",
+    "cmyk": "44,28,1,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 146,
+    "name": "Periwinkle",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "107,161,237",
+    "rgbp": "52,75,127",
+    "cmyk": "58,37,7,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 143,
+    "name": "Mediterranean Blue",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "128,191,250",
+    "rgbp": "39,80,135",
+    "cmyk": "50,25,2,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 126,
+    "name": "Cerulean Blue",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "128,186,255",
+    "rgbp": "43,79,153",
+    "cmyk": "50,27,0,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 125,
+    "name": "Peacock Blue",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "44,118,186",
+    "rgbp": "16,43,73",
+    "cmyk": "82,52,24,4",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 191,
+    "name": "Pale Jade",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "189,222,196",
+    "rgbp": "209,217,219",
+    "cmyk": "26,13,23,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 140,
+    "name": "Celadon Green",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "178,222,194",
+    "rgbp": "123,147,135",
+    "cmyk": "30,13,24,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 185,
+    "name": "Spruce Green",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "48,148,113",
+    "rgbp": "15,51,44",
+    "cmyk": "79,35,50,11",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 142,
+    "name": "Brittany Blue",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "133,186,196",
+    "rgbp": "66,83,103",
+    "cmyk": "48,27,23,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 38,
+    "name": "Teal Blue",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "82,162,167",
+    "rgbp": "26,52,53",
+    "cmyk": "67,35,33,2",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 198,
+    "name": "Muted Turquoise",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "176,230,242",
+    "rgbp": "110,149,172",
+    "cmyk": "31,10,5,0",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 47,
+    "name": "Light Blue",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "153,232,235",
+    "rgbp": "74,162,204",
+    "cmyk": "40,9,8,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 46,
+    "name": "Light Aqua",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "150,232,222",
+    "rgbp": "61,148,167",
+    "cmyk": "41,9,13,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 37,
+    "name": "Aquamarine",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "66,199,181",
+    "rgbp": "14,72,88",
+    "cmyk": "74,22,29,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 166,
+    "name": "True Green",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "189,250,176",
+    "rgbp": "88,171,131",
+    "cmyk": "26,2,31,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 165,
+    "name": "Grass Green",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "83,225,96",
+    "rgbp": "41,110,79",
+    "cmyk": "67,11,62,1",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 193,
+    "name": "Mint Cream",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "181,245,135",
+    "rgbp": "205,219,206",
+    "cmyk": "29,4,47,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 167,
+    "name": "Apple Green",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "161,245,122",
+    "rgbp": "88,157,64",
+    "cmyk": "37,4,52,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 187,
+    "name": "Leaf Green",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "101,215,35",
+    "rgbp": "56,94,38",
+    "cmyk": "60,15,86,1",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 36,
+    "name": "Lime Green",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "186,240,176",
+    "rgbp": "118,132,115",
+    "cmyk": "27,6,31,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 184,
+    "name": "Forest Green",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "133,212,143",
+    "rgbp": "24,37,30",
+    "cmyk": "48,17,44,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 186,
+    "name": "Emerald",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "47,205,45",
+    "rgbp": "21,80,52",
+    "cmyk": "81,17,82,3",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 31,
+    "name": "Dark Green",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "64,180,55",
+    "rgbp": "36,54,42",
+    "cmyk": "73,24,77,7",
+    "groups": {
+      "200": true,
+      "PrimarySecondary":true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 195,
+    "name": "Spearmint",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "37,160,2",
+    "rgbp": "127,152,135",
+    "cmyk": "83,27,99,14",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 27,
+    "name": "Chartreuse",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "214,255,120",
+    "rgbp": "149,199,88",
+    "cmyk": "16,0,53,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 124,
+    "name": "Lime peel",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "212,250,94",
+    "rgbp": "172,171,78",
+    "cmyk": "17,2,63,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 192,
+    "name": "Avocado",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "181,255,5",
+    "rgbp": "183,196,124",
+    "cmyk": "29,0,98,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 25,
+    "name": "Spring Green",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "150,247,54",
+    "rgbp": "117,179,80",
+    "cmyk": "41,3,79,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 197,
+    "name": "Green Tea",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "112,200,0",
+    "rgbp": "150,170,119",
+    "cmyk": "55,20,100,2",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 26,
+    "name": "Light Olive Green",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "154,197,93",
+    "rgbp": "45,56,22",
+    "cmyk": "39,22,63,1",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 28,
+    "name": "Dark Olive Green",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "76,159,22",
+    "rgbp": "42,57,30",
+    "cmyk": "66,29,90,12",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 141,
+    "name": "Jade Green",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "166,224,204",
+    "rgbp": "104,138,140",
+    "cmyk": "35,12,20,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 212,
+    "name": "Pewter",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "209,224,227",
+    "rgbp": "108,120,120",
+    "cmyk": "18,12,11,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 32,
+    "name": "Parrot Green",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "63,215,129",
+    "rgbp": "22,77,72",
+    "cmyk": "75,15,49,1",
+    "groups": {
+      "200": true,
+      "PrimarySecondary":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 206,
+    "name": "Ash Grey",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "214,222,209",
+    "rgbp": "175,176,158",
+    "cmyk": "16,13,18,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 203,
+    "name": "Driftwood",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "219,222,214",
+    "rgbp": "166,153,134",
+    "cmyk": "14,13,16,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 196,
+    "name": "Wheat",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "242,245,204",
+    "rgbp": "210,196,160",
+    "cmyk": "5,4,20,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 207,
+    "name": "Pale Peach",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "245,240,196",
+    "rgbp": "244,216,177",
+    "cmyk": "4,6,23,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 72,
+    "name": "Eggshell",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "250,245,214",
+    "rgbp": "242,194,157",
+    "cmyk": "2,4,16,0",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 96,
+    "name": "Blondwood",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "250,245,194",
+    "rgbp": "213,165,138",
+    "cmyk": "2,4,24,0",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 71,
+    "name": "Buff",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "235,240,235",
+    "rgbp": "212,170,152",
+    "cmyk": "8,6,8,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 201,
+    "name": "Cinnamon Toast",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "224,207,158",
+    "rgbp": "183,146,117",
+    "cmyk": "12,19,38,0",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 214,
+    "name": "Cocoa Bean",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "55,67,12",
+    "rgbp": "25,11,10",
+    "cmyk": "60,51,91,46",
+    "groups": {
+      "200": true,
+      "Portrait": ""
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 199,
+    "name": "Mocha Light",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "149,142,81",
+    "rgbp": "143,112,91",
+    "cmyk": "37,40,66,7",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 204,
+    "name": "Taupe",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "147,165,140",
+    "rgbp": "127,114,97",
+    "cmyk": "41,34,44,2",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 200,
+    "name": "Mocha Dark",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "62,62,10",
+    "rgbp": "75,57,37",
+    "cmyk": "55,55,93,46",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 79,
+    "name": "Brick White",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "245,242,227",
+    "rgbp": "209,197,186",
+    "cmyk": "4,5,11,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 210,
+    "name": "Oatmeal",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "212,219,140",
+    "rgbp": "182,153,110",
+    "cmyk": "17,14,45,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 205,
+    "name": "Parchment",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "209,219,191",
+    "rgbp": "167,149,113",
+    "cmyk": "18,14,25,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 80,
+    "name": "Putty",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "230,222,214",
+    "rgbp": "166,141,129",
+    "cmyk": "10,13,16,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 89,
+    "name": "Light Walnut",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "217,204,181",
+    "rgbp": "168,130,109",
+    "cmyk": "15,20,29,0",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 213,
+    "name": "Eggplant",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "40,13,26",
+    "rgbp": "50,29,28",
+    "cmyk": "48,83,66,70",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 95,
+    "name": "Light Tan",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "187,172,126",
+    "rgbp": "127,65,44",
+    "cmyk": "26,32,50,1",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 211,
+    "name": "Jet Black",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "19,24,23",
+    "rgbp": "2,0,1",
+    "cmyk": "73,65,66,73",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 62,
+    "name": "Sepia",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "117,113,48",
+    "rgbp": "44,35,20",
+    "cmyk": "44,46,77,18",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 172,
+    "name": "Light Umber",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "105,116,58",
+    "rgbp": "",
+    "cmyk": "49,44,72,19",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 88,
+    "name": "Dark Brown",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "111,117,59",
+    "rgbp": "68,44,28",
+    "cmyk": "47,44,72,18",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 209,
+    "name": "Khaki",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "191,194,135",
+    "rgbp": "113,91,54",
+    "cmyk": "25,24,47,0",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 99,
+    "name": "Warm Grey 10%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "252,252,252",
+    "rgbp": "228,223,223",
+    "cmyk": "1,1,1,0",
+    "groups": {
+      "200": true,
+      "WarmGrey":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 100,
+    "name": "Warm Grey 20%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "237,240,240",
+    "rgbp": "210,203,211",
+    "cmyk": "7,6,6,0",
+    "groups": {
+      "200": true,
+      "WarmGrey":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 101,
+    "name": "Warm Grey 30%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "232,232,237",
+    "rgbp": "179,166,176",
+    "cmyk": "9,9,7,0",
+    "groups": {
+      "200": true,
+      "WarmGrey":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 102,
+    "name": "Warm Grey 40%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "222,224,227",
+    "rgbp": "157,144,153",
+    "cmyk": "13,12,11,0",
+    "groups": {
+      "200": true,
+      "WarmGrey":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 103,
+    "name": "Warm Grey 50%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "178,186,191",
+    "rgbp": "123,110,119",
+    "cmyk": "30,27,25,0",
+    "groups": {
+      "200": true,
+      "WarmGrey":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 104,
+    "name": "Warm Grey 60%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "166,173,181",
+    "rgbp": "94,83,91",
+    "cmyk": "35,32,29,0",
+    "groups": {
+      "200": true,
+      "WarmGrey":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 105,
+    "name": "Warm Grey 70%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "117,127,134",
+    "rgbp": "75,63,67",
+    "cmyk": "50,46,43,8",
+    "groups": {
+      "200": true,
+      "WarmGrey":true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 106,
+    "name": "Warm Grey 80%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "74,78,87",
+    "rgbp": "39,35,36",
+    "cmyk": "60,58,53,27",
+    "groups": {
+      "200": true,
+      "WarmGrey":true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 107,
+    "name": "Warm Grey 90%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "35,36,43",
+    "rgbp": "26,22,23",
+    "cmyk": "67,66,60,58",
+    "groups": {
+      "200": true,
+      "WarmGrey":true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 97,
+    "name": "Warm Black",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "6,8,8",
+    "rgbp": "10,10,8",
+    "cmyk": "75,68,67,90",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 108,
+    "name": "Cool Grey 10%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "240,244,246",
+    "rgbp": "212,214,227",
+    "cmyk": "1.5,0,0,3",
+    "groups": {
+      "200": true,
+      "CoolGrey":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 109,
+    "name": "Cool Grey 20%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "229,236,239",
+    "rgbp": "182,184,199",
+    "cmyk": "3,0,0,6",
+    "groups": {
+      "200": true,
+      "CoolGrey":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 110,
+    "name": "Cool Grey 30%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "207,220,227",
+    "rgbp": "154,155,173",
+    "cmyk": "7,0,0,12",
+    "groups": {
+      "200": true,
+      "CoolGrey":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 111,
+    "name": "Cool Grey 40%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "187,198,205",
+    "rgbp": "119,121,136",
+    "cmyk": "7,0,0,23",
+    "groups": {
+      "200": true,
+      "CoolGrey":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 112,
+    "name": "Cool Grey 50%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "165,176,183",
+    "rgbp": "106,105,121",
+    "cmyk": "7,0,0,34",
+    "groups": {
+      "200": true,
+      "CoolGrey":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 113,
+    "name": "Cool Grey 60%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "139,160,172",
+    "rgbp": "83,83,95",
+    "cmyk": "17,0,0,39",
+    "groups": {
+      "200": true,
+      "CoolGrey":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 114,
+    "name": "Cool Grey 70%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "104,128,141",
+    "rgbp": "59,59,71",
+    "cmyk": "23,0,0,55",
+    "groups": {
+      "200": true,
+      "CoolGrey":true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 115,
+    "name": "Cool Grey 80%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "81,101,112",
+    "rgbp": "43,44,48",
+    "cmyk": "23,0,0,70",
+    "groups": {
+      "200": true,
+      "CoolGrey":true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 116,
+    "name": "Cool Grey 90%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "54,70,78",
+    "rgbp": "32,33,37",
+    "cmyk": "23,0,0,85",
+    "groups": {
+      "200": true,
+      "CoolGrey":true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 98,
+    "name": "Black",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "6,8,8",
+    "rgbp": "0,0,0",
+    "cmyk": "75,68,67,90",
+    "groups": {
+      "6": true,
+      "24": true,
+      "48": true,
+      "72": true,
+      "156": true,
+      "200": true,
+      "NeutralGrey":true,
+      "WarmGrey":true,
+      "CoolGrey":true,
+      "FrenchGrey":true,
+      "PrimarySecondary":true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 155,
+    "name": "French Grey 10%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "245,242,240",
+    "rgbp": "205,193,195",
+    "cmyk": "4,5,6,0",
+    "groups": {
+      "200": true,
+      "FrenchGrey": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 156,
+    "name": "French Grey 20%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "232,232,230",
+    "rgbp": "173,161,163",
+    "cmyk": "9,9,10,0",
+    "groups": {
+      "200": true,
+      "FrenchGrey": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 157,
+    "name": "French Grey 30%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "204,207,199",
+    "rgbp": "144,130,128",
+    "cmyk": "20,19,22,0",
+    "groups": {
+      "200": true,
+      "FrenchGrey": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 158,
+    "name": "French Grey 40%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "181,186,184",
+    "rgbp": "127,111,110",
+    "cmyk": "29,27,28,0",
+    "groups": {
+      "200": true,
+      "FrenchGrey": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 159,
+    "name": "French Grey 50%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "164,164,164",
+    "rgbp": "104,89,86",
+    "cmyk": "35,35,35,1",
+    "groups": {
+      "200": true,
+      "FrenchGrey": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 160,
+    "name": "French Grey 60%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "147,152,152",
+    "rgbp": "83,69,66",
+    "cmyk": "41,39,39,2",
+    "groups": {
+      "200": true,
+      "FrenchGrey": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 161,
+    "name": "French Grey 70%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "117,124,124",
+    "rgbp": "56,42,41",
+    "cmyk": "49,46,46,10",
+    "groups": {
+      "200": true,
+      "FrenchGrey": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 162,
+    "name": "French Grey 80%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "76,82,84",
+    "rgbp": "40,30,28",
+    "cmyk": "59,56,55,27",
+    "groups": {
+      "200": true,
+      "FrenchGrey": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 163,
+    "name": "French Grey 90%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "39,42,44",
+    "rgbp": "26,20,21",
+    "cmyk": "66,63,62,55",
+    "groups": {
+      "200": true,
+      "FrenchGrey": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 121,
+    "name": "Colorless Blender",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "255,255,255",
+    "rgbp": "",
+    "cmyk": "0,0,0,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 117,
+    "name": "Metallic Silver Broad",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "149,169,167",
+    "rgbp": "",
+    "cmyk": "41,33,34,1",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 118,
+    "name": "Metallic Silver Fine",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "149,169,167",
+    "rgbp": "",
+    "cmyk": "41,33,34,1",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 119,
+    "name": "Metallic Gold Broad",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "162,177,87",
+    "rgbp": "",
+    "cmyk": "35,29,65,2",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 120,
+    "name": "Metallic Gold Fine",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "162,177,87",
+    "rgbp": "",
+    "cmyk": "35,29,65,2",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 149,
+    "name": "Bronze",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "154,169,0",
+    "rgbp": "104,73,44",
+    "cmyk": "37,31,100,4",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 216,
+    "name": "Neutral Grey 10%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "221,220,221",
+    "rgbp": "",
+    "cmyk": "9,5,6,0",
+    "groups": {
+      "200": true,
+      "NeutralGrey":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 217,
+    "name": "Neutral Grey 20%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "196,195,198",
+    "rgbp": "",
+    "cmyk": "17,11,11,0",
+    "groups": {
+      "200": true,
+      "NeutralGrey":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 218,
+    "name": "Neutral Grey 30%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "174,172,176",
+    "rgbp": "",
+    "cmyk": "26,18,17,0",
+    "groups": {
+      "200": true,
+      "NeutralGrey":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 219,
+    "name": "Neutral Grey 40%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "153,151,157",
+    "rgbp": "",
+    "cmyk": "49,38,34,7",
+    "groups": {
+      "200": true,
+      "NeutralGrey":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 220,
+    "name": "Neutral Grey 50%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "134,132,139",
+    "rgbp": "",
+    "cmyk": "64,51,44,24",
+    "groups": {
+      "200": true,
+      "NeutralGrey":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 221,
+    "name": "Neutral Grey 60%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "116,115,122",
+    "rgbp": "",
+    "cmyk": "51,38,35,9",
+    "groups": {
+      "200": true,
+      "NeutralGrey":true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 222,
+    "name": "Neutral Grey 70%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "100,99,107",
+    "rgbp": "",
+    "cmyk": "72,58,50,33",
+    "groups": {
+      "200": true,
+      "NeutralGrey":true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 223,
+    "name": "Neutral Grey 80%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "85,86,93",
+    "rgbp": "",
+    "cmyk": "65,51,46,25",
+    "groups": {
+      "200": true,
+      "NeutralGrey":true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 224,
+    "name": "Neutral Grey 90%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "70,73,81",
+    "rgbp": "",
+    "cmyk": "54,20,1,0",
+    "groups": {
+      "200": true,
+      "NeutralGrey":true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 24,
+    "name": "Almond Milk",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "251,241,234",
+    "rgbp": "",
+    "cmyk": "0,6,8,0",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 3,
+    "name": "Ballet Pink Light",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "245,223,225",
+    "rgbp": "",
+    "cmyk": "0,15,6,0",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 9,
+    "name": "Blush Pink Light",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "238,203,205",
+    "rgbp": "",
+    "cmyk": "0,25,11,0",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 20,
+    "name": "Canary Yellow Light",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "255,246,153",
+    "rgbp": "",
+    "cmyk": "1,0,53,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 260,
+    "name": "Carmine Red Light",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "225,157,148",
+    "rgbp": "",
+    "cmyk": "0,47,32,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 230,
+    "name": "Deco Orange Light",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "240,203,167",
+    "rgbp": "",
+    "cmyk": "0,24,35,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 233,
+    "name": "Deco Pink Light",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "247,230,239",
+    "rgbp": "",
+    "cmyk": "0,12,1,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 136,
+    "name": "Dusty Rose",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "241,216,213",
+    "rgbp": "",
+    "cmyk": "1,18,11,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 148,
+    "name": "Greyed Lavender Light",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "226,218,236",
+    "rgbp": "",
+    "cmyk": "10,14,0,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 271,
+    "name": "Light Umber 20%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "228,213,192",
+    "rgbp": "",
+    "cmyk": "9,16,24,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 272,
+    "name": "Light Umber 30%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "222,203,178",
+    "rgbp": "",
+    "cmyk": "11,20,29,0",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 273,
+    "name": "Light Umber 40%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "209,191,172",
+    "rgbp": "",
+    "cmyk": "16,24,30,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 274,
+    "name": "Light Umber 50%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "203,182,161",
+    "rgbp": "",
+    "cmyk": "18,28,35,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 275,
+    "name": "Light Umber 60%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "196,173,150",
+    "rgbp": "",
+    "cmyk": "21,32,40,0",
+    "groups": {
+      "200": true,
+      "Portrait": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 276,
+    "name": "Light Umber 70%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "189,163,138",
+    "rgbp": "",
+    "cmyk": "24,36,46,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 277,
+    "name": "Light Umber 80%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "182,155,128",
+    "rgbp": "",
+    "cmyk": "28,40,51,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 278,
+    "name": "Light Umber 90%",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "138,116,85",
+    "rgbp": "",
+    "cmyk": "43,51,72,11",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 173,
+    "name": "Lilac Light",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "157,150,197",
+    "rgbp": "",
+    "cmyk": "41,40,1,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 52,
+    "name": "Mulberry Light",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "213,173,205",
+    "rgbp": "",
+    "cmyk": "9,38,0,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 179,
+    "name": "Neon Blue",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "19,154,202",
+    "rgbp": "",
+    "cmyk": "94,6,10,2",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 181,
+    "name": "Neon Green",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "168,200,96",
+    "rgbp": "",
+    "cmyk": "45,0,81,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 175,
+    "name": "Neon Orange",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "239,194,83",
+    "rgbp": "",
+    "cmyk": "0,25,79,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 177,
+    "name": "Neon Pink",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "195,106,161",
+    "rgbp": "",
+    "cmyk": "10,70,1,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 174,
+    "name": "Neon Yellow",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "252,232,36",
+    "rgbp": "",
+    "cmyk": "1,2,96,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 180,
+    "name": "Neon Yellow Green",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "246,237,99",
+    "rgbp": "",
+    "cmyk": "6,0,76,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 33,
+    "name": "Parrot Green Light",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "129,189,181",
+    "rgbp": "",
+    "cmyk": "62,1,33,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 280,
+    "name": "Pink Light",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "224,163,196",
+    "rgbp": "",
+    "cmyk": "1,45,1,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 2,
+    "name": "Process Red Light",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "231,187,212",
+    "rgbp": "",
+    "cmyk": "1,34,0,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 56,
+    "name": "Rhodamine Dark",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "148,36,127",
+    "rgbp": "",
+    "cmyk": "31,98,0,3",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 54,
+    "name": "Rhodamine Light",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "217,155,191",
+    "rgbp": "",
+    "cmyk": "4,49,1,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 81,
+    "name": "Turquoise Dark",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "26,131,197",
+    "rgbp": "",
+    "cmyk": "94,26,1,3",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 244,
+    "name": "Ultramarine Light",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "138,174,220",
+    "rgbp": "",
+    "cmyk": "55,19,0,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 41,
+    "name": "Violet Blue Light",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "212,176,225",
+    "rgbp": "",
+    "cmyk": "63,13,1,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  },
+  {
+    "id": 51,
+    "name": "Violet Dark",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "63,62,139",
+    "rgbp": "",
+    "cmyk": "89,87,0,3",
+    "groups": {
+      "200": true
+    },
+    "textColor": "white"
+  },
+  {
+    "id": 215,
+    "name": "Yellow Orange Light",
+    "rgbv": [
+      239,
+      194,
+      83
+    ],
+    "cmykv": [
+      0,
+      25,
+      79,
+      0
+    ],
+    "rgb": "239,194,83",
+    "rgbp": "",
+    "cmyk": "0,25,79,0",
+    "groups": {
+      "200": true
+    },
+    "textColor": "black"
+  }
+]
