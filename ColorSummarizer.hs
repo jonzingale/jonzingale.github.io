@@ -2,7 +2,7 @@ module ColorSummarizer where
 import Codec.Picture
 import Data.KMeans
 
-file = "~/Downloads/20190407_180710.jpg"
+file = "/Users/jon/Downloads/20190407_180710.jpg"
 
 -- https://en.wikipedia.org/wiki/Mean_of_circular_quantities
 -- http://hackage.haskell.org/package/JuicyPixels-3.3.3/docs/Codec-Picture.html
@@ -19,21 +19,7 @@ dynWidth img = dynamicMap imageWidth img
 
 -- kmeans :: Int -> [[Double]] -> [[[Double]]]
 
-
 main = do
-  img <- readImage(file)
-  show (dynWidth img)
-
-
--- import qualified Data.ByteString.Lazy.Char8 as L
--- import qualified Data.Vector.Unboxed as U
-
--- test = "./Tests/dataAllOnes100"
-
--- fileToAry :: FilePath -> IO (U.Vector Double)
--- fileToAry file = do
---   s <- L.readFile file
---   return $ U.fromList $ readDouble s
-
--- readDouble :: L.ByteString -> [Double]
--- readDouble bs = map (read.(L.unpack)) $ L.lines $ bs
+  Right img <- readImage(file)
+  let dimg = dynWidth img
+  putStr $ "\n" ++ show dimg ++ "\n"
