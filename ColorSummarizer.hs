@@ -1,36 +1,26 @@
 module ColorSummarizer where
 import Codec.Picture
 import Data.KMeans
-import Data.Word
-import Codec.Picture.RGBA8
--- import Codec.Picture.Jpg
+import Conversion
 
-file = "/Users/jon/Downloads/20190407_180710.jpg"
-
--- https://en.wikipedia.org/wiki/Mean_of_circular_quantities
--- http://hackage.haskell.org/package/JuicyPixels-3.3.3/docs/Codec-Picture.html
--- http://hackage.haskell.org/package/kmeans-0.1.3/docs/Data-KMeans.html
-
-img = readImage(file)
-jpg = readJpeg(file)
-
-dynWidth :: DynamicImage -> Int
-dynWidth img = dynamicMap imageWidth img
-
--- kmeans :: Int -> [[Double]] -> [[[Double]]]
+filename = "/Users/jon/Downloads/flower.jpg"
 
 main = do
-  Right img <- readImage(file)
-  let jpg = fromDynamicImage img
-  let dimg = pixelAt (jpg) 10 10
-  putStr $ "\n" ++ show dimg ++ "\n"
+  Right image <- readImage filename
+  let img = convertRGB8 image
+  putStr $ show $ pixels img
 
-dynSquare :: DynamicImage -> DynamicImage
-dynSquare = dynamicPixelMap squareImage
+pixels :: Image PixelRGB8 -> [[Pixel8]]
+pixels img = let f (PixelRGB8 r g b) = [r,g,b] in
+  [f $ pixelAt img t 0 | t <- [0..1000]]
 
-squareImage :: Pixel a => Image a -> Image a
-squareImage img = generateImage (\x y -> pixelAt img x y) edge edge
-   where edge = min (imageWidth img) (imageHeight img)
+distance :: [Pixel8] -> [Pixel8] -> Double
+distance rgb rgb' =
+  let [r, g, b] = map p2d rgb in
+  let [r', g', b'] = map p2d rgb' in
+  sqrt $ (r-r')^2 + (g-g')^2 + (b-b')^2 
 
+p2d :: Pixel8 -> Double
+p2d red = fromIntegral (convert red::Integer)
 
-
+-- kmeans :: Int -> [[Double]] -> [[[Double]]]
