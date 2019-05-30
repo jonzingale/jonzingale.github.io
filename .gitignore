@@ -2,3 +2,5 @@
 *.csv
 *.png
 *.jpg
+*.hi
+*.o
