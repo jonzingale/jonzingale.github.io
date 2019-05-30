@@ -24,3 +24,9 @@ p2d :: Pixel8 -> Double
 p2d red = fromIntegral (convert red::Integer)
 
 -- kmeans :: Int -> [[Double]] -> [[[Double]]]
+
+kPixelMeans :: Int -> Image PixelRGB8 -> [[[Double]]]
+kPixelMeans k img =
+  let f (PixelRGB8 r g b) =  map p2d [r,g,b] in
+  let pxs = [f $ pixelAt img t 0 | t <- [0..1000]] in
+  kmeans k pxs
