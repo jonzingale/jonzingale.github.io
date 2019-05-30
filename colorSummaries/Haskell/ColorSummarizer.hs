@@ -15,10 +15,17 @@ import qualified Data.Vector.Storable as S
   * compile for main:
   * parallelize
     ghc -O2 --make ColorSummarizer.hs -threaded -rtsopts
+    rm ColorSummarizer.hi ColorSummarizer.o ColorSummarizer
     time ./ColorSummarizer +RTS -N8
 --}
 
 filename = "/Users/jon/Downloads/flower.jpg" -- 1908 × 4032
+
+{--
+  likely pixels written 1 at a time!!
+  S.length (imageData img) == 1908 * 4032 * 3
+  pixelAt img 0 0 == [(S.!) (imageData img) t | <- [0..2]]
+--}
 
 main = do
   Right image <- readImage filename
@@ -40,11 +47,12 @@ centroid rgbs = map floor $ ct rgbs [0,0,0]
     ct [[r,g,b]] [rs, gs, bs] = [mAvg r rs, mAvg g gs, mAvg b bs]
     ct ([r,g,b]:rgbs') [rs, gs, bs] = ct rgbs' [mAvg r rs, mAvg g gs, mAvg b bs]
 
+-- kmeans :: Int -> [[Double]] -> [[[Double]]]
 kPixelMeans :: Int -> Image PixelRGB8 -> [[[Double]]]
 kPixelMeans k img =
   let w = div (imageWidth img) 100 in
   let h = div (imageHeight img) 100 in
-  let d = imageData img in -- what format is this?
+  let d = imageData img in
 
   let f (PixelRGB8 r g b) =  map p2d [r,g,b] in
   let pxs = [f $ pixelAt img (mod t w) (div t h) | t <- [0..(w*h)]] in
