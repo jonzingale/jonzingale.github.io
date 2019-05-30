@@ -8,7 +8,7 @@ file = "/Users/jon/Downloads/20190407_180710.jpg"
 data PixelRGB8 = PixelRGB8 {-# UNPACK #-} !Word8 -- Red
                            {-# UNPACK #-} !Word8 -- Green
                            {-# UNPACK #-} !Word8 -- Blue
-               deriving (Eq, Ord, Show)
+                deriving (Eq, Ord, Show)
 
 -- https://en.wikipedia.org/wiki/Mean_of_circular_quantities
 -- http://hackage.haskell.org/package/JuicyPixels-3.3.3/docs/Codec-Picture.html
@@ -24,8 +24,8 @@ jpg = readJpeg(file)
 dynWidth :: DynamicImage -> Int
 dynWidth img = dynamicMap imageWidth img
 
--- dynData :: DynamicImage -> Int
--- dynData img = dynamicMap imageData img
+dynData :: DynamicImage -> Data.Vector.Storable.Vector (PixelBaseComponent a)
+dynData img = dynamicMap imageData img
 
 -- kmeans :: Int -> [[Double]] -> [[[Double]]]
 
