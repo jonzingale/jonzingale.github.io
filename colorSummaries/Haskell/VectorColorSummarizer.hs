@@ -38,9 +38,6 @@ filename = "/Users/Jon/Desktop/californiaPoppy.jpg"
 --   let json = decode h
 --   putStr ""
 
-
-
-
 main :: IO ()
 main = do
   -- [s] <- getArgs
@@ -71,8 +68,8 @@ kPixelMeans :: Int -> Image PixelRGB8 -> Clusters (U.Vector Double)
 kPixelMeans k img =
   let width  = div (imageWidth  img - 1) 100 in
   let height = div (imageHeight img - 1) 100 in
-  let f (PixelRGB8 r g b) = map p2d [r,g,b] in
-  let pxs = [ U.fromList . f $ pixelAt img w h | w <- [0..width], h <- [0..height] ] in
+  let f (PixelRGB8 r g b) = U.fromList . map p2d $ [r,g,b] in
+  let pxs = [ f $ pixelAt img w h | w <- [0..width], h <- [0..height] ] in
   kmeans id euclidSq k pxs
 
 p2d :: Pixel8 -> Double
