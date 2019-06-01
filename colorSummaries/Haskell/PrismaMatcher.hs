@@ -1,6 +1,7 @@
 module PrismaMatcher (closestPrisma) where
 import Conversion -- conversion-1.2.1
 import Codec.Picture -- JuicyPixel
+import Text.Printf -- formatRGB 
 import PrismaJSON
 
 distance :: [Double] -> [Double] -> Double
@@ -16,3 +17,8 @@ closestPrisma ps rgb = ff rgb ps 255 "name"
       | distance cs (color p) < dist =
         ff cs ps (distance cs (color p)) (name p)
       | otherwise = ff cs ps dist str
+
+-- not yet in use
+formatRGB :: [Double] -> String
+formatRGB rgb = let [r,g,b] = map floor rgb in
+  printf "RGB(%d,%d,%d)" (r::Int) (g::Int) (b::Int)

@@ -5,7 +5,6 @@ import Data.List (intercalate)
 import Codec.Picture -- JuicyPixel
 import Math.KMeans -- kmeans-vector-0.3.2
 import Conversion -- conversion-1.2.1
-import Text.Printf
 import System.Environment
 import PrismaJSON
 import PrismaMatcher
@@ -18,9 +17,6 @@ import PrismaMatcher
   - parse as HTML with d3
   - show image beside summary
 --}
-
--- filename = "/Users/jon/Downloads/flower.jpg" -- 1908 × 4032
-filename = "/Users/Jon/Desktop/californiaPoppy.jpg" -- 2448 × 3264
 
 p2d :: Pixel8 -> Double
 p2d color = fromIntegral (convert color::Integer)
@@ -51,10 +47,6 @@ kPixelMeans k img =
 
 unWrapAll :: G.Vector (Cluster (U.Vector Double)) -> [U.Vector Double]
 unWrapAll = G.toList . G.map (centroid.elements)
-
-formatRGB :: [Double] -> String
-formatRGB rgb = let [r,g,b] = map floor rgb in
-  printf "RGB(%d,%d,%d)" (r::Int) (g::Int) (b::Int)
 
 centroid :: [U.Vector Double] -> U.Vector Double
 centroid cs = let ll = fromIntegral.length $ cs in
