@@ -1,34 +1,52 @@
 module Main where
+{-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE OverloadedStrings #-}
+import qualified Data.Vector.Unboxed as U
+import qualified Data.Vector as G
+import Data.List (intercalate)
 import Codec.Picture -- JuicyPixel
 import Math.KMeans -- kmeans-vector-0.3.2
 import Conversion -- conversion-1.2.1
 import Text.Printf
-import Data.List (intercalate)
-import qualified Data.Vector.Unboxed as U
-import qualified Data.Vector.Storable as S
-import qualified Data.Vector         as G
+-- import Text.JSON
+import System.Environment
+import GHC.Generics
+import Data.Aeson
+import qualified Data.ByteString.Lazy as B
+
+getJSON :: IO B.ByteString
+getJSON = B.readFile "prismas.json"
+
+
 {--
   :set +s
 
   ColorSummaries in Haskell
   http://hackage.haskell.org/package/kmeans-0.1.3/docs/Data-KMeans.html
+  http://hackage.haskell.org/package/vector-0.12.0.3/docs/Data-Vector-Unboxed.html
 
   Todo:
-  * use Unboxed Vectors in place of lists
   * compile for main: ./summarize.sh
   * parallelize
-
-  cs <- clusters
 --}
 
 -- filename = "/Users/jon/Downloads/flower.jpg" -- 1908 × 4032
 filename = "/Users/Jon/Desktop/californiaPoppy.jpg"
 
+-- getPrismas = do
+--   h <- readFile "prismas.json"
+--   let json = decode h
+--   putStr ""
+
+
+
+
 main :: IO ()
 main = do
+  -- [s] <- getArgs
   Right image <- readImage filename
   let img = convertRGB8 image
-  let clusters = kPixelMeans 10 img
+  let clusters = kPixelMeans 3 img
   let cents = unWrapAll clusters
   let formattedC = formatRGB.(U.toList)
   putStr $ intercalate "\n" $ map formattedC cents
