@@ -12,6 +12,11 @@ import PrismaMatcher
 
 {--
   :set +s
+
+  TODO:
+  - repackage as JSON
+  - parse as HTML with d3
+  - show image beside summary
 --}
 
 -- filename = "/Users/jon/Downloads/flower.jpg" -- 1908 × 4032
