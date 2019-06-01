@@ -1,6 +1,4 @@
 module Main where
-{-# LANGUAGE DeriveGeneric #-}
-{-# LANGUAGE OverloadedStrings #-}
 import qualified Data.Vector.Unboxed as U
 import qualified Data.Vector as G
 import Data.List (intercalate)
@@ -8,45 +6,43 @@ import Codec.Picture -- JuicyPixel
 import Math.KMeans -- kmeans-vector-0.3.2
 import Conversion -- conversion-1.2.1
 import Text.Printf
--- import Text.JSON
 import System.Environment
-import GHC.Generics
-import Data.Aeson
-import qualified Data.ByteString.Lazy as B
-
-getJSON :: IO B.ByteString
-getJSON = B.readFile "prismas.json"
-
+import PrismaJSON
+import PrismaMatcher
 
 {--
   :set +s
-
-  ColorSummaries in Haskell
-  http://hackage.haskell.org/package/kmeans-0.1.3/docs/Data-KMeans.html
-  http://hackage.haskell.org/package/vector-0.12.0.3/docs/Data-Vector-Unboxed.html
-
-  Todo:
-  * compile for main: ./summarize.sh
-  * parallelize
 --}
 
 -- filename = "/Users/jon/Downloads/flower.jpg" -- 1908 × 4032
-filename = "/Users/Jon/Desktop/californiaPoppy.jpg"
+filename = "/Users/Jon/Desktop/californiaPoppy.jpg" -- 2448 × 3264
 
--- getPrismas = do
---   h <- readFile "prismas.json"
---   let json = decode h
---   putStr ""
+p2d :: Pixel8 -> Double
+p2d color = fromIntegral (convert color::Integer)
+getRGB (PixelRGB8 r g b) = U.fromList [p2d r, p2d g, p2d b]
 
 main :: IO ()
 main = do
-  -- [s] <- getArgs
-  Right image <- readImage filename
+  [s] <- getArgs
+  Right image <- readImage s --filename
+  ps <- prismas
   let img = convertRGB8 image
-  let clusters = kPixelMeans 3 img
+  let clusters = kPixelMeans 10 img
   let cents = unWrapAll clusters
-  let formattedC = formatRGB.(U.toList)
+  let listC = map (U.toList) cents
+  let formattedC = (closestPrisma ps).(U.toList)
   putStr $ intercalate "\n" $ map formattedC cents
+  putStr "\n"
+
+kPixelMeans :: Int -> Image PixelRGB8 -> Clusters (U.Vector Double)
+kPixelMeans k img =
+  let 𝜆 = 65 in
+  let width  = [0..div (imageWidth  img - 1) 𝜆] in
+  let height = [0..div (imageHeight img - 1) 𝜆] in
+   -- pxs :: [U.Vector Double]
+  let pxs = [ getRGB $ pixelAt img (𝜆*w) (𝜆*h) | w <- width, h <- height] in
+  -- kmeans :: (a -> U.Vector Double) -> Distance -> Int -> [a] -> Clusters a
+  kmeans id euclidSq k pxs
 
 unWrapAll :: G.Vector (Cluster (U.Vector Double)) -> [U.Vector Double]
 unWrapAll = G.toList . G.map (centroid.elements)
@@ -61,23 +57,5 @@ centroid cs = let ll = fromIntegral.length $ cs in
 
 sumV :: [U.Vector Double] -> U.Vector Double
 sumV = foldr add $ U.replicate 3 0
-  where
-    add u v = U.zipWith (+) u v
+  where add u v = U.zipWith (+) u v
 
-kPixelMeans :: Int -> Image PixelRGB8 -> Clusters (U.Vector Double)
-kPixelMeans k img =
-  let width  = div (imageWidth  img - 1) 100 in
-  let height = div (imageHeight img - 1) 100 in
-  let f (PixelRGB8 r g b) = U.fromList . map p2d $ [r,g,b] in
-  let pxs = [ f $ pixelAt img w h | w <- [0..width], h <- [0..height] ] in
-  kmeans id euclidSq k pxs
-
-p2d :: Pixel8 -> Double
-p2d red = fromIntegral (convert red::Integer)
-
--- for comparing to prismacolor pencils
-distance :: [Pixel8] -> [Pixel8] -> Double
-distance rgb rgb' =
-  let [r, g, b] = map p2d rgb in
-  let [r', g', b'] = map p2d rgb' in
-  sqrt $ (r-r')^2 + (g-g')^2 + (b-b')^2 
