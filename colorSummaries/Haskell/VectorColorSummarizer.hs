@@ -18,8 +18,8 @@ import PrismaMatcher
 --}
 
 filenameStub = "/colorSummaries/Haskell"
--- defaultStub  = "/images/californiaPoppy.jpg"
-defaultStub = "/images/IMG_9791.jpg"
+defaultStub  = "/images/californiaPoppy.jpg"
+-- defaultStub = "/images/IMG_9791.jpg"
 
 arguments = do
   args <- getArgs
