@@ -28,4 +28,5 @@ open "http://localhost:8000/colorSummaries/Haskell/prisma.html"
 
 
 # EFFECTIVELY TO RUN THIS SCRIPT:
-# ./summarize.sh 5 "/Users/Jon/Desktop/californiaPoppy.jpg" 
+# throw image in /images and then ...
+#./summarize.sh 3 "/images/IMG_9791.jpg"

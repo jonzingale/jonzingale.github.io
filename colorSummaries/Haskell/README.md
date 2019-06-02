@@ -4,8 +4,9 @@
 ```
 To run: pass the summarize.sh script two arguments.
 The first is the number of clusters.
-The second an absolute path to a file to be summarized.
-./summarize.sh 5 "californiaPoppy.jpg" 
+The second a relative path to a file to be summarized.
+(see images folder)
+./summarize.sh 5 "/images/californiaPoppy.jpg" 
 ```
 
 ### Todo:
