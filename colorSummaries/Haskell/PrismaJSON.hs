@@ -3,6 +3,7 @@
 
 module PrismaJSON where
 import qualified Data.ByteString.Lazy as B
+import System.Directory (getCurrentDirectory)
 import GHC.Generics
 import Data.Aeson
 import Data.Text
@@ -25,4 +26,10 @@ prismas = do
  return prismas
 
 writeJson :: [Prisma] -> IO()
-writeJson ps = B.writeFile "tmp.json" $ encode ps
+writeJson ps = B.writeFile "summary.json" $ encode ps
+
+writeFilename :: String -> IO()
+writeFilename filename = do
+  hostdir <- getCurrentDirectory
+  let jsonName = Prisma {name=filename, color=[]}
+  B.writeFile (hostdir++"/filename.json") $ encode jsonName

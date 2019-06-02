@@ -11,14 +11,20 @@
   <div class='title'>Prismacolor Summaries</div>
 
   <main role="main">
-    <div class='swatches'></div>
+    <table><tbody>
+      <td><div class='swatches'></div></td>
+      <td><div class="images"></div></td>
+    </table></tbody>
     <div class='footer'></div>
+
   </main>
 
   <script>
+    const summaryJson = "/colorSummaries/Haskell/summary.json"
+    const filenameJson = "/colorSummaries/Haskell/filename.json"
     const radius = 60
-    const height = radius*2
-    const modulus = 9
+    const height = radius*2.1
+    const modulus = 5
 
     function rasterX(i) {
       return mod(i, modulus)*height + height
@@ -29,9 +35,17 @@
       return div(i, modulus)*height + height + offset
     } 
 
-    d3.json("tmp.json", function(error, data){
+    d3.json(filenameJson, function(error, data){
+      var imageContainer = d3.selectAll('.images')
+      imageContainer.append('img')
+        .attr('src', data.name)
+        .attr('width', 500)
+        .attr('height', 500)
+    })
+
+    d3.json(summaryJson, function(error, data){
       var container = d3.selectAll('.swatches')
-        .append('svg').attr('height', 3000).attr('width', 1200)
+        .append('svg').attr('height', 600).attr('width', 800)
 
       var colorContainer = container.append('g').selectAll('.color')
 
