@@ -32,4 +32,4 @@ writeFilename :: String -> IO()
 writeFilename filename = do
   hostdir <- getCurrentDirectory
   let jsonName = Prisma {name=filename, color=[]}
-  B.writeFile (hostdir++"/filename.json") $ encode jsonName
+  B.writeFile "filename.json" $ encode jsonName
