@@ -13,10 +13,10 @@ import PrismaMatcher
   :set +s
 
   TODO:
-  - repackage as JSON
   - parse as HTML with d3
   - show image beside summary
 --}
+-- filename = "/Users/Jon/Desktop/californiaPoppy.jpg" 
 
 p2d :: Pixel8 -> Double
 p2d color = fromIntegral (convert color::Integer)
@@ -24,6 +24,21 @@ getRGB (PixelRGB8 r g b) = U.fromList [p2d r, p2d g, p2d b]
 
 main :: IO ()
 main = do
+  [clusters, filename] <- getArgs
+  -- let [clusters, filename] = ["5", "/Users/Jon/Desktop/californiaPoppy.jpg" ]
+  let k = (read clusters)::Int
+  Right image <- readImage filename
+  ps <- prismas
+
+  let img = convertRGB8 image
+  let clusters = kPixelMeans k img
+  let cents = unWrapAll clusters
+  let listC = map (U.toList) cents
+  let formattedC = (closestPrisma ps).(U.toList)
+  writeJson.map formattedC $ cents
+
+mainStdOut :: IO ()
+mainStdOut = do
   [s] <- getArgs
   Right image <- readImage s --filename
   ps <- prismas
@@ -31,7 +46,7 @@ main = do
   let clusters = kPixelMeans 10 img
   let cents = unWrapAll clusters
   let listC = map (U.toList) cents
-  let formattedC = (closestPrisma ps).(U.toList)
+  let formattedC = (closestPrismaStr ps).(U.toList)
   putStr $ intercalate "\n" $ map formattedC cents
   putStr "\n"
 
