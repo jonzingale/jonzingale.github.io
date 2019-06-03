@@ -12,17 +12,18 @@
 
 
 # TOWARDS PRODUCTION CODE
-# ghc -O2 --make VectorColorSummarizer.hs -rtsopts -fforce-recomp
+ghc -O2 --make VectorColorSummarizer.hs -rtsopts -fforce-recomp
 echo "Running Summarizer"
 clusters="$1" # 12
 file="$2" # "/Users/Jon/Desktop/californiaPoppy.jpg" 
 time ./VectorColorSummarizer $clusters $file
-# rm VectorColorSummarizer.hi VectorColorSummarizer.o
-# rm PrismaJSON.hi PrismaJSON.o PrismaMatcher.hi PrismaMatcher.o
+rm VectorColorSummarizer.hi VectorColorSummarizer.o
+rm PrismaJSON.hi PrismaJSON.o PrismaMatcher.hi PrismaMatcher.o
 
-cd ./../..
-python -m http.server &
-open "http://localhost:8000/colorSummaries/Haskell/prisma.html" & fg
+# cd ./../..
+# python -m http.server &
+open "http://localhost:8000/colorSummaries/Haskell/prisma.html"
+# & fg
 # rm VectorColorSummarizer
 
 

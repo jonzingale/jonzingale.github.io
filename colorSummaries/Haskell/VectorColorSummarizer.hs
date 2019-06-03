@@ -19,11 +19,11 @@ import PrismaMatcher
 --}
 
 filenameStub = "/colorSummaries/Haskell/images/"
-defaultStub  = "californiaPoppy.jpg"
+defaultImage  = "californiaPoppy.jpg"
 
 arguments = do
   args <- getArgs
-  let defaults =  ["12", defaultStub]
+  let defaults =  ["12", defaultImage]
   return $ if args == [] then defaults else args
 
 p2d :: Pixel8 -> Double
@@ -35,7 +35,7 @@ main = do
   directory <- getCurrentDirectory
   [clusters, filename] <- arguments
   let k = (read clusters)::Int
-  Right image <- readImage (directory++filename)
+  Right image <- readImage (directory++"/images/"++filename)
   ps <- prismas
 
   let img = convertRGB8 image
@@ -75,7 +75,7 @@ calculateSizes img
   where
     maxImgSize = 5*10^6
     𝜆=65
-    -- 𝜆 = div (width*height) (10^5)
+    -- 𝜆 = 5 * div (width*height) (10^5)
     -- 𝜆 = (* (4::Int)).floor.log.fromIntegral $ width * height
     width = imageWidth img
     height = imageHeight img
