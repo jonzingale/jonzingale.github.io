@@ -65,17 +65,12 @@ sumV :: [U.Vector Double] -> U.Vector Double
 sumV = foldr add $ U.replicate 3 0
   where add u v = U.zipWith (+) u v
 
--- Limits sample sizes based on image size
--- best would be to skip ~40 for small images
--- skip ~65 for larger.
 calculateSizes :: Image PixelRGB8 -> (Int, [Int], [Int])
 calculateSizes img 
   | width*height < 1*10^6 = (1, [0..width - 1], [0..height - 1])
   | otherwise = (𝜆, [0..div (width - 1) 𝜆], [0..div (height - 1) 𝜆])
   where
-    maxImgSize = 5*10^6
-    -- 𝜆=65
-    𝜆 = 8 * div (width*height) (10^6)
-    -- 𝜆 = (* (4::Int)).floor.log.fromIntegral $ width * height
+    -- complexity is quadratic
+    𝜆 = (+ 7).floor.maximum.map (sqrt.fromIntegral) $ [width, height]
     width = imageWidth img
     height = imageHeight img
