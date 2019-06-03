@@ -8,7 +8,6 @@ __To run:__
 - pass the summarize.sh script two arguments.<br>
 The first is the number of clusters.<br>
 The second a jpg file in the images sub-directory.<br>
-
 `./summarize.sh 5 tetris.jpg`
 
 
