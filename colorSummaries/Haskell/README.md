@@ -9,8 +9,8 @@ The second a relative path to a file to be summarized.
 
 ./summarize.sh 5 tetris.jpg
 
-be sure to kill server afterwards
-or better yet, exit gracefully
+be sure to run server:
+python -m http.server
 ```
 
 ### Todo:
