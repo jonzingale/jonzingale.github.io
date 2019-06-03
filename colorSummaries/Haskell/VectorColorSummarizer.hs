@@ -19,7 +19,6 @@ import PrismaMatcher
 
 filenameStub = "/colorSummaries/Haskell/images/"
 defaultStub  = "californiaPoppy.jpg"
--- defaultStub = "/images/IMG_9791.jpg"
 
 arguments = do
   args <- getArgs
