@@ -1,5 +1,4 @@
 {-# LANGUAGE DeriveGeneric #-}
-{-# LANGUAGE OverloadedStrings #-}
 
 module PrismaJSON where
 import qualified Data.ByteString.Lazy as B

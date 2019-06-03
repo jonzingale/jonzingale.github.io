@@ -1,14 +1,13 @@
 module Main where
 import qualified Data.Vector.Unboxed as U
 import qualified Data.Vector as G
-import Data.List (intercalate)
 import Codec.Picture -- JuicyPixel
 import Math.KMeans -- kmeans-vector-0.3.2
 import Conversion -- conversion-1.2.1
 import System.Environment (getArgs)
 import System.Directory (getCurrentDirectory)
 import PrismaJSON (writeFilename, writeJson, prismas)
-import PrismaMatcher
+import PrismaMatcher (closestPrisma)
 
 {--
   :set +s
