@@ -16,7 +16,6 @@ python -m http.server
 ### Todo:
 - kill for server
 - color densities
-- set 𝜆 relative to image size
 - pass directory full of images
 - match colors to:
   `https://www.deviantart.com/sushiopolis/art/Color-Chart-Prismacolor-RGB-Pencils-377991556`
