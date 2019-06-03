@@ -20,13 +20,12 @@ time ./VectorColorSummarizer $clusters $file
 # rm VectorColorSummarizer.hi VectorColorSummarizer.o
 # rm PrismaJSON.hi PrismaJSON.o PrismaMatcher.hi PrismaMatcher.o
 
-# python -m http.server
-open "http://localhost:8000/colorSummaries/Haskell/prisma.html"
+cd ./../..
+python -m http.server &
+open "http://localhost:8000/colorSummaries/Haskell/prisma.html" & fg
 # rm VectorColorSummarizer
-
-
 
 
 # EFFECTIVELY TO RUN THIS SCRIPT:
 # throw image in /images and then ...
-#./summarize.sh 3 "/images/IMG_9791.jpg"
+#./summarize.sh 3 tetris.jpg

@@ -17,8 +17,8 @@ import PrismaMatcher
   - calculateSizes
 --}
 
-filenameStub = "/colorSummaries/Haskell"
-defaultStub  = "/images/californiaPoppy.jpg"
+filenameStub = "/colorSummaries/Haskell/images/"
+defaultStub  = "californiaPoppy.jpg"
 -- defaultStub = "/images/IMG_9791.jpg"
 
 arguments = do
