@@ -2,12 +2,12 @@
 
 
 __To run:__
-- fire up a local server:
+- fire up a local server:<br>
 `python -m http.server`
 
-- pass the summarize.sh script two arguments.
-The first is the number of clusters.
-The second a jpg file in the images sub-directory.
+- pass the summarize.sh script two arguments.<br>
+The first is the number of clusters.<br>
+The second a jpg file in the images sub-directory.<br>
 
 `./summarize.sh 5 tetris.jpg`
 
