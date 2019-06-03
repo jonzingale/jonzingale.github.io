@@ -4,8 +4,7 @@
 ```
 To run: pass the summarize.sh script two arguments.
 The first is the number of clusters.
-The second a relative path to a file to be summarized.
-(see images folder)
+The second a jpg file in the images sub-directory.
 
 ./summarize.sh 5 tetris.jpg
 
