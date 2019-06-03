@@ -1,16 +1,17 @@
 ## Haskell Prismacolor Image Summarizer
 
 
-```
-To run: pass the summarize.sh script two arguments.
+__To run:__
+- fire up a local server:
+`python -m http.server`
+
+- pass the summarize.sh script two arguments.
 The first is the number of clusters.
 The second a jpg file in the images sub-directory.
 
-./summarize.sh 5 tetris.jpg
+`./summarize.sh 5 tetris.jpg`
 
-be sure to run server:
-python -m http.server
-```
+
 
 ### Todo:
 - kill for server
