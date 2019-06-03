@@ -2,23 +2,23 @@
 # https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/profiling.html
 
 # DEV AND PROFILING
-# ghc -O2 --make VectorColorSummarizer.hs -rtsopts -fforce-recomp -prof -fprof-auto -fprof-cafs
+# ghc -O2 --make ColorSummarizer.hs -rtsopts -fforce-recomp -prof -fprof-auto -fprof-cafs
 # echo "Running Summarizer"
-# time ./VectorColorSummarizer +RTS -sstderr -p
+# time ./ColorSummarizer +RTS -sstderr -p
 
-# rm VectorColorSummarizer.hi VectorColorSummarizer.o
+# rm ColorSummarizer.hi ColorSummarizer.o
 # rm PrismaJSON.hi PrismaJSON.o PrismaMatcher.hi PrismaMatcher.o
-# rm VectorColorSummarizer
+# rm ColorSummarizer
 
 
 # TOWARDS PRODUCTION CODE
-ghc -O2 --make VectorColorSummarizer.hs -rtsopts -fforce-recomp
+# ghc -O2 --make ColorSummarizer.hs -rtsopts -fforce-recomp
 echo "Running Summarizer"
 clusters="$1" # 12
 file="$2" # "/Users/Jon/Desktop/californiaPoppy.jpg" 
-time ./VectorColorSummarizer $clusters $file
-rm VectorColorSummarizer.hi VectorColorSummarizer.o
-rm PrismaJSON.hi PrismaJSON.o PrismaMatcher.hi PrismaMatcher.o
+time ./ColorSummarizer $clusters $file
+# rm ColorSummarizer.hi ColorSummarizer.o
+# rm PrismaJSON.hi PrismaJSON.o PrismaMatcher.hi PrismaMatcher.o
 
 # seems to work, needs a kill to clean the process.
 # cd ./../..
@@ -26,7 +26,7 @@ rm PrismaJSON.hi PrismaJSON.o PrismaMatcher.hi PrismaMatcher.o
 open "http://localhost:8000/colorSummaries/Haskell/prisma.html"
 # & fg
 
-# rm VectorColorSummarizer
+# rm ColorSummarizer
 
 
 # EFFECTIVELY TO RUN THIS SCRIPT:

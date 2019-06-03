@@ -1,76 +1,73 @@
 module Main where
-import Codec.Picture -- JuicyPixel
-import Data.KMeans
-import Conversion
-import Text.Printf
-import Data.List (intercalate)
 import qualified Data.Vector.Unboxed as U
-import qualified Data.Vector.Storable as S
-{--
-  ColorSummaries in Haskell
-  http://hackage.haskell.org/package/kmeans-0.1.3/docs/Data-KMeans.html
-
-  Todo:
-  * use Unboxed Vectors in place of lists
-  * compile for main:
-  * parallelize
-    ghc -O2 --make ColorSummarizer.hs -threaded -rtsopts
-    rm ColorSummarizer.hi ColorSummarizer.o ColorSummarizer
-    time ./ColorSummarizer +RTS -N8
---}
-
-filename = "/Users/jon/Downloads/flower.jpg" -- 1908 × 4032
+import qualified Data.Vector as G
+import Codec.Picture -- JuicyPixel
+import Math.KMeans -- kmeans-vector-0.3.2
+import Conversion -- conversion-1.2.1
+import System.Environment (getArgs)
+import System.Directory (getCurrentDirectory)
+import PrismaJSON (writeFilename, writeJson, prismas)
+import PrismaMatcher (closestPrisma)
 
 {--
-  likely pixels written 1 at a time!!
-  S.length (imageData img) == 1908 * 4032 * 3
-  pixelAt img 0 0 == [(S.!) (imageData img) t | <- [0..2]]
+  :set +s
+
+  TODO:
+  - calculate densities
 --}
 
-main = do
-  Right image <- readImage filename
-  let img = convertRGB8 image
-  let clusters = kPixelMeans 10 img
-  let formCentroids = map (formatRGB.centroid) clusters -- slow
-  putStr $ intercalate "\n" formCentroids
+filenameStub = "/colorSummaries/Haskell/images/"
+defaultImage  = "californiaPoppy.jpg"
 
-main2 = do
-  Right image <- readImage filename
-  let img = convertRGB8 image
-  let val = (S.!) (imageData img) 0
-  putStr $ show val
-
-centroid :: [[Double]] -> [Int]
-centroid rgbs = map floor $ ct rgbs [0,0,0]
-  where
-    ct [] cents = cents
-    ct [[r,g,b]] [rs, gs, bs] = [mAvg r rs, mAvg g gs, mAvg b bs]
-    ct ([r,g,b]:rgbs') [rs, gs, bs] = ct rgbs' [mAvg r rs, mAvg g gs, mAvg b bs]
-
--- kmeans :: Int -> [[Double]] -> [[[Double]]]
-kPixelMeans :: Int -> Image PixelRGB8 -> [[[Double]]]
-kPixelMeans k img =
-  let w = div (imageWidth img) 100 in
-  let h = div (imageHeight img) 100 in
-  let d = imageData img in
-
-  let f (PixelRGB8 r g b) =  map p2d [r,g,b] in
-  let pxs = [f $ pixelAt img (mod t w) (div t h) | t <- [0..(w*h)]] in
-  kmeans k pxs
-
-distance :: [Pixel8] -> [Pixel8] -> Double
-distance rgb rgb' =
-  let [r, g, b] = map p2d rgb in
-  let [r', g', b'] = map p2d rgb' in
-  sqrt $ (r-r')^2 + (g-g')^2 + (b-b')^2 
+arguments = do
+  args <- getArgs
+  let defaults =  ["12", defaultImage]
+  return $ if args == [] then defaults else args
 
 p2d :: Pixel8 -> Double
-p2d red = fromIntegral (convert red::Integer)
+p2d color = fromIntegral (convert color::Integer)
+getRGB (PixelRGB8 r g b) = U.fromList [p2d r, p2d g, p2d b]
 
-formatRGB :: [Int] -> String
-formatRGB [r,g,b] = printf "RGB(%d,%d,%d)" r g b
+main :: IO ()
+main = do
+  directory <- getCurrentDirectory
+  [clusters, filename] <- arguments
+  let k = (read clusters)::Int
+  Right image <- readImage (directory++"/images/"++filename)
+  ps <- prismas
 
-mAvg :: Double -> Double -> Double
-mAvg a 0 = a
-mAvg t avg = α * t + (1 - α) * avg
-  where α = 0.7
+  let img = convertRGB8 image
+  let clusters = kPixelMeans k img
+  let cents = unWrapAll clusters
+  let listC = map (U.toList) cents
+  let formattedC = (closestPrisma ps).(U.toList)
+  writeJson.map formattedC $ cents
+  writeFilename (filenameStub++filename)
+
+kPixelMeans :: Int -> Image PixelRGB8 -> Clusters (U.Vector Double)
+kPixelMeans k img =
+  let (𝜆, width, height) = calculateSizes img in
+   -- pxs :: [U.Vector Double]
+  let pxs = [ getRGB $ pixelAt img (𝜆*w) (𝜆*h) | w <- width, h <- height] in
+  -- kmeans :: (a -> U.Vector Double) -> Distance -> Int -> [a] -> Clusters a
+  kmeans id euclidSq k pxs
+
+unWrapAll :: G.Vector (Cluster (U.Vector Double)) -> [U.Vector Double]
+unWrapAll = G.toList . G.map (centroid.elements)
+
+centroid :: [U.Vector Double] -> U.Vector Double
+centroid cs = let ll = fromIntegral.length $ cs in
+  U.map (/ ll) (sumV cs)
+
+sumV :: [U.Vector Double] -> U.Vector Double
+sumV = foldr add $ U.replicate 3 0
+  where add u v = U.zipWith (+) u v
+
+calculateSizes :: Image PixelRGB8 -> (Int, [Int], [Int])
+calculateSizes img 
+  | width*height < 1*10^6 = (1, [0..width - 1], [0..height - 1])
+  | otherwise = (𝜆, [0..div (width - 1) 𝜆], [0..div (height - 1) 𝜆])
+  where
+    -- complexity is quadratic
+    𝜆 = (+ 7).floor.maximum.map (sqrt.fromIntegral) $ [width, height]
+    [width, height] = [imageWidth img, imageHeight img]

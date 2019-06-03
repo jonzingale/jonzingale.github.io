@@ -46,7 +46,7 @@
     d3.json(summaryJson, function(error, data){
       var container = d3.selectAll('.swatches')
         .append('svg').attr('width', 800)
-        .attr('height', 150 * data.length / 4.5)
+        .attr('height', 150 * (1+data.length / 5))
 
       var colorContainer = container.append('g').selectAll('.color')
 
