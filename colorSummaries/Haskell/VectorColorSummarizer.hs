@@ -15,6 +15,7 @@ import PrismaMatcher
 
   TODO:
   - calculateSizes
+  - calculate densities
 --}
 
 filenameStub = "/colorSummaries/Haskell/images/"
