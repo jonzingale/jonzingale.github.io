@@ -14,7 +14,6 @@ import PrismaMatcher
   :set +s
 
   TODO:
-  - calculateSizes
   - calculate densities
 --}
 
@@ -72,5 +71,4 @@ calculateSizes img
   where
     -- complexity is quadratic
     𝜆 = (+ 7).floor.maximum.map (sqrt.fromIntegral) $ [width, height]
-    width = imageWidth img
-    height = imageHeight img
+    [width, height] = [imageWidth img, imageHeight img]

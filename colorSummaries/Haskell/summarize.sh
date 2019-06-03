@@ -20,10 +20,12 @@ time ./VectorColorSummarizer $clusters $file
 rm VectorColorSummarizer.hi VectorColorSummarizer.o
 rm PrismaJSON.hi PrismaJSON.o PrismaMatcher.hi PrismaMatcher.o
 
+# seems to work, needs a kill to clean the process.
 # cd ./../..
 # python -m http.server &
 open "http://localhost:8000/colorSummaries/Haskell/prisma.html"
 # & fg
+
 # rm VectorColorSummarizer
 
 
