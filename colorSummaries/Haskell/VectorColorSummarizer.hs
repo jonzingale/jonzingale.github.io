@@ -74,8 +74,8 @@ calculateSizes img
   | otherwise = (𝜆, [0..div (width - 1) 𝜆], [0..div (height - 1) 𝜆])
   where
     maxImgSize = 5*10^6
-    𝜆=65
-    -- 𝜆 = 5 * div (width*height) (10^5)
+    -- 𝜆=65
+    𝜆 = 8 * div (width*height) (10^6)
     -- 𝜆 = (* (4::Int)).floor.log.fromIntegral $ width * height
     width = imageWidth img
     height = imageHeight img
