@@ -16,5 +16,3 @@ The second a jpg file in the images sub-directory.<br>
 - kill for server
 - color densities
 - pass directory full of images
-- match colors to:
-  `https://www.deviantart.com/sushiopolis/art/Color-Chart-Prismacolor-RGB-Pencils-377991556`
