@@ -3,12 +3,12 @@
 <html lang="en-us">
   <head>
     <link href='/fonts/nunitoSans.css' rel="stylesheet">
-    <link href="./../prisma.css" rel="stylesheet" type="text/css" /> 
+    <link href="./colorsummary.css" rel="stylesheet" type="text/css" /> 
     <script src="/js/d3.v4.min.js" type="text/javascript"></script>
     <script src="/js/d3-scale-chromatic.v1.min.js"></script>
     <script src="/js/helpers.js"></script>
   </head>
-  <div class='title'>Prismacolor Summaries</div>
+  <div class='title'>Prismacolor Summary</div>
 
   <main role="main">
     <table><tbody>
@@ -16,7 +16,6 @@
       <td><div class="images"></div></td>
     </table></tbody>
     <div class='footer'></div>
-
   </main>
 
   <script>
@@ -31,8 +30,8 @@
     } 
 
     function rasterY(i, bool=false) {
-      var offset = bool ? 5*(-1)**(i) : 0
-      return div(i, modulus)*height + height + offset
+      var offset = bool ? 5*(-1)**i : 0
+      return div(i, modulus)*height + height + offset - 30
     }
 
     function formatStr(str) {
@@ -54,9 +53,10 @@
     })
 
     d3.json(summaryJson, function(error, data){
+
       var container = d3.selectAll('.swatches')
-        .append('svg').attr('width', 800)
-        .attr('height', 150 * (1+data.length / 5))
+        .append('svg').attr('width', 750)
+        .attr('height', 115 * (1+data.length / 5))
 
       var colorContainer = container.append('g').selectAll('.color')
 
@@ -65,20 +65,33 @@
         .attr('cx', function(d,i) {return rasterX(i) })
         .attr('cy', function(d,i) {return rasterY(i) })
         .attr('fill', function(d) {return `rgb( ${d.color} )`})
+        .style('stroke', 'black')
+        .style('stroke-width', '5px')
         .attr("r", radius)
 
       var colorNames1 = colorContainer
         .data(data).enter().append('text')
-        .attr('class','color-circle-text')
+        .attr('class','color-text')
+        .attr('fill', function(d){
+          var sum = d.color.reduce((a,i) => a+i)
+          return sum < 270 ? "rgb( 139,160,172 )" : "black"
+        })
         .attr('x', function(d,i) { return rasterX(i) - 45 })
-        .attr('y', function(d,i) { return rasterY(i, true) - 10 })
-        .text(function(d) { return d.name.split(' ')[0] })
+        .attr('y', function(d,i) { return rasterY(i, true) - 6 })
+        .attr('font-size', 20)
+        .text(function(d) {
+          return d.name.split(' ')[0] })
 
       var colorNames2 = colorContainer
         .data(data).enter().append('text')
-        .attr('class','color-circle-text')
+        .attr('class','color-text')
+        .attr('fill', function(d){
+          var sum = d.color.reduce((a,i) => a+i)
+          return sum < 270 ? "rgb( 139,160,172 )" : "black"
+        })
         .attr('x', function(d,i) { return rasterX(i) - 40 })
         .attr('y', function(d,i) { return rasterY(i, true) + 15 })
+        .attr('font-size', 20)
         .text(function(d) {
           return d.name.split(' ').slice(1).join(' ')
         })
