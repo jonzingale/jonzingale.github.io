@@ -33,7 +33,17 @@
     function rasterY(i, bool=false) {
       var offset = bool ? 5*(-1)**(i) : 0
       return div(i, modulus)*height + height + offset
-    } 
+    }
+
+    function formatStr(str) {
+      var split = str.split(' ')
+      var uped = split.map(x => {
+        return (x.charAt(0).toUpperCase() + x.slice(1))
+      })
+
+      var result = uped.join(' ')
+      return result
+    }
 
     d3.json(filenameJson, function(error, data){
       var imageContainer = d3.selectAll('.images')

@@ -8,7 +8,8 @@ import Data.Aeson
 import Data.Text
 
 getJson :: IO B.ByteString
-getJson = B.readFile "prismas.json"
+getJson = B.readFile "prismacolors.json" -- mixed with sushiopolis
+-- getJson = B.readFile "prismas.json" -- og list
 
 data Prisma =
   Prisma { name  :: !String,
