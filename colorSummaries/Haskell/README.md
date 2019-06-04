@@ -10,6 +10,6 @@ __To run:__
 `./summarize.sh 5 tetris.jpg`
 
 ### Todo:
-- kill for server
+- better summarize script
 - color densities
 - pass directory full of images
