@@ -19,9 +19,15 @@ html {
   padding-left: 5%
 }
 
+.circle {
+  stroke-width: 4px;
+  stroke: #413928;
+  
+}
+
 .color-text {
-  font-family: 'Nunito Sans'
-  font-size: 50px;
+  /*font-family: 'Nunito Sans'*/
+  font-size: 18px;
 }
 
 .footer {
