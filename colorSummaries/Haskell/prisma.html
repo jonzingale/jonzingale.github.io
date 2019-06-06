@@ -73,7 +73,7 @@
         .data(data).enter().append('text')
         .attr('class','color-text')
         .attr('fill', d => add(d.color) < 270 ? warmgrey : "black")
-        .attr('x', function(d,i) { return rasterX(i) - 45 })
+        .attr('x', function(d,i) { return rasterX(i) - 50 })
         .attr('y', function(d,i) { return rasterY(i, true) - 6 })
         .text(d => d.name.split(' ')[0])
 
