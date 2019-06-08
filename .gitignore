@@ -2,6 +2,7 @@
 *.csv
 *.png
 *.jpg
+*.jpeg
 *.hi
 *.o
 *.prof
