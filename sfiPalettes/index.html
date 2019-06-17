@@ -22,7 +22,7 @@
   <script>
     const palette = "palette.json"
     const warmgrey = "rgb(139,160,172)"
-    const radius = 62
+    const radius = 80
     const modulus = 5
     const height = radius*2.13
 
@@ -47,8 +47,8 @@
 
     d3.json(palette, function(error, data){
       var container = d3.selectAll('.swatches')
-        .append('svg').attr('width', 750)
-        .attr('height', 130 * (1+data.length / 5))
+        .append('svg').attr('width', 950)
+        .attr('height', 180 * (1+data.length / 5))
 
       var colorContainer = container.append('g').selectAll('.color')
 
@@ -66,15 +66,7 @@
         .attr('fill', d => add(d.color) < 270 ? warmgrey : "black")
         .attr('x', function(d,i) { return rasterX(i) - 50 })
         .attr('y', function(d,i) { return rasterY(i, true) - 6 })
-        .text(d => d.name.split(' ')[0])
-
-      var colorNames2 = colorContainer
-        .data(data).enter().append('text')
-        .attr('class','color-text')
-        .attr('fill', d => add(d.color) < 270 ? warmgrey : "black")
-        .attr('x', function(d,i) { return rasterX(i) - 40 })
-        .attr('y', function(d,i) { return rasterY(i, true) + 15 })
-        .text(d => d.name.split(' ').slice(1).join(' '))
+        .text(d => d.name)
     });
   </script>
 </html>

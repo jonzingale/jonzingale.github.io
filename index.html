@@ -27,7 +27,8 @@
     const yHeight = 50
   	const modelColors = ['#8c510a','#bf812d','#dfc27d',
   								       '#80cdc1','#35978f','#01665e',
-                         // '#435084', '#613375']
+                         '#435084',
+                         // '#613375']
                          '#2E48A5', '#9C3DF4']
                          // '#9C3DF4', '#613375']
 
@@ -39,11 +40,12 @@
 				{'id': 'The Lorenz System', 'url': "/explorables/lorenz/lorenz.html"},
         {'id': 'Color Summaries', 'url': "/colorSummaries/index.html"},
         {'id': 'Ann Nitze Hiking Trails', 'url': "/maps/hiking.html"},
+        {'id': 'SFI Color Palette', 'url': "/sfiPalettes"},
         {'id': 'Primitive Roots', 'url': "/galois/index.html"},
 			]
 
     var col = d3.selectAll('.first-col').append('svg')
-                 .attr('height', 400).attr('width', 470)
+                 .attr('height', 500).attr('width', 470)
 
     // careful not to upload this.
     // const imgData = [554.88,416.16]
