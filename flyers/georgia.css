@@ -1,0 +1,107 @@
+@font-face {
+    font-family: "DIN Regular";
+    src: url(/fonts/DIN_regular.woff) format("woff");
+    font-weight: normal;
+    font-style: normal; 
+}
+
+@font-face {
+    font-family: "Chap Light";
+    src: url(/fonts/chap-light.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Western";
+    src: url(/fonts/Western.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "nashville";
+    src: url(/fonts/NASHVILL.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sherlock";
+    src: url(/fonts/Sherlock.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  background: #fff;
+  font-family: 'nashville';
+  font-size: 50px;
+  padding-left: 6%;
+}
+
+.title {
+  font-family: 'Chap Light';
+  color: #413928;
+  font-size: 30px;
+  padding-top: 1%;
+}
+
+.western-title {
+  font-family: 'nashville';
+  color: #413928;
+  font-size: 60px;
+  padding-bottom: 30px;
+}
+
+.trace {
+  z-index: 1;
+  fill: none;
+  stroke: none;
+}
+
+.parking-lots {
+  fill: grey;
+}
+
+.roads {
+  fill: none;
+  stroke: grey;
+  stroke-width: 1.9px;
+}
+
+.contours {
+  fill: none;
+  stroke: #c4c4a1;
+  stroke-width: 1px;
+}
+
+.trails {
+  fill: none;
+  stroke: brown;
+  stroke-width: 4px;
+}
+
+.key-rect {
+  stroke: grey;
+  stroke-width: 3px;
+  fill: white;
+}
+
+.key-title {
+  font-size: 30px;
+  fill: black;
+}
+
+.compass {
+  fill: black;
+  stroke: black;
+}
+
+.footer {
+  margin-bottom: 1%;
+}
