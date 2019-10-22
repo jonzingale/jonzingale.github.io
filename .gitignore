@@ -1,10 +1,12 @@
 *.json
 *.csv
 *.png
-# *.jpg
+*.jpg
 *.jpeg
 *.hi
 *.o
 *.prof
 flyers/*
 colorSummaries/*
+
+!mushroomNet/*
