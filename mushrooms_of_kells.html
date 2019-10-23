@@ -15,7 +15,6 @@
         <table>
           <tbody>
             <span class='first-col'></span>
-            <span class='second-col'></span>
           </tbody>
         </table>
           <div class='description'>
@@ -33,15 +32,15 @@
 
   <script>
     const imgSize = 400
-    var container1 = d3.selectAll('.first-col')
-    var container2 = d3.selectAll('.second-col')
-    var img1 = container1.append('img')
+    var container = d3.selectAll('.first-col')
+
+    var img1 = container.append('img')
         .attr('src','/mushroomNet/mushroomOfKells.jpg')
         .attr('class','top-img').attr('width', imgSize)
-    var img2 = container2.append('img')
+    var img2 = container.append('img')
         .attr('src','/mushroomNet/bookOfKells.jpg')
         .attr('class','top-img').attr('width', imgSize)
-    var img3 = container2.append('img')
+    var img3 = container.append('img')
         .attr('src','/mushroomNet/mushrooms.jpeg')
         .attr('class','top-img').attr('width', imgSize)
   </script>
