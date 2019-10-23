@@ -3,17 +3,12 @@
 <html lang="en-us">
   <head>
     <script src="/js/d3.v4.min.js" type="text/javascript"></script>
-    <script src="/js/d3-scale-chromatic.v1.min.js"></script>
     <link href='/fonts/nunitoSans.css' rel="stylesheet">
-    <link href='/fonts/merriweather.css' rel="stylesheet"></script>
-
-    <link href="/explorables/css/explorables.css" rel="stylesheet" type="text/css" />
+    <link href='/fonts/merriweather.css' rel="stylesheet">
+    <link href="/mushrooms.css" rel="stylesheet" type="text/css">
   </head>
 
   <main role="main">
-    <table><tbody>
-      <td class="back-button"></td>
-    </tbody></table>
     <table>
     <div class='main-menu'>
       <div class="menu-text">
@@ -23,11 +18,15 @@
             <span class='second-col'></span>
           </tbody>
         </table>
-        <font face='merriweather' size='20'>Mushrooms of Kells.</font>
-        <br>
-        This image, created by a neural net, mixes a page from the
-        Book of Kells<br>with an image of mushrooms found in the
-        Sangre De Cristo mountains.
+          <div class='description'>
+            <span class='back-button'></span>
+            <span class='title'>Mushrooms of Kells</span>
+            <div class='content'>
+              This image, created by a neural net, mixes a page from the
+              Book of Kells with an image of mushrooms found in the
+              Sangre De Cristo mountains.
+            </div>
+          </div>
       </div>
     </div>
   </main>
@@ -46,6 +45,5 @@
         .attr('src','/mushroomNet/mushrooms.jpeg')
         .attr('class','top-img').attr('width', imgSize)
   </script>
-  <script src='/explorables/js/backButton.js' type="text/javascript"></script>
-
+  <script src='/js/back-button.js' type="text/javascript"></script>
 </html>
