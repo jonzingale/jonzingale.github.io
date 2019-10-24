@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en-us">
+  <head>
+    <script src="/js/d3.v4.min.js" type="text/javascript"></script>
+    <script src="/js/d3-scale-chromatic.v1.min.js"></script>
+    <link href='/fonts/nunitoSans.css' rel="stylesheet">
+    <link href="neural-net.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <main role="main">
+    <div class='main-menu'>
+      <span class='back-button' width='30'></span>
+
+      <div class="menu-text">
+        <table>
+          <tbody>
+            <span class='first-col'></span>
+            <span class='second-col'></span>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const yHeight = 50
+    const modelColors = ['#8c510a','#bf812d','#dfc27d',
+                         '#80cdc1','#35978f','#01665e',
+                         '#435084',
+                         // '#613375']
+                         '#2E48A5', '#9C3DF4']
+                         // '#9C3DF4', '#613375']
+
+    const data =
+      [ 
+        {'id': 'Mushrooms of Kells', 'url': '/mushrooms_of_kells.html'},
+        {'id': 'Max Ernst in Diablo Canyon', 'url': 'diablo-canyon.html'},
+      ]
+
+    var col = d3.selectAll('.first-col').append('svg')
+                 .attr('height', 500).attr('width', 470)
+
+    var modelLinks = col.selectAll("text").data(data).enter()
+
+    modelLinks.append('g')
+        .selectAll("circle").data(data)
+        .enter().append("circle")
+          .attr('id', function(d) { return d.id })
+          .attr("cx", 20).attr("r", 16)
+          .attr("cy", function(d, i) { return i*yHeight + 20 })
+          .attr('fill', function(d, i) { return modelColors[i] })
+
+    modelLinks.append('a')
+        .attr('href', function(d) { return d.url })
+        .append('text').attr('class', 'menu').attr('x', 43)
+        .attr('y', function(d, i) { return i*yHeight + 31})
+        .attr('font-family', 'Nunito Sans')
+        .attr("font-size", "30px")
+        .text(function(d) {return d.id})
+
+  </script>
+  <script src='/js/back-button.js' type="text/javascript"></script>
+</html>

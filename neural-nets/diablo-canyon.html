@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en-us">
+  <head>
+    <script src="/js/d3.v4.min.js" type="text/javascript"></script>
+    <link href='/fonts/nunitoSans.css' rel="stylesheet">
+    <link href='/fonts/merriweather.css' rel="stylesheet">
+    <link href="neural-net.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <main role="main">
+    <div class='container'></div>
+    <div class='description'>
+      <span class='back-button'></span>
+      <span class='title'>Max Ernst in Diablo Canyon</span>
+      <div class='content'>
+        A <a href='https://deepdreamgenerator.com/u/774528'>neural net</a>
+        trained on the painting <i>Sans Titre</i> by Max Ernst,
+        reconstructs a photograph of mullein found in Diablo Canyon.
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const images = [
+      'images/mullein.jpg',
+      'images/sans_titre.jpg',
+      'images/max_ernst_in_diablo_canyon.jpg',
+    ]
+
+    d3.selectAll('.container')
+      .selectAll('img')
+      .data(images).enter()
+      .append('img')
+      .attr('src', i => i)
+  </script>
+  <!-- TODO BACK BUTTON NEEDS TO BE PARAMETERIZABLE -->
+  <script src='/js/back-button.js' type="text/javascript"></script>
+</html>

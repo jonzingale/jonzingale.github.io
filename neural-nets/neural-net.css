@@ -1,0 +1,46 @@
+/*Generalize this to be useful. Especially img details*/
+
+img {
+  height: 410px;
+  width: 430px;
+}
+
+.main-menu {
+  padding-left: 5em;
+  padding-top: 5em;
+}
+
+.menu-text {
+  padding-top: 2em;
+}
+
+.container {
+  padding-top: 3em;
+  padding-left: 6em;
+}
+
+.back-button {
+  padding-top: 1%;
+}
+
+.description {
+  padding-left: 6em;
+  padding-top: 20px;
+  padding-bottom: 4em;
+}
+
+.title {
+  font-weight: bold;
+  /*green*/
+  /*color: #30770f;*/
+  /*rust*/
+  color: #B7410E;
+  font-size: 50px;
+  font-family: 'Nunito Sans';
+}
+
+.content {
+  font-family: 'merriweather';
+  font-size: 18px;
+  width: 30em;
+}
