@@ -10,3 +10,4 @@ flyers/*
 colorSummaries/*
 
 !mushroomNet/*
+!neural-nets/images/*
