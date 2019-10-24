@@ -12,7 +12,10 @@
     <div class='container'></div>
     <div class='description'>
       <span class='back-button'></span>
-      <span class='title'>Max Ernst in Diablo Canyon</span>
+      <span class='title'>
+        <font color='#30770f'>Max Ernst in Diablo Canyon</font>
+      </span>
+
       <div class='content'>
         A <a href='https://deepdreamgenerator.com/u/774528'>neural net</a>
         trained on the painting <i>Sans Titre</i> by Max Ernst,
@@ -23,15 +26,16 @@
 
   <script>
     const images = [
-      'images/mullein.jpg',
-      'images/sans_titre.jpg',
-      'images/max_ernst_in_diablo_canyon.jpg',
+      'images/diablo-canyon/mullein.jpg',
+      'images/diablo-canyon/sans_titre.jpg',
+      'images/diablo-canyon/max_ernst_in_diablo_canyon.jpg',
     ]
 
     d3.selectAll('.container')
       .selectAll('img')
       .data(images).enter()
       .append('img')
+      .attr('class', 'diablo-canyon')
       .attr('src', i => i)
   </script>
   <!-- TODO BACK BUTTON NEEDS TO BE PARAMETERIZABLE -->

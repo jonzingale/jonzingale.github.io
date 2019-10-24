@@ -5,14 +5,16 @@
     <script src="/js/d3.v4.min.js" type="text/javascript"></script>
     <link href='/fonts/nunitoSans.css' rel="stylesheet">
     <link href='/fonts/merriweather.css' rel="stylesheet">
-    <link href="/mushrooms.css" rel="stylesheet" type="text/css">
+    <link href="neural-net.css" rel="stylesheet" type="text/css">
   </head>
 
   <main role="main">
     <div class='container'></div>
     <div class='description'>
       <span class='back-button'></span>
-      <span class='title'>Mushrooms of Kells</span>
+      <span class='title'>
+        <font color='#B7410E'>Mushrooms of Kells</font>
+      </span>
       <div class='content'>
         This image, created by a
         <a href='https://deepdreamgenerator.com/u/774528'>neural net</a>,
@@ -24,15 +26,16 @@
 
   <script>
     const images = [
-      '/mushroomNet/bookOfKells.jpg',
-      '/mushroomNet/mushrooms.jpeg',
-      '/mushroomNet/mushroomOfKells.jpg',
+      'images/mushrooms/bookOfKells.jpg',
+      'images/mushrooms/mushrooms.jpeg',
+      'images/mushrooms/mushroomOfKells.jpg',
     ]
 
     d3.selectAll('.container')
       .selectAll('img')
       .data(images).enter()
       .append('img')
+      .attr('class', 'mushrooms')
       .attr('src', i => i)
   </script>
   <script src='/js/back-button.js' type="text/javascript"></script>

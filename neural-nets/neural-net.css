@@ -1,8 +1,10 @@
-/*Generalize this to be useful. Especially img details*/
-
-img {
+.diablo-canyon {
   height: 410px;
   width: 430px;
+}
+
+.mushrooms {
+  height: 530px;
 }
 
 .main-menu {
@@ -30,13 +32,9 @@ img {
 }
 
 .title {
-  font-weight: bold;
-  /*green*/
-  /*color: #30770f;*/
-  /*rust*/
-  color: #B7410E;
-  font-size: 50px;
   font-family: 'Nunito Sans';
+  font-weight: bold;
+  font-size: 50px;
 }
 
 .content {
