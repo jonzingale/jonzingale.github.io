@@ -39,5 +39,6 @@
       .attr('src', i => i)
   </script>
   <script src='/js/back-button.js' type="text/javascript"></script>
-  <script>d3.selectAll('a').attr('href', '/neural-nets')</script>
+  <script>d3.select('.back-button')
+            .select('a').attr('href', '/neural-nets')</script>
 </html>
