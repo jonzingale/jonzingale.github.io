@@ -18,22 +18,25 @@
 
       <div class='content'>
         These <a href='https://deepdreamgenerator.com/u/774528'>neural nets</a>
-        reconstruct photographs of a 
-        <a href='https://www.dmagazine.com/arts-entertainment/2019/05/christian-dior-paris-to-world-dallas-museum-art/'>
-        Christian Dior</a> exhibition at the Dallas Museum of Art.
+        reconstruct photographs of a <a class='dior'>Christian Dior</a> 
+        exhibition at the Dallas Museum of Art.
       </div>
     </div>
   </main>
 
   <script>
+    const stub = 'https://www.dmagazine.com/arts-entertainment/2019/05/'
+    const url = stub + 'christian-dior-paris-to-world-dallas-museum-art/'
+
     const images = [
       'images/dior/an_outing.jpg',
       'images/dior/cakes.jpg',
       'images/dior/the_ball.jpg',
       'images/dior/trophy.jpg',
       'images/dior/wisdom.jpg',
-
     ]
+
+    d3.select('a.dior').attr('href', url)
 
     d3.selectAll('.container')
       .selectAll('img')
