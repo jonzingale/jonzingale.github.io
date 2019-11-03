@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Chap Light";
+  src: url(/fonts/chap-light.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .dior {
   height: 450px;
   padding-left: 0.5%;
@@ -12,6 +19,12 @@
   padding-top: 3em;
   padding-bottom: 3em;
   padding-left: 6em;
+}
+
+.dior-title {
+  font-family: 'Chap Light';
+  font-weight: bold;
+  font-size: 60px;
 }
 
 .diablo-canyon {
@@ -58,5 +71,5 @@
 .content {
   font-family: 'merriweather';
   font-size: 18px;
-  width: 30em;
+  width: 35em;
 }
