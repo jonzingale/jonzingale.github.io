@@ -167,7 +167,7 @@ import { network } from './network.js';
     sirData['recovered'].forEach(function(name) {
       d3.select('#'+name)
         .style('stroke', 'black')
-        .attr('fill', 'white')
+        .attr('fill', '#f5f2d0')
     })
   }
 
