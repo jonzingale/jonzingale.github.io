@@ -11,13 +11,11 @@ function network() {
       .force("center", d3.forceCenter(width / 2, height / 2));
 
 
-  d3.csv("/graph.csv")
+  d3.csv("graph.csv")
     .row(function(d) { return { source: d.src, target: d.tgt } })
     .get(function(data) {
 
-      function uniq(ary) {
-        return [...new Set(ary)]
-      }
+      function uniq(ary) { return [...new Set(ary)] }
 
       function get_nodes(data) {
         let nodes = []
@@ -31,7 +29,6 @@ function network() {
       }
 
       var graph = { 'nodes': get_nodes(data), 'links': data }
-
 
       var numNodes = graph.nodes.length
 
