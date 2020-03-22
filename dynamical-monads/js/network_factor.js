@@ -10,7 +10,7 @@ function network_factor() {
       )
       .force("center", d3.forceCenter(width / 2, height / 2));
 
-  d3.csv("graph.csv")
+  d3.csv("graph_factor.csv")
     .row(function(d) { return { source: d.src, target: d.tgt } })
     .get(function(data) {
 
