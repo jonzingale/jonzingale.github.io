@@ -39,7 +39,7 @@ function network() {
   var keyData = [
     {'id': 'susceptible', 'color': d3.interpolateYlGnBu(2/3)},
     {'id': 'infected', 'color': '#fb8072'},
-    {'id': 'recovered', 'color': 'white'}]
+    {'id': 'recovered', 'color': '#12eeff'}]
 
     svg.append('g')
       .attr("class", "keyNodes")
