@@ -8,3 +8,7 @@ A Product type (M = 𝝥.𝜟) monadic dynamical system consists of:
 ### Setup:
 1. run local server: `python -m SimpleHTTPServer 8000`
 2. navigate to http://localhost:8000/dyanamical.html
+
+### Todo:
+- Make new network_join.js
+- Visualize `join` with color coding.
