@@ -46,7 +46,8 @@ function network_factor() {
           .attr('id', function(d) { return d.id })
           .attr("r", function(d) { return d.degree * 3 }) // size of nodes
           .attr('fill', function(d, i) { // color nodes
-            return d3.interpolateYlGnBu((numNodes-i)/numNodes)
+            // return d3.interpolateYlGnBu((numNodes-i)/numNodes)
+            return d3.interpolateOrRd((numNodes-i)/numNodes)
           })
           .call(d3.drag()
             .on("start", dragstarted)

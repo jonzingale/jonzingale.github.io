@@ -46,8 +46,11 @@ function network() {
           .attr('id', function(d) { return d.id })
           .attr("r", function(d) { return d.degree * 3 }) // size of nodes
           .attr('fill', function(d, i) { // color nodes
-              // return d3.interpolateYlGnBu((numNodes-i)/numNodes)
-              return d3.interpolateOrRd((numNodes-i)/numNodes)
+              if (d['id'][0]==d['id'][1]) {
+                return d3.interpolateOrRd((numNodes-i)/numNodes)
+              } else {
+                return d3.interpolatePurples((numNodes-i)/numNodes)
+              }
           })
           .call(d3.drag()
             .on("start", dragstarted)
