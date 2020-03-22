@@ -1,5 +1,5 @@
-function network() {
-  var svg = d3.select('#network'),
+function network_factor() {
+  var svg = d3.select('#network-factor'),
       width = +svg.attr("width"),
       height = +svg.attr("height");
 
@@ -92,4 +92,4 @@ function network() {
 }
 
 // export { network }
-network()
+network_factor()

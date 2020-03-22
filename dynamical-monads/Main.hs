@@ -19,6 +19,9 @@ instance DefaultOrdered (Edge String) where
     headerOrder _ = header ["src", "tgt"]
 
 main = do
-  let csv = encodeDefaultOrderedByName $  (dude) ^ 2
+  let csv = encodeDefaultOrderedByName $ dude ^ 2
   BL.writeFile "./graph.csv" csv
 
+another = do
+  let csv = encodeDefaultOrderedByName $ dude
+  BL.writeFile "./graph_factor.csv" csv
