@@ -18,12 +18,8 @@ function network() {
 
       function get_nodes(data) {
         let nodes = []
-        data.forEach(d => nodes.push(d.source))
-        data.forEach(d => nodes.push(d.target))
-        nodes = uniq(nodes).map(function(n) {
-          return ({ 'id': n, 'degree': 2 })
-        })
-
+        data.forEach(d => nodes = nodes.concat([d.source, d.target]))
+        nodes = uniq(nodes).map(n => ({ 'id': n, 'degree': 2 }))
         return nodes
       }
 
