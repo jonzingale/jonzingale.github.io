@@ -28,9 +28,9 @@ fixed_points :: Eq s => Graph [s] -> Graph [s]
 fixed_points es = [ e | e <- es, src e == tgt e]
 
 instance Num (Graph [s]) where
-  (*) es ds = [ (++) <$> e <*> d | e <- es, d <- ds ] -- cartesian product
+  (*) es ds = [ (++) <$> e <*> d | e <- es, d <- ds ] -- product
+  (+) es ds = es ++ ds -- coproduct
   negate = map (\(E x y) -> E y x) -- dualize graph
   fromInteger = undefined
   signum = undefined
-  (+) = undefined
   abs = undefined

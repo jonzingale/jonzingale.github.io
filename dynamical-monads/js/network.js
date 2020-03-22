@@ -6,7 +6,7 @@ function network() {
   var simulation = d3.forceSimulation()
       .force("link", d3.forceLink().id(function(d) { return d.id; }))
       .force("charge", d3.forceManyBody().strength(
-        function(d){ return -d.degree * 10 } )
+        function(d){ return -d.degree * 3 } )
       )
       .force("center", d3.forceCenter(width / 2, height / 2));
 
@@ -21,7 +21,7 @@ function network() {
         data.forEach(d => nodes.push(d.source))
         data.forEach(d => nodes.push(d.target))
         nodes = uniq(nodes).map(function(n) {
-          return ({ 'id': n, 'degree': 4 })
+          return ({ 'id': n, 'degree': 2 })
         })
 
         return nodes
@@ -46,7 +46,8 @@ function network() {
           .attr('id', function(d) { return d.id })
           .attr("r", function(d) { return d.degree * 3 }) // size of nodes
           .attr('fill', function(d, i) { // color nodes
-            return d3.interpolateYlGnBu((numNodes-i)/numNodes)
+              // return d3.interpolateYlGnBu((numNodes-i)/numNodes)
+              return d3.interpolateOrRd((numNodes-i)/numNodes)
           })
           .call(d3.drag()
             .on("start", dragstarted)
