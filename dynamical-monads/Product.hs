@@ -24,4 +24,8 @@ instance Monad Product where
 unitGraph :: Product (Graph String)
 unitGraph = unit graph
 joinGraph = join $ unit unitGraph
-appendGraph = (unit graph) >>= (\g -> TT graph g)
+appendRight = (unit graph) >>= (\g -> TT graph g)
+
+-- USAGE: eval appendRight
+eval :: Monoid s => Product (Graph s) -> Graph s
+eval pg = pr1 pg `mappend` pr2 pg

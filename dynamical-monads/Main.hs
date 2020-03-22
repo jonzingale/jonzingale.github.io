@@ -9,6 +9,7 @@ import Data.Text (Text)
 import Data.Csv
 
 import Dynamical
+import Product
 
 g1, g2 :: Graph String
 g1 = [ E "0" "0", E "1" "0", E "3" "0", E "9" "0" ]
