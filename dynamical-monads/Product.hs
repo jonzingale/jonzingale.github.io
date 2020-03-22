@@ -27,5 +27,5 @@ joinGraph = join $ unit unitGraph
 appendRight = (unit graph) >>= (\g -> TT graph g)
 
 -- USAGE: eval appendRight
-eval :: Monoid s => Product (Graph s) -> Graph s
-eval pg = pr1 pg `mappend` pr2 pg
+eval :: Product (Graph [s]) -> Graph [s]
+eval pg = pr1 pg * pr2 pg

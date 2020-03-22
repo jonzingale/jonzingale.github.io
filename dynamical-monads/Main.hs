@@ -22,7 +22,8 @@ instance DefaultOrdered (Edge String) where
 
 main = do
   let g = g1 + g2
-  let csv1 = encodeDefaultOrderedByName g
-  let csv = encodeDefaultOrderedByName (g^2)
-  BL.writeFile "./graph_factor.csv" csv1
-  BL.writeFile "./graph.csv" csv
+  let a = encodeDefaultOrderedByName g
+  let m_a = encodeDefaultOrderedByName $ eval.unit $ g
+  -- let m_m_a = encodeDefaultOrderedByName $ eval.unit.unit $ g -- Not sure!!!
+  BL.writeFile "./graph_factor.csv" a
+  BL.writeFile "./graph.csv" m_a
