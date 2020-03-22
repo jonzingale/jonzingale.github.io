@@ -38,6 +38,10 @@ function network() {
         .enter().append("line")
         .attr('id', function(d) {return d.source+d.target});
 
+      var diagonal = graph.nodes.filter(d => d['id'][0]==d['id'][1]) 
+      var numIncl = diagonal.length
+      console.log(graph.nodes)
+
       var node = svg.append("g")
         .attr("class", "nodes")
         .selectAll("circle")
@@ -47,9 +51,10 @@ function network() {
           .attr("r", function(d) { return d.degree * 3 }) // size of nodes
           .attr('fill', function(d, i) { // color nodes
               if (d['id'][0]==d['id'][1]) {
-                return d3.interpolateOrRd((numNodes-i)/numNodes)
+                let ii = numIncl - diagonal.indexOf(d)
+                return d3.interpolateOrRd(ii/numIncl)
               } else {
-                return d3.interpolatePurples((numNodes-i)/numNodes)
+                return d3.interpolatePurples(i/numNodes)
               }
           })
           .call(d3.drag()

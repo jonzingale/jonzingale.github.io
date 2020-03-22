@@ -1,9 +1,9 @@
 ## Module for exploring monadic properties with Discrete Dynamical Systems
 
-### Product type (M = 𝝥.𝜟) monadic dynamical systems
-- M takes a dynamical system and returns its cartesian square
-- η finds the diagonal inclusion in M
-- 𝜇 flattens square onto its factor
+A Product type (M = 𝝥.𝜟) monadic dynamical system consists of:
+* M takes a dynamical system and returns its cartesian square<br>
+* η includes a dynamical system as the diagonal in M<br>
+* 𝜇 flattens a square of squares (M.M) onto its factor M
 
 ### Setup:
 1. run local server: `python -m SimpleHTTPServer 8000`
