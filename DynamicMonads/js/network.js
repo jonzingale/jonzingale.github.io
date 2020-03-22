@@ -10,7 +10,7 @@ function network() {
       )
       .force("center", d3.forceCenter(width / 2, height / 2));
 
-  d3.csv("/DynamicMonads/graph.csv")
+  d3.csv("./graph.csv")
     .row(function(d) { return { source: d.src, target: d.tgt } })
     .get(function(data) {
 
