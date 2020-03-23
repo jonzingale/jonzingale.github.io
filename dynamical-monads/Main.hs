@@ -15,8 +15,7 @@ import Product
 TODO:
 * Validate dynamicals
 - must have terminating cycle
-- mustn't have two arrows leaving a state
-- list with indices is prototypical [0,3,2,1]
+- must not have two arrows leaving a state
 
 * Avoid name space crashes
 
