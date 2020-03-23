@@ -28,6 +28,9 @@ nodes (e:es) = src e : tgt e : nodes es
 fixed_points :: Eq s => Graph [s] -> Graph [s]
 fixed_points es = [ e | e <- es, src e == tgt e]
 
+limit_cycles :: Eq s => Graph [s] -> Graph [s]
+limit_cycles g = filter (\(E s t) -> elem s $ map tgt g) g
+
 instance Num (Graph [s]) where
   (*) es ds = [ (++) <$> e <*> d | e <- es, d <- ds ] -- product
   (+) es ds = es ++ ds -- coproduct
