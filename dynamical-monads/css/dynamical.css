@@ -6,6 +6,10 @@
   margin-left: 5%;
 }
 
+.join-table {
+  margin-left: 5%;
+}
+
 .explorable-title {
   font-size: 30px;
   font-family: 'Helvetica';
@@ -42,4 +46,8 @@ html {
 .nodes circle {
   stroke: #aaa;
   stroke-width: 0.5px;
+}
+
+.footer {
+  margin-bottom: 10%
 }

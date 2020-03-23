@@ -6,6 +6,7 @@
     <link href="/dynamical-monads/css/widget.v3.css" rel="stylesheet" type="text/css" />
     <link href="/dynamical-monads/css/dynamical.css" rel="stylesheet" type="text/css" />
 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
     <script type="text/javascript" src="js/d3.v4.min.js"></script>
     <script type="text/javascript" src="js/widget.v3.3.js"></script>
     <script src="js/d3-scale-chromatic.v1.min.js"></script>
@@ -30,39 +31,48 @@
               * η includes a dynamical system as the diagonal in M<br>
               * 𝜇 flattens a square of squares (M.M) onto its factor M
             </div>
+
             <div class="mw8 center ph1-ns">          
               <table class="unit-table">
                 <tbody>
-                  <td><svg id="network-factor" width="300" height="550"></svg></td>
+                  <td><svg id="network-factor" width="400" height="550"></svg></td>
                   <td><svg id="network" width="500" height="550"></svg></td>
                 </tbody>
               </table>
               <div class='description'>
-                Above are two dynamical systems. On the left (with larger nodes)
-                is some given dynamical, d, and on the right M(d) given by η(d). 
+                Above are two dynamical systems. Denoting the system of large
+                red nodes on the left by \(d :: Set \to Set\), the system on
+                the right is the result of applying \(M\) to \(d\).<br>
+                The corresponding small red nodes highlight the
+                <i>inclusion along the diagonal</i> of \(d\)
+                via the <i>unit</i>, \(\eta :: Id \to M\).
               </div>
             </div>
- <!--
-          TODO: Put the join visualization here.
-          <div class="mw8 center ph1-ns">          
-          <table class="multiplication-table">
-            <tbody>
-              <td><svg id="network-factor" width="300" height="550"></svg></td>
-              <td><svg id="network" width="500" height="550"></svg></td>
-            </tbody>
-          </table>
-          <div class='description'>
-            Above are two dynamical systems. On the left (with larger nodes)
-            is some given dynamical, d, and on the right M(d) given by η(d). 
-          </div>
-        </div>
--->
+
+            <!-- TODO: link to haskell code -->
+
+            <div class="mw8 center ph1-ns">
+              <table class="join-table">
+                <tbody>
+                  <td><svg id="network-join" width="800" height="550"></svg></td>
+                  <!-- <td><svg id="network" width="500" height="550"></svg></td> -->
+                </tbody>
+              </table>
+              <div class='description'>
+                The mess above is \(M^2(d)\). Because this monstrosity is
+                structured monadically, \(\mu :: M^2 \to M\) provides a clean
+                way to identify each state in the dynamical system with states
+                in \(M(d)\).
+              </div>
+            </div>
           </article>
         </div>
       </article>
     </div>
+    <div class='footer'></div>
   </main>
   <script src='/dynamical-monads/js/backButton.js' type="text/javascript"></script>
   <script src='/dynamical-monads/js/network.js' type='module'></script>
   <script src='/dynamical-monads/js/network_factor.js' type='module'></script>
+  <script src='/dynamical-monads/js/network_join.js' type='module'></script>
 </html>
