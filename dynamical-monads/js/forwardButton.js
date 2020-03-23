@@ -1,25 +1,25 @@
-var backButton = d3.selectAll('.back-button')
+var forwardButton = d3.selectAll('.forward-button')
   .append('svg').attr('width', 70).attr('height', 50)
 
-backButton
+forwardButton
   .append('circle').style('fill','#fff')
   .attr("cx", 21).attr("cy", 21).attr("r", 20)
   .style('stroke','black').attr("stroke-width", 2)
 
-backButton
+forwardButton
   .append('line')
   .style('stroke','black').attr("stroke-width", 2)
-  .attr('x1', 31).attr('y1', 4)
-  .attr('x2', 31).attr('y2', 37)
+  .attr('x1', 10).attr('y1', 4)
+  .attr('x2', 10).attr('y2', 37)
 
-backButton
+forwardButton
   .append('line')
   .style('stroke','black').attr("stroke-width", 2)
-  .attr('x1', 31).attr('y1', 4)
-  .attr('x2', 2).attr('y2', 20)
+  .attr('x1', 10).attr('y1', 4)
+  .attr('x2', 40).attr('y2', 20)
 
-backButton
+forwardButton
   .append('line')
   .style('stroke','black').attr("stroke-width", 2)
-  .attr('x1', 2).attr('y1', 20)
-  .attr('x2', 31).attr('y2', 37)
+  .attr('x1', 40).attr('y1', 20)
+  .attr('x2', 10).attr('y2', 37)

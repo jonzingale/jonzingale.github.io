@@ -1,5 +1,10 @@
 .title-table {
-  margin-left: 5%
+  margin-left: 5%;
+}
+
+.footer-table {
+  margin-top: 5%;
+  margin-left: 10%;
 }
 
 .unit-table {
@@ -28,6 +33,15 @@
 
 .back-button {
   padding-top: 3%;
+  border: none;
+  font-size: 14px;
+  background-color: #fee;
+}
+
+.forward-button {
+  border: none;
+  font-size: 14px;
+  background-color: #fee;
 }
 
 a {
