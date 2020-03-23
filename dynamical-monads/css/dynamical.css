@@ -34,14 +34,15 @@
 .back-button {
   padding-top: 3%;
   border: none;
-  font-size: 14px;
   background-color: #fee;
 }
 
 .forward-button {
   border: none;
-  font-size: 14px;
   background-color: #fee;
+}
+.button-text {
+  font-size: 24px;
 }
 
 a {
