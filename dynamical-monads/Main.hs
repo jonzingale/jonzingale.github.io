@@ -16,6 +16,8 @@ import Product
 TODO:
 * avoid name space crashes
 * fix corresponding colors
+* extend to Edge with context:
+  id, degree, color_palette and color value
 --}
 
 instance ToNamedRecord (Edge String)
@@ -25,7 +27,7 @@ instance DefaultOrdered (Edge String) where
 
 main = do
   -- let g = g1 + g2 -- edge^2, 3-cycle with leg
-  let g = g4 + g1
+  let g = g4 + g1 -- 2-cycle, edge^2
   let a = encodeDefaultOrderedByName g
   let m_a = encodeDefaultOrderedByName.eval.unit $ g
   let m_m_a = encodeDefaultOrderedByName $ (eval.unit).(eval.unit) $ g

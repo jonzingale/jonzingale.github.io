@@ -38,6 +38,9 @@ function network_join() {
         .enter().append("line")
         .attr('id', function(d) {return d.source+d.target});
 
+// TODO: Package data from the haskell side to include:
+// id, degree, color_palette and value based on monadic operations.
+
       // color and place nodes
       var node = svg.append("g")
         .attr("class", "nodes")
