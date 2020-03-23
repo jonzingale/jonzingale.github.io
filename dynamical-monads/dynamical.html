@@ -10,7 +10,6 @@
     <script type="text/javascript" src="js/d3.v4.min.js"></script>
     <script type="text/javascript" src="js/widget.v3.3.js"></script>
     <script src="js/d3-scale-chromatic.v1.min.js"></script>
-
   </head>
 
   <main role="main">
@@ -26,10 +25,15 @@
         <div class="flex-l mt2 mw8 center">
           <article class="center pv1 ph3 ph4-ns mw10 ">
             <div class='description'>
-              A Product type (M = 𝝥.𝜟) monadic dynamical system consists of:</p>
-              * M takes a dynamical system and returns its cartesian square<br>
-              * η includes a dynamical system as the diagonal in M<br>
-              * 𝜇 flattens a square of squares (M.M) onto its factor M
+              Product type \(M = \Pi \circ \Delta\):<br>
+              Composing the functor \(\Delta :: C \to C \times C\), which takes
+              objects to pairs of objects, and it's right adjoint the product
+              functor \(\Pi :: C \times C \to C\) gives a monad \(M\) when
+              equipped with natural transformations \(\eta :: Id \to M \) and
+              \(\mu :: M^2 \to M \).
+
+              η includes a dynamical system as the diagonal in M, while
+              𝜇 can be seen to flatten \(M^2\) onto its factor \(M\).
             </div>
 
             <div class="mw8 center ph1-ns">          
@@ -54,16 +58,16 @@
             <div class="mw8 center ph1-ns">
               <table class="join-table">
                 <tbody>
-                  <td><svg id="network-join" width="800" height="550"></svg></td>
+                  <!-- <td><svg id="network-join" width="800" height="550"></svg></td> -->
                   <!-- <td><svg id="network" width="500" height="550"></svg></td> -->
                 </tbody>
               </table>
-              <div class='description'>
+<!--               <div class='description'>
                 The mess above is \(M^2(d)\). Because this monstrosity is
                 structured monadically, \(\mu :: M^2 \to M\) provides a clean
                 way to identify each state in the dynamical system with states
                 in \(M(d)\).
-              </div>
+              </div> -->
             </div>
           </article>
         </div>
@@ -74,5 +78,5 @@
   <script src='/dynamical-monads/js/backButton.js' type="text/javascript"></script>
   <script src='/dynamical-monads/js/network.js' type='module'></script>
   <script src='/dynamical-monads/js/network_factor.js' type='module'></script>
-  <script src='/dynamical-monads/js/network_join.js' type='module'></script>
+  <!-- <script src='/dynamical-monads/js/network_join.js' type='module'></script> -->
 </html>

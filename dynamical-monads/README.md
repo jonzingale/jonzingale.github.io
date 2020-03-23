@@ -12,3 +12,4 @@ A Product type (M = 𝝥.𝜟) monadic dynamical system consists of:
 ### Todo:
 - Make new network_join.js
 - Visualize `join` with color coding.
+- fix monoidal multiplication

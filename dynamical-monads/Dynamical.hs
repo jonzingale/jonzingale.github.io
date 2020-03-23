@@ -5,13 +5,14 @@ module Dynamical where
 import GHC.Generics (Generic)
 
 graph = [E "0" "0", E "1" "0", E "2" "0"]
+e1 = [E "0" "1"]
 
 type Graph s = [Edge s]
 
 data Edge s = E { src :: s, tgt :: s} | Empty deriving (Eq, Generic)
 
 instance Show s => Show (Edge s) where
-  show (E a b) = show a ++ "->" ++show b
+  show (E a b) = show a ++ "->" ++ show b
 
 instance Functor Edge where
   fmap f (E s t) = E (f s) (f t)
@@ -30,7 +31,7 @@ fixed_points es = [ e | e <- es, src e == tgt e]
 instance Num (Graph [s]) where
   (*) es ds = [ (++) <$> e <*> d | e <- es, d <- ds ] -- product
   (+) es ds = es ++ ds -- coproduct
-  negate = map (\(E x y) -> E y x) -- dualize graph
+  negate = undefined
   fromInteger = undefined
   signum = undefined
   abs = undefined
