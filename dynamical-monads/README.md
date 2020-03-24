@@ -14,3 +14,7 @@ To create new csvs for monadic dynamical systems:
 1. `cd hs`
 2. `ghci Main.hs`
 3. `main`
+
+#### Todo:
+- prevent name spacing crashes in DynamicalExamples
+- finish specifying MRecord or MMRecord which should precompute colorings.
