@@ -8,26 +8,27 @@ import GHC.Generics
 import Data.Text (Text)
 import Data.Csv
 
-import Dynamical
 import DynamicalExample (g1, g2, g3, g4)
+import CsvRecord (DynamicalRecord)
+import Dynamical
 import Product
 
 {--
 TODO:
 * avoid name space crashes
-* fix corresponding colors
-* extend to Edge with context:
-  id, degree, color_palette and color value
 --}
 
-instance ToNamedRecord (Edge String)
-
-instance DefaultOrdered (Edge String) where
-    headerOrder _ = header ["src", "tgt"]
+-- TODO: make DynamicalRecord work
+-- dynamicalCsv = do
+--   let g = g1 + g4
+--   let mg = eval.unit $ g
+--   let mmg = eval.unit $ mg
+--   let recs = [DynamicalRecord (E gs gt) ]
+--   BL.writeFile "./dynamical_record.csv"
 
 main = do
   -- let g = g1 + g2 -- edge^2, 3-cycle with leg
-  let g = g4 + g1 -- 2-cycle, edge^2
+  let g = g1 + g4 -- 2-cycle, edge^2
   let a = encodeDefaultOrderedByName g
   let m_a = encodeDefaultOrderedByName.eval.unit $ g
   let m_m_a = encodeDefaultOrderedByName $ (eval.unit).(eval.unit) $ g

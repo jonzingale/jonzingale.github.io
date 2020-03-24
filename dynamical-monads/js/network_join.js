@@ -27,10 +27,6 @@ function network_join() {
       var graph = { 'nodes': get_nodes(data), 'links': data }
       var numNodes = graph.nodes.length
 
-      // prepare folded subgraph
-      var folded = uniq(graph.nodes.map(d => d.id[0]+d.id[3]))
-      var numIncl = folded.length
-
       var link = svg.append("g")
         .attr("class", "links")
         .selectAll("line")
@@ -41,6 +37,14 @@ function network_join() {
 // TODO: Package data from the haskell side to include:
 // id, degree, color_palette and value based on monadic operations.
 
+      // prepare folded subgraph nodes
+      var folded_nodes = uniq(graph.nodes.map(d => d.id[0]+d.id[3]))
+      var numFolded = folded_nodes.length
+
+      // prepare unit of folded subgraph nodes
+      var diagonal_nodes = folded_nodes.filter(d => d[0]==d[1])
+      var numIncl = diagonal_nodes.length
+
       // color and place nodes
       var node = svg.append("g")
         .attr("class", "nodes")
@@ -50,9 +54,18 @@ function network_join() {
           .attr('id', function(d) { return d.id })
           .attr("r", function(d) { return d.degree * 3 }) // size of nodes
           .attr('fill', function(d, i) { // color nodes
-            let ii = folded.indexOf(d.id[0] + d.id[3])
-            return d3.interpolatePurples((numIncl - ii)/numIncl)
-            // return d3.interpolateOrRd((numIncl - ii)/numIncl)
+
+// TODO: See comment above, this computation should
+// be replace by a precalculated backend function.
+            let ii = folded_nodes.indexOf(d.id[0] + d.id[3])
+            let diag_index = diagonal_nodes.indexOf(d.id[0] + d.id[3])
+
+            if (diag_index < 0) {
+              return d3.interpolatePurples(ii/numFolded)
+            } else {
+              return d3.interpolateOrRd((numIncl - diag_index)/numIncl)
+            }
+
           })
           .call(d3.drag()
             .on("start", dragstarted)
