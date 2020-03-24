@@ -61,11 +61,11 @@ function network() {
             if (ii < 0) {
               return d3.interpolatePurples(i/numNodes)
             } else {
-              return d3.interpolateOrRd((numIncl - ii)/numIncl)
+              return d3.interpolateOrRd((numIncl - 1 - ii)/numIncl)
             }
           })
           .attr('stroke-width', function(d) {
-            return (d.fixedPoint ? '4px' : '0.5px')
+            return (d.fixedPoint ? '3px' : '0.5px')
           })
           .call(d3.drag()
             .on("start", dragstarted)

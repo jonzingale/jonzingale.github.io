@@ -71,12 +71,12 @@ function network_join() {
             if (diag_index < 0) {
               return d3.interpolatePurples(ii/numFolded)
             } else {
-              return d3.interpolateOrRd((numIncl - diag_index)/numIncl)
+              return d3.interpolateOrRd((numIncl - 1 - diag_index)/numIncl)
             }
 
           })
           .attr('stroke-width', function(d) {
-            return (d.fixedPoint ? '4px' : '0.5px')
+            return (d.fixedPoint ? '3px' : '0.5px')
           })
           .call(d3.drag()
             .on("start", dragstarted)

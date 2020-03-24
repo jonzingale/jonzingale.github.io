@@ -52,10 +52,10 @@ function network_factor() {
           .attr('id', function(d) { return d.id })
           .attr("r", function(d) { return d.degree * 3 }) // size of nodes
           .attr('fill', function(d, i) { // color nodes
-            return d3.interpolateOrRd((numNodes-i)/numNodes)
+            return d3.interpolateOrRd((numNodes - 1 - i)/numNodes)
           })
           .attr('stroke-width', function(d) {
-            return (d.fixedPoint ? '4px' : '0.3px')
+            return (d.fixedPoint ? '3px' : '0.3px')
           })
           .call(d3.drag()
             .on("start", dragstarted)
