@@ -6,11 +6,11 @@ function network_join() {
   var simulation = d3.forceSimulation()
       .force("link", d3.forceLink().id(function(d) { return d.id; }))
       .force("charge", d3.forceManyBody().strength(
-        function(d){ return -d.degree * 0.8 } )
+        function(d){ return -d.degree * 4 } )
       )
       .force("center", d3.forceCenter(width / 2, height / 2));
 
-  d3.csv("m_m_a.csv")
+  d3.csv("./data/m_m_a_dyn.csv")
     .row(function(d) { return { source: d.src, target: d.tgt } })
     .get(function(data) {
 
@@ -18,8 +18,18 @@ function network_join() {
 
       function get_nodes(data) {
         let nodes = []
-        data.forEach(d => nodes = nodes.concat([d.source, d.target]))
-        nodes = uniq(nodes).map(n => ({ 'id': n, 'degree': 1 }))
+        let fixedPoints = []
+        data.forEach(function(d) {
+          if (d.source == d.target) { fixedPoints.push(d.source) }
+        })
+
+        data.forEach(d => nodes.push(d.source))
+        data.forEach(d => nodes.push(d.target))
+        nodes = uniq(nodes).map(function(n) {
+          var fp = fixedPoints.indexOf(n) >= 0
+          return ({ 'id': n, 'degree': 1, 'fixedPoint': fp })
+        })
+
         return nodes
       }
 
@@ -55,8 +65,6 @@ function network_join() {
           .attr("r", function(d) { return d.degree * 3 }) // size of nodes
           .attr('fill', function(d, i) { // color nodes
 
-// TODO: See comment above, this computation should
-// be replace by a precalculated backend function.
             let ii = folded_nodes.indexOf(d.id[0] + d.id[3])
             let diag_index = diagonal_nodes.indexOf(d.id[0] + d.id[3])
 
@@ -66,6 +74,9 @@ function network_join() {
               return d3.interpolateOrRd((numIncl - diag_index)/numIncl)
             }
 
+          })
+          .attr('stroke-width', function(d) {
+            return (d.fixedPoint ? '4px' : '0.5px')
           })
           .call(d3.drag()
             .on("start", dragstarted)

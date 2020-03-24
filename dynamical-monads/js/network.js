@@ -10,7 +10,7 @@ function network() {
       )
       .force("center", d3.forceCenter(width / 2, height / 2));
 
-  d3.csv("graph.csv")
+  d3.csv("./data/m_a_dyn.csv")
     .row(function(d) { return { source: d.src, target: d.tgt } })
     .get(function(data) {
 
@@ -18,8 +18,18 @@ function network() {
 
       function get_nodes(data) {
         let nodes = []
-        data.forEach(d => nodes = nodes.concat([d.source, d.target]))
-        nodes = uniq(nodes).map(n => ({ 'id': n, 'degree': 2 }))
+        let fixedPoints = []
+        data.forEach(function(d) {
+          if (d.source == d.target) { fixedPoints.push(d.source) }
+        })
+
+        data.forEach(d => nodes.push(d.source))
+        data.forEach(d => nodes.push(d.target))
+        nodes = uniq(nodes).map(function(n) {
+          var fp = fixedPoints.indexOf(n) >= 0
+          return ({ 'id': n, 'degree': 2, 'fixedPoint': fp })
+        })
+
         return nodes
       }
 
@@ -53,6 +63,9 @@ function network() {
             } else {
               return d3.interpolateOrRd((numIncl - ii)/numIncl)
             }
+          })
+          .attr('stroke-width', function(d) {
+            return (d.fixedPoint ? '4px' : '0.5px')
           })
           .call(d3.drag()
             .on("start", dragstarted)

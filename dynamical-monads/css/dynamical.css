@@ -59,8 +59,8 @@ html {
 }
 
 .nodes circle {
-  stroke: #aaa;
-  stroke-width: 0.5px;
+  stroke: #000;
+  /*stroke-width: 0.5px;*/
 }
 
 .footer {
