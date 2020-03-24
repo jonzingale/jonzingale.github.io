@@ -26,6 +26,6 @@ unitGraph = unit graph
 joinGraph = join $ unit unitGraph
 appendRight = (unit graph) >>= (\g -> TT graph g)
 
--- USAGE: eval appendRight
+-- USAGE: eval appendRight, eval.unit
 eval :: Product (Graph [s]) -> Graph [s]
 eval pg = pr1 pg * pr2 pg

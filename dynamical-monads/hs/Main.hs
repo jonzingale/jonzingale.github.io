@@ -16,6 +16,7 @@ import Product
 {--
 TODO:
 * avoid name space crashes
+* finish mRecords, mmRecords implementation
 --}
 
 mRecords = do -- not yet used on frontend, incomplete specification
@@ -29,9 +30,6 @@ mmRecords = do -- not yet used on frontend, incomplete specification
   let recs = [MMRecord s t (muName (E s t)) | (E s t) <- mmg]
   let m_a = encodeDefaultOrderedByName recs
   BL.writeFile "./data/m_m_a_test.csv" m_a
-
--- Perhaps instead of the above make a M1_Record which includes the unit name
--- and make an M2_record which includes both unit name and mu name.
 
 main = do
   -- let g = g1 + g2 -- edge^2, 3-cycle with leg

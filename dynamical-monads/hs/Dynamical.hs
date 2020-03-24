@@ -5,7 +5,6 @@ module Dynamical where
 import GHC.Generics (Generic)
 
 graph = [E "0" "0", E "1" "0", E "2" "0"]
-e1 = [E "0" "1"]
 
 type Graph s = [Edge s]
 
@@ -34,7 +33,7 @@ limit_cycles g = filter (\(E s t) -> elem s $ map tgt g) g
 instance Num (Graph [s]) where
   (*) es ds = [ (++) <$> e <*> d | e <- es, d <- ds ] -- product
   (+) es ds = es ++ ds -- coproduct
-  negate = undefined
   fromInteger = undefined
+  negate = undefined
   signum = undefined
   abs = undefined

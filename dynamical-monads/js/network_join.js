@@ -27,7 +27,7 @@ function network_join() {
         data.forEach(d => nodes.push(d.target))
         nodes = uniq(nodes).map(function(n) {
           var fp = fixedPoints.indexOf(n) >= 0
-          return ({ 'id': n, 'degree': 1, 'fixedPoint': fp })
+          return ({ 'id': n, 'degree': 2, 'fixedPoint': fp })
         })
 
         return nodes

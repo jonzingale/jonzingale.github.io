@@ -23,6 +23,7 @@ instance ToNamedRecord (MRecord String)
 instance DefaultOrdered (MRecord String) where
     headerOrder _ = header ["srcM", "tgtM", "diagonalName"]
 
+
 -- MMRecord
 data MMRecord s = MMRecord {
   srcMM :: s, tgtMM :: s, joinName :: String
