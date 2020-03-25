@@ -17,4 +17,3 @@ To create new csvs for monadic dynamical systems:
 
 #### Todo:
 - prevent name spacing crashes in DynamicalExamples
-- finish specifying MRecord or MMRecord which should precompute colorings.
