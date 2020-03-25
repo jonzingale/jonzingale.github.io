@@ -1,13 +1,13 @@
 function network_factor() {
+  const degree = 5
+
   var svg = d3.select('#network-factor'),
       width = +svg.attr("width"),
       height = +svg.attr("height");
 
   var simulation = d3.forceSimulation()
       .force("link", d3.forceLink().id(function(d) { return d.id; }))
-      .force("charge", d3.forceManyBody().strength(
-        function(d){ return -d.degree * 30 } )
-      )
+      .force("charge", d3.forceManyBody().strength(degree * -30))
       .force("center", d3.forceCenter(width / 2, height / 2));
 
   d3.csv("./data/dyn.csv")
@@ -27,7 +27,7 @@ function network_factor() {
         data.forEach(d => nodes.push(d.target))
         nodes = uniq(nodes).map(function(n) {
           var fp = fixedPoints.indexOf(n) >= 0
-          return ({ 'id': n, 'degree': 6, 'fixedPoint': fp })
+          return ({ 'id': n, 'fixedPoint': fp })
         })
 
         return nodes
@@ -50,7 +50,7 @@ function network_factor() {
         .data(graph.nodes)
         .enter().append("circle")
           .attr('id', function(d) { return d.id })
-          .attr("r", function(d) { return d.degree * 3 }) // size of nodes
+          .attr("r", degree * 3) // size of nodes
           .attr('fill', function(d, i) { // color nodes
             return d3.interpolateOrRd((numNodes - 1 - i)/numNodes)
           })

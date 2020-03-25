@@ -1,11 +1,13 @@
 function network_join() {
+  const degree = 2
+
   var svg = d3.select('#network-join'),
       width = +svg.attr("width"),
       height = +svg.attr("height");
 
   var simulation = d3.forceSimulation()
       .force("link", d3.forceLink().id(function(d) { return d.source }))
-      .force("charge", d3.forceManyBody().strength(-8))
+      .force("charge", d3.forceManyBody().strength(degree * -6))
       .force("center", d3.forceCenter(width / 2, height / 2));
 
   d3.csv("./data/m_m_a_dyn.csv")
@@ -52,7 +54,7 @@ function network_join() {
         .data(data)
         .enter().append("circle")
           .attr('id', function(d) { return d.source })
-          .attr("r", 6) // size of nodes
+          .attr("r", degree * 3) // size of nodes
           .attr('fill', function(d, i) { // color nodes
 
             let ii = folded_nodes.indexOf(d.joinNode)

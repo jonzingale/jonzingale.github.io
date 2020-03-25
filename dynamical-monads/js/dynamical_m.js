@@ -1,11 +1,13 @@
 function network() {
+  const degree = 2
+
   var svg = d3.select('#network'),
       width = +svg.attr("width"),
       height = +svg.attr("height");
 
   var simulation = d3.forceSimulation()
       .force("link", d3.forceLink().id(function(d) { return d.source; }))
-      .force("charge", d3.forceManyBody().strength(-50))
+      .force("charge", d3.forceManyBody().strength(-25 * degree))
       .force("center", d3.forceCenter(width / 2, height / 2));
 
   d3.csv("./data/m_a_dyn.csv")
@@ -43,7 +45,7 @@ function network() {
         .data(graph.nodes)
         .enter().append("circle")
           .attr('id', function(d) { return d.source})
-          .attr("r", 8) // size of nodes
+          .attr("r", 4 * degree) // size of nodes
           .attr('fill', function(d, i) { // color nodes
             let ii = diagonals.indexOf(d)
             if (ii < 0) {
