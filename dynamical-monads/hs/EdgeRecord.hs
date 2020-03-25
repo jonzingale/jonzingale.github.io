@@ -2,7 +2,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE DeriveGeneric #-}
 
-module CsvRecord where
+module EdgeRecord where
 import GHC.Generics
 import Data.Csv
 

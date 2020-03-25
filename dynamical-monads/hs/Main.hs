@@ -11,7 +11,7 @@ import Data.Csv
 import DynamicalExamples (g1, g2, g3, g4)
 import MMRecord
 import MRecord
-import CsvRecord
+import EdgeRecord
 import Dynamical
 import Product
 
