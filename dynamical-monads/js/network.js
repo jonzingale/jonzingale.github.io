@@ -8,7 +8,7 @@ function network() {
       .force("charge", d3.forceManyBody().strength(-8))
       .force("center", d3.forceCenter(width / 2, height / 2));
 
-  d3.csv("./data/m_a_test.csv")
+  d3.csv("./data/m_a_dyn.csv")
     .row(function(d) {
       return {
         source: d.source,

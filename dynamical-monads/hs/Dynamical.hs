@@ -1,8 +1,10 @@
 {-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE DeriveGeneric #-}
 
 module Dynamical where
 import GHC.Generics (Generic)
+import Data.Csv
 
 graph = [E "0" "0", E "1" "0", E "2" "0"]
 
@@ -12,6 +14,11 @@ data Edge s = E { src :: s, tgt :: s} | Empty deriving (Eq, Generic)
 
 instance Show s => Show (Edge s) where
   show (E a b) = show a ++ "->" ++ show b
+
+instance ToNamedRecord (Edge String)
+
+instance DefaultOrdered (Edge String) where
+    headerOrder _ = header ["src", "tgt"]
 
 instance Functor Edge where
   fmap f (E s t) = E (f s) (f t)
