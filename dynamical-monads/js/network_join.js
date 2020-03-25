@@ -69,7 +69,7 @@ function network_join() {
             let diag_index = diagonal_nodes.indexOf(d.id[0] + d.id[3])
 
             if (diag_index < 0) {
-              return d3.interpolatePurples(ii/numFolded)
+              return d3.interpolatePurples((ii+1)/numFolded)
             } else {
               return d3.interpolateOrRd((numIncl - 1 - diag_index)/numIncl)
             }

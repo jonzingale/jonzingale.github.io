@@ -23,7 +23,7 @@ TODO:
 
 mRecords = do
   let mg = eval.unit $ [E "0" "0", E "1" "0", E "2" "1"] 
-  let recs = [ MRecord n (etaName n) | n <- nodes mg ]
+  let recs = [ MRecord s t (etaName s) (show (s == t)) | E s t <- mg ]
   let m_a = encodeDefaultOrderedByName recs
   BL.writeFile "../data/m_a_test.csv" m_a
 

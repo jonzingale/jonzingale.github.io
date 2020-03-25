@@ -10,7 +10,12 @@ import Dynamical
 import Product
 
 data MRecord =
-  MRecord { node :: String, diagNode :: String } deriving (Eq, Generic, Show)
+  MRecord {
+    source :: String,
+    target :: String,
+    dNode :: String,
+    fixedPoint :: String
+  } deriving (Eq, Generic, Show)
 
 etaName :: String -> String
 etaName str | eqHalves str = half take str
@@ -22,4 +27,4 @@ etaName str | eqHalves str = half take str
 instance ToNamedRecord MRecord
 
 instance DefaultOrdered MRecord where
-    headerOrder _ = header ["node", "diagNode"]
+    headerOrder _ = header ["source", "target", "dNode", "fixedPoint"]
