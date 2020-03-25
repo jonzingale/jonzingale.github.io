@@ -9,6 +9,8 @@ import Data.Text (Text)
 import Data.Csv
 
 import DynamicalExamples (g1, g2, g3, g4)
+import MMRecord
+import MRecord
 import CsvRecord
 import Dynamical
 import Product
@@ -16,20 +18,20 @@ import Product
 {--
 TODO:
 * avoid name space crashes
-* finish mRecords, mmRecords implementation
+* multiplying complicates naming: g1 + g4. WILL BREAK MMRecord
 --}
 
-mRecords = do -- not yet used on frontend, incomplete specification
-  let mg = eval.unit $ g1 + g4
-  let recs = [MRecord s t (etaName (E s t)) | (E s t) <- mg]
+mRecords = do
+  let mg = eval.unit $ [E "0" "0", E "1" "0", E "2" "1"] 
+  let recs = [ MRecord n (etaName n) | n <- nodes mg ]
   let m_a = encodeDefaultOrderedByName recs
-  BL.writeFile "./data/m_a_test.csv" m_a
+  BL.writeFile "../data/m_a_test.csv" m_a
 
-mmRecords = do -- not yet used on frontend, incomplete specification
-  let mmg = eval.unit.eval.unit $ g1 + g4
-  let recs = [MMRecord s t (muName (E s t)) | (E s t) <- mmg]
+mmRecords = do
+  let mmg = eval.unit.eval.unit $ [E "0" "0", E "1" "0", E "2" "1"] 
+  let recs = [ MMRecord n (muName n) | n <- nodes mmg ]
   let m_a = encodeDefaultOrderedByName recs
-  BL.writeFile "./data/m_m_a_test.csv" m_a
+  BL.writeFile "../data/m_m_a_test.csv" m_a
 
 main = do
   -- let g = g1 + g2 -- edge^2, 3-cycle with leg
