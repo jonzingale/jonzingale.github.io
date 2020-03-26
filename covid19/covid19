@@ -1,4 +1,4 @@
 #!/bin/bash
-cd ~/Desktop/crude/Ruby/covid19_nm/
+cd ~/Desktop/crude/jonzingale.github.io/covid19/
 source ~/.rvm/scripts/rvm
 ruby covid_nm_scraper.rb
