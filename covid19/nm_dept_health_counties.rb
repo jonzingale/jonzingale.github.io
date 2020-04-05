@@ -3,7 +3,6 @@ require 'csv'
 
 DATA_CSV = 'nm_dept_health_counties.csv'
 LANDING_URL = 'https://cv.nmhealth.org/newsroom/'
-HEADERS = %w[positive negative total_tests deaths]
 UPDATE_URL_SEL = 'div[@id="recent-posts-2"]//li/a[@href]'
 COUNTY_SEL = '//div[@class="entry-content"]/ul[1]/li'
 COUNTY_REGEX = /(\d+).* in (\w+ ?\w*) County/
