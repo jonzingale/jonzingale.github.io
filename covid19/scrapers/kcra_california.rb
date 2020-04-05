@@ -8,7 +8,7 @@ DATA_REGEX = /window.infographicData=(\{.+\})/
 
 # initialize csv with date stamp
 date = Date.today.strftime('%Y_%m_%d')
-csv_name = 'kcra_california_counties_%s.csv' % date
+csv_name = './../data/kcra_california_counties_%s.csv' % date
 
 # initialize crawler and hit endpoint
 agent = Mechanize.new

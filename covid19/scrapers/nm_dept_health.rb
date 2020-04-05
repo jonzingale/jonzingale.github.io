@@ -2,7 +2,7 @@ require 'mechanize'
 require 'csv'
 
 URL = 'https://cv.nmhealth.org/'
-DATA_CSV = 'nm_dept_health.csv'
+DATA_CSV = './../data/nm_dept_health.csv'
 HEADERS = %w[positive negative total_tests deaths]
 DATA_ROW_SEL = '//div[@class="et_pb_text_inner"]//table/tbody/tr/td[2]'
 

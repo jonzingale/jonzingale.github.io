@@ -2,7 +2,7 @@
 require 'mechanize'
 require 'csv'
 
-DATA_CSV = 'covid_kaggle.csv'
+DATA_CSV = './../data/covid_kaggle.csv'
 URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQU0SIALScXx8VXDX7yKNKWWPKE1YjFlWc6VTEVSN45CklWWf-uWmprQIyLtoPDA18tX9cFDr-aQ9S6/pubhtml'
 HEADERS = %w[NA 00s 10s 20s 30s 40s 50s 60s 70s 80s 90s 100s]
 
