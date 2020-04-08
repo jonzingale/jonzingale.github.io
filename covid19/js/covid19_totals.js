@@ -65,15 +65,20 @@
 
     // date labels
     var dates = column_data['date']
+    var thin_dates = []
+    var delta = Math.floor(dates.length/10)
+    let i = 0 ; for (i = 0; i < dates.length; i=i+delta) {
+      thin_dates.push(dates[i])
+    }
 
     var lScale = d3.scaleLinear()
-      .domain([0, dates.length + 2])
+      .domain([0, thin_dates.length + 2])
       .range([0, 900])
 
     d3.select('#covid19-totals').append('g')
       .attr('class', 'date-label')
       .selectAll('date-labels')
-      .data(dates).enter()
+      .data(thin_dates).enter()
       .append('text')
       .text(function(d) { return d })
       .attr("font-size", "10px")
