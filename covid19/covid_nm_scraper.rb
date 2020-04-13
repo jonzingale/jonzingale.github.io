@@ -19,7 +19,7 @@ CASE_REGEX = /been (\d,?\d*) cases/i
 DEATH_REGEX = /(\d,?\d*) ?reported? deaths?/i
 RECOVERY_REGEX = /(\d,?\d*) ?reported? recover/i
 COUNTY_DATA_REGEX = /\[\"(\w+\W?\W?\w+ ?\w*)\",\"(\d+)\"/
-COUNTIES_REGEX = /"data":\[\[(.+),\[null/
+COUNTIES_REGEX = /"data":\[\[(.+\"Valencia\"\]\]\]),/
 TABLE_REGEX = /<tbody.+tbody>/
 AGE_REGEX = /(\d+s|N\/A)/
 
