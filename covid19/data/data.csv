@@ -1,4 +1,4 @@
-date,time,total cases,deaths,recoveries
+date,time,total cases,deaths,recoveries,hospitalized
 2020-03-15,12:13 AM,0,0,0
 2020-03-17,12:00 AM,17,0,0
 2020-03-18,12:00 PM,23,0,0
@@ -35,3 +35,4 @@ date,time,total cases,deaths,recoveries
 2020-04-17,03:00 PM,1597,44,353
 2020-04-18,03:00 PM,1711,51,382
 2020-04-19,03:00 PM,1711,51,382
+2020-04-20,04:32 PM,1971,58,501,116
