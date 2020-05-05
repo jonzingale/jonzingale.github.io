@@ -20,7 +20,7 @@ DEATH_REGEX = /(\d,?\d*) ?reported? deaths?/i
 HOSPITALIZED_REGEX = /(\d,?\d*) ?people? hospitalized/i
 RECOVERY_REGEX = /(\d,?\d*) ?reported? recover/i
 
-COUNTY_DATA_REGEX = /\[\"(\w+\W?\W?\w+ ?\w*)\",\"(\d+)\"/
+COUNTY_DATA_REGEX = /\[\"(\w+\W?\W?\w+ ?\w*)\",\"(\d,?\d*)\"/
 COUNTIES_REGEX = /"data":\[\[(.+\"Valencia\"\]\]\]),/
 TABLE_REGEX = /<tbody.+tbody>/
 AGE_REGEX = /(\d+s|N\/A)/
@@ -103,7 +103,7 @@ def save_data(agent)
   end
 
   CSV.open(COUNTY_CSV, 'a') do |csv|
-    csv << agent.counties.map(&:last)
+    csv << agent.counties.map(&:last).map { |c| c.gsub(',','') }
   end
 
   CSV.open(DATA_CSV, 'a') do |csv|
