@@ -102,14 +102,14 @@ def save_data(agent)
     csv << agent.ages
   end
 
-  # CSV.open(COUNTY_CSV, 'a') do |csv|
-  #   csv << agent.counties.map(&:last).map { |c| c.gsub(',','') }
-  # end
+  CSV.open(COUNTY_CSV, 'a') do |csv|
+    csv << agent.counties.map(&:last).map { |c| c.gsub(',','') }
+  end
 
-  # CSV.open(DATA_CSV, 'a') do |csv|
-  #   csv << [DATE, TIME, agent.total_cases, agent.deaths,
-  #           agent.recoveries, agent.hospitalized]
-  # end
+  CSV.open(DATA_CSV, 'a') do |csv|
+    csv << [DATE, TIME, agent.total_cases, agent.deaths,
+            agent.recoveries, agent.hospitalized]
+  end
 end
 
 def process(save_records = true, use_fixture = false)
