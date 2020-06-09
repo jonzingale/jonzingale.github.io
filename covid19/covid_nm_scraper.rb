@@ -37,7 +37,7 @@ class Agent
     @deaths = get_case_by_type(DEATH_REGEX)
     @recoveries = get_case_by_type(RECOVERY_REGEX)
     @hospitalized = get_case_by_type(HOSPITALIZED_REGEX)
-    @ages = get_ages
+    # @ages = get_ages
   end
 
   def get_age_body(use_fixture)
@@ -98,9 +98,9 @@ def return_covid19_results
 end
 
 def save_data(agent)
-  CSV.open(AGE_CSV, 'a') do |csv|
-    csv << agent.ages
-  end
+  # CSV.open(AGE_CSV, 'a') do |csv|
+  #   csv << agent.ages
+  # end
 
   CSV.open(COUNTY_CSV, 'a') do |csv|
     csv << agent.counties.map(&:last).map { |c| c.gsub(',','') }
