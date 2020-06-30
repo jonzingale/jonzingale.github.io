@@ -15,12 +15,12 @@ DATA_CSV = 'data/data.csv'.freeze
 COUNTY_CSV = 'data/county.csv'.freeze
 AGE_CSV = 'data/age.csv'.freeze
 
-CASE_REGEX = /been (\d,?\d*) cases/i
-DEATH_REGEX = /(\d,?\d*) ?reported? deaths?/i
-HOSPITALIZED_REGEX = /(\d,?\d*) ?people? hospitalized/i
-RECOVERY_REGEX = /(\d,?\d*) ?reported? recover/i
+CASE_REGEX = /been (\d+,?\d*) cases/i
+DEATH_REGEX = /(\d+,?\d*) ?reported? deaths?/i
+HOSPITALIZED_REGEX = /(\d+,?\d*) ?people? hospitalized/i
+RECOVERY_REGEX = /(\d+,?\d*) ?reported? recover/i
 
-COUNTY_DATA_REGEX = /\[\"(\w+\W?\W?\w+ ?\w*)\",\"(\d,?\d*)\"/
+COUNTY_DATA_REGEX = /\[\"(\w+\W?\W?\w+ ?\w*)\",\"(\d+,?\d*)\"/
 COUNTIES_REGEX = /"data":\[\[(.+\"Valencia\"\]\]\]),/
 TABLE_REGEX = /<tbody.+tbody>/
 AGE_REGEX = /(\d+s|N\/A)/
