@@ -1,0 +1,2 @@
+date,time,cvDataId,created,updated,archived,cases,tests,totalHospitalizations,currentHospitalizations,deaths,recovered,male,female,genderNR,0-9,10-19,20-29,30-39,40-49,50-59,60-69,70-79,80-89,90+,ageNR,amInd,asian,black,hawaiian,unknown,other,white,hispanic
+2020-07-06,03:32 PM,186,1594071026906,1594071026906,,13507,380240,2033,129,515,5902,6754,6348,111,592,1210,2417,2416,2034,1886,1404,663,415,174,2,6298,87,256,24,829,75,1553,4091
