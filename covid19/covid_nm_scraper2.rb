@@ -41,8 +41,8 @@ end
 
 def save_data
   user = User.new
-  CSV.open(DATA_CSV, 'w+') do |csv|
-    csv << HEADERS if csv.count == 0
+  CSV.open(DATA_CSV, 'a') do |csv|
+    # csv << HEADERS if csv.count == 0
     csv << [DATE, TIME] + user.body.values
   end
 end
