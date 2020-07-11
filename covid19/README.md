@@ -14,3 +14,8 @@ and presents the data as a timeseries.
   - `0 15 * * * /Users/Jon/Desktop/crude/Ruby/covid19_nm/covid19`
 3. visit visualization endpoint
   - [`http://localhost:8000/covid19.html`](http://localhost:8000/covid19.html)
+
+### Todo:
+visualizers for daily deltas:
+1) county totals
+2) race and ages
