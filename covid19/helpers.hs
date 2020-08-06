@@ -12,7 +12,7 @@ diffs (c:cs) = zipWith (-) cs (c:cs)
 avg :: [Int] -> IO ()
 avg cs = do
   let ds = diffs cs
-  let tot = foldr (+) 0 ds
-  print $ div tot (length ds)
+  let total = foldr (+) 0 ds
+  print $ div total (length ds)
 
 lastFive = avg $ drop (length cases - 5) cases
