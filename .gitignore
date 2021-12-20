@@ -3,6 +3,7 @@
 *.png
 *.jpg
 *.jpeg
+*.tif
 *.hi
 *.o
 *.prof

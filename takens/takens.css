@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "Chap Light";
+    src: url('/maps/chap-light.woff') format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+  background: #fff;
+  font-family: 'Chap Light';
+}
+
+.theorem {
+  font-size: 20px;
+  padding-left: 100px;
+  height: 700px;
+  width: 600px;
+}
+
+.din-title {
+  color: #413928;
+  font-size: 50px;
+  padding-top: 1%;
+  padding-left: 2.5%;
+  padding-bottom: 1%;
+}
+
+.group_widgets {
+  width: 100%;
+}
+
+.grid-container {
+  padding-left: 6%;
+}
+
+.grid {
+  fill: #413928;
+}
+
+.images {
+  height: 450px;
+  padding-left: 0.5%;
+  width: 30%;
+}
