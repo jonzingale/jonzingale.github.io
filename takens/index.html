@@ -8,25 +8,30 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
     <link href="/takens/takens.css" rel="stylesheet" type="text/css" />
   </head>
+
   <div class='din-title'>
     <span class='back-button'></span>
     Takens' Method</div>
   <main role="main">
     <table>
       <tbody>
-        <td width='600'>
-          <div class='grid-container'></div>
-          <div class='group-controls'></div>
-        </td>
-        <td>
+        <tr>
           <div class='theorem'>
             Takens theorem is a part of a class of <i>delay embedding theorems</i>
             from which low dimensional phase spaces can be reconstructed from
             continous one-dimensional observables. The spaces displayed here are
             projections reconstructed from audio (WAV) and medical (EDF) time
             series.
+            <br><br>
+            1. <a href="https://en.wikipedia.org/wiki/Rebab">rebab</a><br>
+            2. <a href="https://www.youtube.com/watch?v=UpTem6mWv3Y&list=PLT38_LBa0TNg29TSxgF_O4yZYy6pTMJkY&ab_channel=ClassicalMusic">cello</a><br>
+            3. <a href="https://physionet.org/content/nifecgdb/1.0.0/">fetal heart (ecg)</a><br>
+            4. whistling into my laptop microphone
           </div>
-        </td>
+        </tr>
+        <tr>
+          <div class='container'></div>
+        </tr>
       </tbody>
     </table>
     </div>
@@ -34,18 +39,21 @@
 
   <script>
     const images = [
-      'images/rebab_xy.tif',
-      'images/max_ernst_in_abiquiu2.jpg',
+      'images/rebab.jpg',
+      'images/cello.jpg',
+      'images/fetal_heart.jpg',
+      'images/whistle.jpg',
     ]
 
     d3.selectAll('.container')
       .selectAll('img')
       .data(images).enter()
       .append('img')
-      .attr('class', 'images')
       .attr('src', i => i)
   </script>
   <script src='/js/back-button.js' type="text/javascript"></script>
-  <script>d3.select('.back-button')
-            .select('a').attr('href', '/')</script>
+  <script>
+    d3.select('.back-button')
+      .select('a').attr('href', '/')
+  </script>
 </html>
