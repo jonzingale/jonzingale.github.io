@@ -1,5 +1,0 @@
-#!/bin/bash
-cd ~/Desktop/crude/jonzingale.github.io/covid19/
-source ~/.rvm/scripts/rvm
-ruby covid_nm_scraper.rb
-ruby covid_nm_scraper2.rb
