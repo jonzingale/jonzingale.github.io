@@ -10,6 +10,7 @@
 
   <main role="main">
     <div class='title'>
+      <span class='back-button'></span>
       Palettes from Color Summaries:
     </div>
 
@@ -80,5 +81,9 @@
         .attr("x", 620).attr('y', 325)
         .text(function(d) { return key});
     })
+  </script>
+  <script src='/js/backButton.js' type="text/javascript"></script>
+  <script>
+    d3.select('.back-button').select('a').attr('href', '/')
   </script>
 </html>
