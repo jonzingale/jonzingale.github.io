@@ -9,5 +9,3 @@
 *.prof
 flyers/*
 colorSummaries/*
-
-!neural-nets/images/*/*
