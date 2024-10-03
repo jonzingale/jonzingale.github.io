@@ -12,6 +12,10 @@ html {
   padding-left: 8%;
 }
 
+.first-col {
+  padding-left: 100px;
+}
+
 .title {
   font-family: 'Merriweather';
   color: #3d3d4d;
