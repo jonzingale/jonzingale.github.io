@@ -9,3 +9,5 @@
 *.prof
 flyers/*
 colorSummaries/*
+
+**/.DS_Store
