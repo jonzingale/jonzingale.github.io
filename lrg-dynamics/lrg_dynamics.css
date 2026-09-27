@@ -355,3 +355,43 @@ select:focus-visible {
     border-bottom: 0;
   }
 }
+
+/* Live, UI-only ticker highlighting. */
+:root { --special: #ff4fbf; --special-stroke: #ffd0ed; }
+.highlight-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: -8px 0 18px;
+  padding: 12px;
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  background: rgba(18, 26, 45, 0.9);
+}
+.highlight-controls label { font-size: 0.86rem; font-weight: 700; }
+.highlight-controls input {
+  flex: 1 1 310px;
+  min-width: 200px;
+  padding: 8px 10px;
+  border: 1px solid var(--panel-border);
+  border-radius: 7px;
+  background: #17233d;
+  color: var(--text);
+}
+.highlight-controls input::placeholder { color: var(--muted); }
+#highlight-status { color: var(--muted); font-size: 0.8rem; }
+.node.special circle {
+  fill: var(--special);
+  stroke: var(--special-stroke);
+  stroke-width: 2.1px;
+  filter: drop-shadow(0 0 3px rgba(255, 79, 191, 0.9));
+}
+.node.special text { fill: var(--special-stroke); font-weight: 700; }
+.node.selected.special circle {
+  fill: var(--selected);
+  stroke: var(--special-stroke);
+  stroke-width: 3px;
+}
+.selection .ticker.special-ticker { color: var(--special); }
+.security-category { color: var(--special); font-size: 0.75rem; font-weight: 700; }

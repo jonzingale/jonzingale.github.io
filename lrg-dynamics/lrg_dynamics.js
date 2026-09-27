@@ -6,6 +6,7 @@ const INITIAL_LAYOUT_TICKS = 360;
 const DEFAULT_PLAY_INTERVAL_MS = 3200;
 const INITIAL_ZOOM_SCALE = 0.90;
 const LAYOUT_INSET = 115;
+const SPECIAL_NODE_COLOR = "#ff4fbf";
 
 const colors = [
     "#78b7ff", "#8ce0b5", "#f7c86e", "#df9cff", "#ff9f9f",
@@ -34,6 +35,7 @@ const ui = {
 };
 
 let payload;
+let highlightedTickers = new Set();
 let frameIndex = 0;
 let timer = null;
 let selectedIndex = null;
@@ -46,6 +48,7 @@ async function boot() {
     validatePayload(payload);
     initializeGraph();
     initializeControls();
+    initializeHighlightInput();
     renderFrame(0, null, { initial: true });
 }
 
@@ -78,6 +81,7 @@ function initializeGraph() {
     const nodes = payload.securities.map((ticker, index) => ({
         index,
         ticker,
+        special: false,
         x: width / 2 + seededOffset(index, 220),
         y: height / 2 + seededOffset(index + 137, 220),
         vx: 0,
@@ -238,6 +242,64 @@ function initializeControls() {
             (option) => option.value === DEFAULT_PLAY_INTERVAL_MS
         )
         .text((option) => option.label);
+}
+
+function initializeHighlightInput() {
+    const controls = d3.select(".controls").node();
+    if (!controls) return;
+
+    const form = d3.create("form")
+        .attr("class", "highlight-controls")
+        .on("submit", (event) => event.preventDefault());
+    form.append("label")
+        .attr("for", "highlight-tickers")
+        .text("Highlight tickers");
+    const input = form.append("input")
+        .attr("id", "highlight-tickers")
+        .attr("type", "text")
+        .attr("autocomplete", "off")
+        .attr("spellcheck", "false")
+        .attr("placeholder", "IMTM, ICLN, DFAX, ...")
+        .attr("aria-describedby", "highlight-status")
+        .on("input", updateHighlights);
+    form.append("button")
+        .attr("type", "button")
+        .text("Clear")
+        .on("click", () => {
+            input.property("value", "");
+            updateHighlights();
+            input.node().focus();
+        });
+    const status = form.append("span")
+        .attr("id", "highlight-status")
+        .attr("role", "status")
+        .attr("aria-live", "polite");
+    controls.parentNode.insertBefore(form.node(), controls.nextSibling);
+    updateHighlights();
+}
+
+function updateHighlights() {
+    const raw = d3.select("#highlight-tickers").property("value") || "";
+    highlightedTickers = new Set(
+        raw.split(",").map((ticker) => ticker.trim().toUpperCase()).filter(Boolean)
+    );
+    const known = new Set(payload.securities.map((ticker) => ticker.trim().toUpperCase()));
+    const missing = [...highlightedTickers].filter((ticker) => !known.has(ticker));
+    const count = [...highlightedTickers].filter((ticker) => known.has(ticker)).length;
+    d3.select("#highlight-status").text(
+        `${count} highlighted${missing.length ? ` · not in graph: ${missing.join(", ")}` : ""}`
+    );
+    graphState.nodes.forEach((node) => {
+        node.special = highlightedTickers.has(node.ticker.trim().toUpperCase());
+    });
+    if (graphState.nodeSelection) {
+        graphState.nodeSelection.classed("special", (node) => node.special);
+        graphState.nodeSelection.select("circle").attr("r", nodeRadius).attr("fill", nodeColor);
+        graphState.nodeSelection.select("text").attr("dy", (node) => -(nodeRadius(node) + 5));
+        updateLabels();
+        updateSelection();
+        graphState.simulation.force("collide").radius((node) => nodeRadius(node) + 3);
+    }
 }
 
 function renderFrame(nextIndex, previousIndex, options = {}) {
@@ -720,6 +782,7 @@ function renderNodes() {
                 .remove()
         )
         .classed("connected", (node) => node.degree > 0)
+        .classed("special", (node) => node.special)
         .classed("entered", (node) => node.entered)
         .classed("exited", (node) => node.exited)
         .on("click", (event, node) => {
@@ -800,6 +863,7 @@ function updateLabels() {
             (node) => (
                 showAll
                 || node.degree > 0
+                || node.special
                 || node.index === selectedIndex
             ) ? null : "none"
         );
@@ -877,8 +941,10 @@ function updateSelection() {
 
     panel
         .append("div")
-        .attr("class", "ticker")
+        .attr("class", selected.special ? "ticker special-ticker" : "ticker")
         .text(selected.ticker);
+
+    if (selected.special) panel.append("div").attr("class", "security-category").text("Highlighted security");
 
     panel.append("div").text(
         `Degree ${selected.degree} · bubble size ${selected.componentSize}`
@@ -1053,6 +1119,7 @@ function showNodeTooltip(event, node) {
     ui.tooltip
         .html(
             `<strong>${node.ticker}</strong><br>`
+            + (node.special ? "Highlighted security<br>" : "")
             + `degree: ${node.degree}<br>`
             + `bubble size: ${node.componentSize}<br>`
             + `status: ${status}`
@@ -1096,16 +1163,15 @@ function hideTooltip() {
 
 function nodeRadius(node) {
     if (node.componentSize === 1) {
-        return 2.5;
+        return node.special ? 4.5 : 2.5;
     }
 
-    return Math.min(
-        10,
-        3.5 + Math.sqrt(node.degree || 1) * 1.7
-    );
+    return Math.min(10, 3.5 + Math.sqrt(node.degree || 1) * 1.7)
+        + (node.special ? 1.5 : 0);
 }
 
 function nodeColor(node) {
+    if (node.special) return SPECIAL_NODE_COLOR;
     if (node.entered) {
         return "#f9c74f";
     }
