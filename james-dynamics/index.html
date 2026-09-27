@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LRG Dynamics</title>
+  <link rel="stylesheet" href="lrg_dynamics.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow"></p>
+        <h1>LRG dynamics</h1>
+        <p id="subtitle" class="subtitle">Loading candidate-collapse connectivity…</p>
+      </div>
+      <div class="header-actions">
+        <button id="reset-view" type="button" title="Reset node positions">Reset layout</button>
+      </div>
+    </header>
+
+    <section class="controls" aria-label="Animation controls">
+      <button id="previous" type="button" aria-label="Previous frame">←</button>
+      <button id="play" type="button" aria-label="Play animation">Play</button>
+      <button id="next" type="button" aria-label="Next frame">→</button>
+      <input id="timeline" type="range" min="0" max="0" value="0" step="1" aria-label="Frame">
+      <output id="date-label" for="timeline">—</output>
+      <label class="speed-control" for="speed">
+        Speed
+        <select id="speed">
+          <option value="1500">Slow</option>
+          <option value="850" selected>Normal</option>
+          <option value="350">Fast</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="workspace">
+      <div class="chart-panel">
+        <svg id="graph" role="img" aria-label="LRG candidate-collapse graph"></svg>
+        <div id="tooltip" class="tooltip" hidden></div>
+      </div>
+
+      <aside class="side-panel">
+        <section>
+          <h2>Frame</h2>
+          <dl id="frame-stats" class="stats"></dl>
+        </section>
+
+        <section>
+          <h2>Selected security</h2>
+          <div id="selected-security" class="selection empty">
+            Click a security to inspect its actual candidate-collapse links.
+          </div>
+        </section>
+
+        <section>
+          <h2>Display</h2>
+          <label class="toggle-row">
+            <input id="show-singletons" type="checkbox" checked>
+            Show isolated securities
+          </label>
+          <label class="toggle-row">
+            <input id="show-labels" type="checkbox">
+            Show all ticker labels
+          </label>
+          <label class="toggle-row">
+            <input id="show-hulls" type="checkbox" checked>
+            Show component bubbles
+          </label>
+          <label class="toggle-row">
+            <input id="freeze-layout" type="checkbox">
+            Freeze layout
+          </label>
+        </section>
+
+        <section class="legend-section">
+          <h2>Interpretation</h2>
+          <p>
+            A line is an actual candidate-collapse edge that passed the witness
+            Jaccard tolerance. A shaded bubble is a connected component, not a
+            claim that every member is pairwise connected.
+          </p>
+          <p id="run-parameters" class="parameters"></p>
+        </section>
+      </aside>
+    </section>
+
+    <section id="error-panel" class="error-panel" hidden></section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script type="module" src="lrg_dynamics.js"></script>
+</body>
+</html>
