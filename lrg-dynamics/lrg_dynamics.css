@@ -356,6 +356,18 @@ select:focus-visible {
   }
 }
 
+/* Keep Frame from jumping around */
+.chart-panel {
+  height: 850px;
+  min-height: 0;
+  align-self: start;
+}
+
+#graph {
+  height: 100%;
+  min-height: 0;
+}
+
 /* Live, UI-only ticker highlighting. */
 :root { --special: #ff4fbf; --special-stroke: #ffd0ed; }
 .highlight-controls {
